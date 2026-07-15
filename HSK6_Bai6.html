@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HSK 6 – Bài 6: 当好职场新丁 | Ôn tập Từ vựng &amp; Ngữ pháp</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:      #1C1A24;
+  --ink-soft: #4A4658;
+  --paper:    #FBF9F4;
+  --paper2:   #F2EEE3;
+  --line:     #DDD6C5;
+  --gold:     #9C7A2E;
+  --gold-d:   #6E5620;
+  --gold-bg:  #F3E7C8;
+  --jade:     #2F5D50;
+  --jade-d:   #1E3F37;
+  --jade-bg:  #DCEAE4;
+  --plum:     #6B3550;
+  --plum-bg:  #F1DEE6;
+  --rust:     #8C3A2B;
+  --rust-bg:  #F5E0D6;
+  --ok:       #1E5E2E;
+  --ok-bg:    #DEEDE0;
+  --bad:      #8C2C2C;
+  --bad-bg:   #F6DEDE;
+  --shadow:   0 6px 24px rgba(28,26,36,.08);
+  --r:        4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.5}
+.han{font-family:'Noto Serif SC',serif}
+
+/* ─── HERO ─── */
+.hero{
+  background:linear-gradient(160deg,var(--jade-d) 0%, var(--jade) 55%, #28473D 100%);
+  padding:40px 20px 64px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;opacity:.06;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 38px,#fff 38px,#fff 39px);
+}
+.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-bg);font-weight:700;margin-bottom:10px;opacity:.85}
+.hero-title-zh{font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px}
+.hero-title-vn{font-size:15px;color:rgba(255,255,255,.78);margin-bottom:18px;font-style:italic}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hmeta-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:5px 14px;font-size:12px;color:#fff;font-weight:600}
+
+/* ─── NAV TABS ─── */
+.tabnav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tabnav-inner{max-width:760px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.tabnav-inner::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;padding:13px 16px;font-size:13px;font-weight:600;color:var(--ink-soft);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:'Source Sans 3',sans-serif;transition:all .15s}
+.tab-btn.active{color:var(--jade-d);border-bottom-color:var(--jade)}
+.tab-btn:hover{color:var(--jade-d)}
+
+/* ─── MAIN ─── */
+main{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+.tab-pane{display:none}
+.tab-pane.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.section-head{margin-bottom:20px}
+.section-title{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.section-sub{font-size:13px;color:var(--ink-soft)}
+
+/* ─── PROGRESS ─── */
+.progress-row{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.progress-track{flex:1;height:5px;background:var(--paper2);border-radius:3px;overflow:hidden}
+.progress-fill{height:5px;background:var(--jade);border-radius:3px;transition:width .35s}
+.progress-label{font-size:11px;color:var(--ink-soft);white-space:nowrap;font-weight:600}
+
+/* ─── VOCAB FLASHCARDS ─── */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.flip-card{position:relative;height:140px;perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;border-radius:8px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;border:1px solid var(--line)}
+.flip-front{background:var(--paper);box-shadow:var(--shadow)}
+.flip-back{background:var(--jade-d);color:#fff;transform:rotateY(180deg)}
+.fc-zh{font-family:'Noto Serif SC',serif;font-size:25px;font-weight:700;color:var(--ink);margin-bottom:4px;text-align:center}
+.fc-py{font-size:11px;color:var(--gold-d);font-weight:600}
+.fc-tag{position:absolute;top:8px;right:10px;font-size:9px;color:var(--ink-soft);opacity:.5}
+.fc-vn{font-size:14px;font-weight:700;color:#fff;text-align:center;margin-bottom:6px;padding:0 4px}
+.fc-ex{font-size:10.5px;color:rgba(255,255,255,.75);text-align:center;padding:0 8px;font-family:'Noto Serif SC',serif;line-height:1.45}
+.vocab-progress{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:16px;font-weight:600}
+
+/* ─── MC ─── */
+.q-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.q-tag{font-size:11px;color:var(--ink-soft);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.q-text{font-size:15px;color:var(--ink);margin-bottom:12px;line-height:1.6}
+.q-text .han{font-size:17px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:14px;color:var(--ink);transition:all .12s;background:#fff}
+.opt:hover{background:var(--paper2)}
+.opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opt-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.opt-zh{font-family:'Noto Serif SC',serif;font-weight:600}
+.chk-btn{margin-top:10px;padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.chk-btn:hover{background:var(--jade-bg)}
+.fb{font-size:13px;margin-top:9px;padding:8px 12px;border-radius:6px;font-weight:600}
+.fb-ok{background:var(--ok-bg);color:var(--ok)}
+.fb-no{background:var(--bad-bg);color:var(--bad)}
+
+/* ─── FILL ─── */
+.wb-box{background:var(--gold-bg);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid var(--line)}
+.wb-label{font-size:11px;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.06em;margin-bottom:9px}
+.wb-chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:#fff;border:1px solid var(--gold-d);border-radius:20px;padding:6px 15px;font-size:15px;font-family:'Noto Serif SC',serif;font-weight:600;color:var(--gold-d);cursor:pointer;transition:all .12s}
+.chip:hover{background:var(--gold-bg)}
+.chip.used{background:var(--paper2);border-color:var(--line);color:var(--ink-soft);text-decoration:line-through;cursor:default}
+.chip.active-chip{outline:2px solid var(--gold-d);outline-offset:1px}
+.fill-rows{display:flex;flex-direction:column;gap:9px}
+.fill-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.rn{font-size:12px;color:var(--ink-soft);font-weight:700;min-width:20px}
+.ft{font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink)}
+.slot{display:inline-flex;flex-direction:column;align-items:center}
+.slot-box{min-width:62px;height:34px;border:none;border-bottom:2px solid var(--gold);background:transparent;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--gold-d);font-weight:700;text-align:center;cursor:pointer;border-radius:0;padding:0 4px}
+.slot-box:empty::before{content:'＿＿';color:var(--ink-soft);font-weight:400;font-size:14px}
+.slot-box.filled{border-bottom-color:var(--gold-d)}
+.slot-box.ok{background:var(--ok-bg);color:var(--ok);border-bottom-color:var(--ok);border-radius:4px}
+.slot-box.err{background:var(--bad-bg);color:var(--bad);border-bottom-color:var(--bad);border-radius:4px}
+.fill-actions{display:flex;gap:8px;margin-top:14px}
+.fill-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--gold-d);background:transparent;color:var(--gold-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.fill-btn:hover{background:var(--gold-bg)}
+.reset-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--ink-soft);background:transparent;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+
+/* ─── GRAMMAR ─── */
+.gram-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
+.gram-title{font-size:16px;font-weight:700;color:var(--plum);margin-bottom:9px;font-family:'Noto Serif SC',serif}
+.gram-formula{background:var(--gold-bg);color:var(--gold-d);padding:9px 12px;border-radius:6px;font-size:14.5px;font-weight:700;margin-bottom:10px;font-family:'Noto Serif SC',serif;display:inline-block}
+.gram-explain{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px;line-height:1.65}
+.gram-ex{background:var(--paper2);border-radius:6px;padding:10px 12px;margin-bottom:7px}
+.gram-ex:last-child{margin-bottom:0}
+.gram-ex-zh{font-size:15.5px;font-weight:600;color:var(--ink);font-family:'Noto Serif SC',serif}
+.gram-ex-vn{font-size:12px;color:var(--ink-soft);margin-top:3px;font-style:italic}
+
+/* ─── DIALOGUE/READING ─── */
+.passage-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:16px;box-shadow:var(--shadow)}
+.passage-title{font-size:13px;font-weight:700;color:var(--plum);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+.passage-zh{font-family:'Noto Serif SC',serif;font-size:16px;line-height:2;color:var(--ink);text-align:justify}
+.passage-zh .hl{background:var(--gold-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--gold-d)}
+.passage-vn{font-size:14.5px;line-height:1.85;color:var(--ink-soft);text-align:justify;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.passage-vn .hl{background:var(--jade-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--jade-d)}
+
+/* ─── ERROR CORRECTION ─── */
+.err-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.err-sentence{font-family:'Noto Serif SC',serif;font-size:17px;line-height:1.8;color:var(--ink);margin-bottom:14px;padding:10px 12px;background:var(--rust-bg);border-radius:6px;border-left:3px solid var(--rust)}
+.err-sentence u{text-decoration:none;background:#fff;border-bottom:2px solid var(--rust);padding:0 2px;font-weight:700;color:var(--rust)}
+.err-opts{display:flex;flex-direction:column;gap:7px}
+.err-opt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:15px;font-family:'Noto Serif SC',serif;color:var(--ink);transition:all .12s;background:#fff;line-height:1.6}
+.err-opt:hover{background:var(--paper2)}
+.err-opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.err-opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.err-opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.err-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;font-family:'Source Sans 3',sans-serif}
+.err-note{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:12.5px;color:var(--ink-soft);font-style:italic;line-height:1.55}
+
+/* ─── TRANSLATION ─── */
+.sent-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.sent-vn{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.55}
+.sent-input{width:100%;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink);outline:none}
+.sent-input:focus{border-color:var(--jade)}
+.sent-check-btn{margin-top:8px;padding:7px 16px;font-size:12px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.sent-fb{font-size:13px;margin-top:9px;padding:9px 12px;border-radius:6px;font-weight:600}
+.sent-explain{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:13px}
+.sent-explain-zh{font-family:'Noto Serif SC',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.se-words{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.se-word{background:#fff;border:1px solid var(--line);border-radius:5px;padding:5px 9px;text-align:center}
+.se-word-zh{font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;color:var(--ink)}
+.se-word-vn{font-size:10px;color:var(--ink-soft);margin-top:1px}
+.se-note{font-size:12.5px;color:var(--ink-soft);font-style:italic;border-top:1px solid var(--line);padding-top:8px}
+
+/* ─── SCORE ─── */
+.score-wrap{background:linear-gradient(160deg,var(--jade-d),var(--jade));border-radius:10px;padding:24px 20px;color:#fff;text-align:center;margin-bottom:20px}
+.score-ring{width:90px;height:90px;border-radius:50%;border:4px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px}
+.score-ring-num{font-size:24px;font-weight:800}
+.score-ring-tot{font-size:11px;opacity:.75}
+.score-title{font-size:17px;font-weight:700;margin-bottom:5px}
+.score-sub{font-size:13px;opacity:.85}
+.score-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}
+.score-table th{text-align:left;padding:9px 10px;background:rgba(255,255,255,.12);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+.score-table td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.15)}
+.score-table tr:last-child td{border-bottom:none;font-weight:700}
+.submit-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--jade),var(--jade-d));color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;box-shadow:0 4px 16px rgba(47,93,80,.35);margin-bottom:18px}
+.submit-btn:hover{transform:translateY(-1px)}
+
+/* ─── NAV ARROWS ─── */
+.pane-nav{display:flex;justify-content:space-between;margin-top:24px}
+.nav-arrow{padding:9px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.nav-arrow:hover{border-color:var(--jade);color:var(--jade-d)}
+
+footer.wm{text-align:center;font-size:11.5px;color:var(--ink-soft);padding:18px;font-style:italic;border-top:1px solid var(--line)}
+
+@media(max-width:480px){
+  .vocab-grid{grid-template-columns:1fr}
+  .hero-title-zh{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Tiếng Trung Halaoshi · HSK 6 · 标准教程 6上 第6课</div>
+    <div class="hero-title-zh">当好职场新丁</div>
+    <div class="hero-title-vn">Làm tốt vai trò người mới trong công sở — Ôn tập từ vựng &amp; ngữ pháp</div>
+    <div class="hero-meta">
+      <span class="hmeta-chip">📖 46 từ vựng</span>
+      <span class="hmeta-chip">⏱ ~25 phút</span>
+      <span class="hmeta-chip">🎯 6 phần luyện tập</span>
+    </div>
+  </div>
+</div>
+
+<nav class="tabnav">
+  <div class="tabnav-inner" id="tabnav"></div>
+</nav>
+
+<main>
+
+  <!-- VOCAB -->
+  <section class="tab-pane active" id="pane-vocab">
+    <div class="section-head">
+      <div class="section-title">Từ vựng bài học</div>
+      <div class="section-sub">Nhấn vào thẻ để lật — xem pinyin, nghĩa và ví dụ trong văn cảnh bài đọc.</div>
+    </div>
+    <div class="vocab-grid" id="vocab-grid"></div>
+    <div class="vocab-progress" id="vocab-progress">0 / 46 đã xem</div>
+  </section>
+
+  <!-- TRANSLATION OF PASSAGE -->
+  <section class="tab-pane" id="pane-transl">
+    <div class="section-head">
+      <div class="section-title">Dịch bài khóa</div>
+      <div class="section-sub">Bản dịch tiếng Việt theo từng đoạn — từ mới và thành ngữ được tô màu tương ứng ở cả bản tiếng Trung (vàng) và bản dịch (xanh ngọc).</div>
+    </div>
+    <div id="transl-wrap"></div>
+  </section>
+
+  <!-- GRAMMAR -->
+  <section class="tab-pane" id="pane-grammar">
+    <div class="section-head">
+      <div class="section-title">Ôn ngữ pháp chính trong bài khóa</div>
+      <div class="section-sub">Các cấu trúc ngữ pháp trọng tâm xuất hiện trong bài đọc, kèm ví dụ trích trực tiếp từ bài khóa.</div>
+    </div>
+    <div id="gram-wrap"></div>
+  </section>
+
+  <!-- MC -->
+  <section class="tab-pane" id="pane-mc">
+    <div class="section-head">
+      <div class="section-title">Phần 1 — Trắc nghiệm</div>
+      <div class="section-sub">Chọn nghĩa hoặc cách dùng đúng nhất cho mỗi từ / cấu trúc.</div>
+    </div>
+    <div class="progress-row"><div class="progress-track"><div class="progress-fill" id="mc-prog" style="width:0%"></div></div><div class="progress-label" id="mc-prog-label">0 / 12</div></div>
+    <div id="mc-wrap"></div>
+  </section>
+
+  <!-- FILL -->
+  <section class="tab-pane" id="pane-fill">
+    <div class="section-head">
+      <div class="section-title">Phần 2 — Điền từ vào chỗ trống</div>
+      <div class="section-sub">Chọn từ trong khung gợi ý, sau đó nhấn vào ô trống để điền.</div>
+    </div>
+    <div class="wb-box">
+      <div class="wb-label">📦 Ngân hàng từ</div>
+      <div class="wb-chips" id="wb"></div>
+    </div>
+    <div class="fill-rows" id="fill-wrap"></div>
+    <div class="fill-actions">
+      <button class="fill-btn" onclick="checkFill()">Kiểm tra</button>
+      <button class="reset-btn" onclick="resetFill()">↺ Làm lại</button>
+    </div>
+    <div id="fill-fb" style="margin-top:10px"></div>
+  </section>
+
+  <!-- READING -->
+  <section class="tab-pane" id="pane-reading">
+    <div class="section-head">
+      <div class="section-title">Phần 3 — Đọc hiểu trích đoạn</div>
+      <div class="section-sub">Đọc đoạn văn gốc, các từ vựng trọng tâm được tô vàng, sau đó trả lời câu hỏi.</div>
+    </div>
+    <div id="reading-wrap"></div>
+  </section>
+
+  <!-- ERROR CORRECTION -->
+  <section class="tab-pane" id="pane-wo">
+    <div class="section-head">
+      <div class="section-title">Phần 4 — Tìm lỗi sai</div>
+      <div class="section-sub">Trong 4 câu A, B, C, D dưới đây, chỉ có 1 câu chứa lỗi sai. Hãy chọn ra câu đó.</div>
+    </div>
+    <div id="wo-wrap"></div>
+  </section>
+
+  <!-- TRANSLATION -->
+  <section class="tab-pane" id="pane-sent">
+    <div class="section-head">
+      <div class="section-title">Phần 5 — Dịch câu sang tiếng Trung</div>
+      <div class="section-sub">Gõ câu tiếng Trung tương ứng. Sau khi kiểm tra sẽ có phân tích từ và ngữ pháp.</div>
+    </div>
+    <div id="sent-wrap"></div>
+  </section>
+
+  <!-- SCORE -->
+  <section class="tab-pane" id="pane-score">
+    <div class="section-head">
+      <div class="section-title">Phần 6 — Tổng kết điểm số</div>
+      <div class="section-sub">Tổng hợp kết quả toàn bộ các phần đã làm.</div>
+    </div>
+    <div id="score-wrap"></div>
+    <button class="submit-btn" onclick="calcScore()">🎯 Tính điểm tổng kết</button>
+  </section>
+
+</main>
+
+<footer class="wm">© Tiếng Trung Halaoshi — Tài liệu ôn tập HSK 6, Bài 6</footer>
+
+<script>
+const vocabData = [
+  {zh:'上任', py:'shàngrèn', vn:'nhậm chức', ex:'这天是我到这家公司上任的第一天。', exvn:'Hôm nay là ngày đầu tiên tôi đến công ty này nhậm chức.'},
+  {zh:'职位', py:'zhíwèi', vn:'chức vụ', ex:'我的职位是咨询师。', exvn:'Chức vụ của tôi là chuyên viên tư vấn.'},
+  {zh:'资深', py:'zīshēn', vn:'thâm niên, lâu năm', ex:'不少资深员工在公司创立之初就开始在这里工作了。', exvn:'Không ít nhân viên thâm niên đã bắt đầu làm việc ở đây từ khi công ty mới thành lập.'},
+  {zh:'创立', py:'chuànglì', vn:'sáng lập, thành lập', ex:'不少资深员工在公司创立之初就开始在这里工作了。', exvn:'Không ít nhân viên thâm niên đã bắt đầu làm việc ở đây từ khi công ty mới thành lập.'},
+  {zh:'泡', py:'pào', vn:'pha (trà, cà phê...)', ex:'赵姐工作的第一件事是忙着泡茶和咖啡。', exvn:'Việc đầu tiên chị Triệu làm là bận rộn pha trà và cà phê.'},
+  {zh:'风气', py:'fēngqì', vn:'bầu không khí, nếp sống', ex:'我想这单位风气真好。', exvn:'Tôi nghĩ nếp sống của đơn vị này thật tốt.'},
+  {zh:'唯独', py:'wéidú', vn:'chỉ có, duy nhất', ex:'唯独剩下我和我的搭档。', exvn:'Chỉ còn sót lại mỗi tôi và người cộng sự của tôi.'},
+  {zh:'搭档', py:'dādàng', vn:'cộng sự, người cộng tác', ex:'唯独剩下我和我的搭档——与我同一天就职的小林。', exvn:'Chỉ còn sót lại mỗi tôi và người cộng sự của tôi — Tiểu Lâm, người nhận việc cùng ngày với tôi.'},
+  {zh:'就职', py:'jiùzhí', vn:'nhận chức, nhận việc', ex:'与我同一天就职的小林。', exvn:'Tiểu Lâm, người nhận việc cùng ngày với tôi.'},
+  {zh:'边缘', py:'biānyuán', vn:'rìa, vùng ven', ex:'我也有被边缘化的感觉。', exvn:'Tôi cũng có cảm giác bị đẩy ra ngoài rìa.'},
+  {zh:'眼色', py:'yǎnsè', vn:'cái nháy mắt (để ra hiệu), cái liếc mắt đầy ngụ ý', ex:'我还是向小林使了个眼色。', exvn:'Tôi vẫn nháy mắt ra hiệu với Tiểu Lâm.'},
+  {zh:'指标', py:'zhǐbiāo', vn:'chỉ tiêu', ex:'有时候还完不成指标。', exvn:'Có lúc còn không hoàn thành được chỉ tiêu.'},
+  {zh:'成天', py:'chéngtiān', vn:'suốt ngày', ex:'几乎成天聊天儿、上网、吹牛。', exvn:'Hầu như suốt ngày tán gẫu, lên mạng, khoác lác.'},
+  {zh:'吹牛', py:'chuīniú', vn:'ba hoa, khoác lác', ex:'几乎成天聊天儿、上网、吹牛。', exvn:'Hầu như suốt ngày tán gẫu, lên mạng, khoác lác.'},
+  {zh:'溜', py:'liū', vn:'chuồn mất', ex:'还有人溜出去逛街。', exvn:'Còn có người lẻn ra ngoài đi dạo phố.'},
+  {zh:'等级', py:'děngjí', vn:'đẳng cấp, cấp bậc', ex:'我们的工作压力大，和他们根本就不是一个等级。', exvn:'Áp lực công việc của chúng tôi rất lớn, hoàn toàn không cùng đẳng cấp với họ.'},
+  {zh:'公道', py:'gōngdào', vn:'sự công bằng, lẽ phải', ex:'小林要去找领导讨说公道。', exvn:'Tiểu Lâm định đi tìm lãnh đạo đòi lại lẽ công bằng.'},
+  {zh:'哼', py:'hng', vn:'hừ, hừm (biểu thị sự bực bội hoặc không tin)', ex:'“哼，太不像话了。”', exvn:'“Hừ, thật là quá vô lý.”'},
+  {zh:'不像话', py:'búxiànghuà', vn:'vô lý, kỳ cục', ex:'“哼，太不像话了。”', exvn:'“Hừ, thật là quá vô lý.”'},
+  {zh:'明明', py:'míngmíng', vn:'rõ ràng', ex:'明明是在欺负人，大不了辞职。', exvn:'Rõ ràng là đang bắt nạt người khác, cùng lắm thì nghỉ việc.'},
+  {zh:'欺负', py:'qīfu', vn:'ăn hiếp, bắt nạt', ex:'明明是在欺负人，大不了辞职。', exvn:'Rõ ràng là đang bắt nạt người khác, cùng lắm thì nghỉ việc.'},
+  {zh:'大不了', py:'dàbuliǎo', vn:'cùng lắm, trong trường hợp xấu nhất', ex:'明明是在欺负人，大不了辞职。', exvn:'Rõ ràng là đang bắt nạt người khác, cùng lắm thì nghỉ việc.'},
+  {zh:'展示', py:'zhǎnshì', vn:'thể hiện', ex:'这反而是我们可以展示自己才干的好机会。', exvn:'Đây ngược lại chính là cơ hội tốt để chúng tôi thể hiện tài năng của mình.'},
+  {zh:'才干', py:'cáigàn', vn:'tài năng, năng lực', ex:'这反而是我们可以展示自己才干的好机会。', exvn:'Đây ngược lại chính là cơ hội tốt để chúng tôi thể hiện tài năng của mình.'},
+  {zh:'计较', py:'jìjiào', vn:'tính toán, so đo', ex:'我和小林决定不和他们计较。', exvn:'Tôi và Tiểu Lâm quyết định không so đo tính toán với họ.'},
+  {zh:'全力以赴', py:'quánlìyǐfù', vn:'dốc toàn lực, không tiếc công sức', ex:'全力以赴投入工作。', exvn:'Dốc toàn lực lao vào công việc.'},
+  {zh:'怠慢', py:'dàimàn', vn:'lạnh nhạt, thờ ơ', ex:'不怠慢、不敷衍每一位客户。', exvn:'Không thờ ơ, không làm lấy lệ với bất kỳ khách hàng nào.'},
+  {zh:'敷衍', py:'fūyǎn', vn:'làm lấy lệ, làm qua loa, hời hợt', ex:'不怠慢、不敷衍每一位客户。', exvn:'Không thờ ơ, không làm lấy lệ với bất kỳ khách hàng nào.'},
+  {zh:'想方设法', py:'xiǎngfāng-shèfǎ', vn:'nghĩ đủ mọi cách', ex:'想方设法做好每一单业务。', exvn:'Nghĩ đủ mọi cách để làm tốt từng đơn việc.'},
+  {zh:'凑合', py:'còuhe', vn:'làm không nhiệt tình, làm miễn cưỡng, làm không thật lòng', ex:'多忙都不凑合。', exvn:'Dù bận rộn đến đâu cũng không làm qua loa cho xong.'},
+  {zh:'忙碌', py:'mánglù', vn:'bận rộn', ex:'忙碌中，时光过得飞快。', exvn:'Trong lúc bận rộn, thời gian trôi qua rất nhanh.'},
+  {zh:'时光', py:'shíguāng', vn:'thời gian', ex:'忙碌中，时光过得飞快。', exvn:'Trong lúc bận rộn, thời gian trôi qua rất nhanh.'},
+  {zh:'飞跃', py:'fēiyuè', vn:'vượt bậc, nhảy vọt', ex:'我们的业务能力得到了飞跃式的提高。', exvn:'Năng lực nghiệp vụ của chúng tôi đã được nâng cao vượt bậc.'},
+  {zh:'投诉', py:'tóusù', vn:'khiếu nại', ex:'客户投诉赵姐了，你们处理一下吧。', exvn:'Khách hàng đã khiếu nại chị Triệu rồi, các em xử lý giúp nhé.'},
+  {zh:'激情', py:'jīqíng', vn:'tình cảm mãnh liệt, cảm xúc mạnh mẽ', ex:'我们每天都充满激情地工作。', exvn:'Chúng tôi ngày nào cũng làm việc tràn đầy nhiệt huyết.'},
+  {zh:'年度', py:'niándù', vn:'hằng năm', ex:'年度考核，我和小林受到了表扬。', exvn:'Trong đợt đánh giá hằng năm, tôi và Tiểu Lâm đã được khen ngợi.'},
+  {zh:'考核', py:'kǎohé', vn:'kiểm tra, đánh giá', ex:'年度考核，我和小林受到了表扬。', exvn:'Trong đợt đánh giá hằng năm, tôi và Tiểu Lâm đã được khen ngợi.'},
+  {zh:'敬业', py:'jìngyè', vn:'yêu nghề, cống hiến cho công việc', ex:'我和小林的敬业精神受到了表扬。', exvn:'Tinh thần yêu nghề của tôi và Tiểu Lâm đã được khen ngợi.'},
+  {zh:'兢兢业业', py:'jīngjīngyèyè', vn:'thận trọng tỉ mỉ', ex:'兢兢业业的工作态度受到了表扬。', exvn:'Thái độ làm việc thận trọng tỉ mỉ đã được khen ngợi.'},
+  {zh:'回报', py:'huíbào', vn:'đền đáp', ex:'经济上也得到了丰厚的回报。', exvn:'Về kinh tế cũng nhận được sự đền đáp hậu hĩnh.'},
+  {zh:'当初', py:'dāngchū', vn:'lúc đầu, trước đây', ex:'当初对我们不友好的资深前辈也变得热情起来。', exvn:'Những tiền bối thâm niên trước đây không thân thiện với chúng tôi cũng trở nên nhiệt tình hơn.'},
+  {zh:'技巧', py:'jìqiǎo', vn:'kỹ năng, kỹ xảo', ex:'我把工作经验和技巧传授给他们。', exvn:'Tôi truyền đạt kinh nghiệm và kỹ năng làm việc cho họ.'},
+  {zh:'传授', py:'chuánshòu', vn:'truyền dạy, truyền đạt', ex:'我把工作经验和技巧传授给他们，毫无保留。', exvn:'Tôi truyền đạt kinh nghiệm và kỹ năng làm việc cho họ, không giữ lại chút gì.'},
+  {zh:'人格', py:'réngé', vn:'nhân cách, tính cách', ex:'这个过程，正是展示你人格魅力的时候。', exvn:'Quá trình này, chính là lúc thể hiện sức hút nhân cách của bạn.'},
+  {zh:'施展', py:'shīzhǎn', vn:'phát huy, thi thố', ex:'也是你施展才能的时机。', exvn:'Cũng là thời cơ để bạn phát huy tài năng của mình.'},
+  {zh:'时机', py:'shíjī', vn:'cơ hội, thời cơ', ex:'也是你施展才能的时机。', exvn:'Cũng là thời cơ để bạn phát huy tài năng của mình.'},
+];
+
+const grammarData = [
+  {
+    title: '1. 唯独 + đối tượng',
+    formula: '唯独 + (chủ ngữ/đối tượng còn lại)',
+    explain: '唯独 nghĩa là "chỉ riêng, duy chỉ có", dùng để nhấn mạnh rằng ngoại trừ những gì vừa nêu, chỉ còn sót lại một đối tượng duy nhất khác biệt với số đông.',
+    examples: [
+      {zh:'唯独剩下我和我的搭档——与我同一天就职的小林。', vn:'Chỉ còn sót lại mỗi tôi và người cộng sự của tôi — Tiểu Lâm, người nhận việc cùng ngày với tôi.'},
+    ]
+  },
+  {
+    title: '2. 没想到 + mệnh đề',
+    formula: '没想到 + chủ ngữ + động từ/sự việc',
+    explain: '没想到 dùng để giới thiệu một sự việc bất ngờ, trái với dự đoán ban đầu của người nói, thường đứng đầu câu hoặc ngay sau chủ ngữ.',
+    examples: [
+      {zh:'我以为一天的工作就此开始，没想到赵姐工作的第一件事是忙着泡茶和咖啡。', vn:'Tôi tưởng công việc trong ngày bắt đầu từ đó, không ngờ việc đầu tiên chị Triệu làm lại là bận rộn pha trà pha cà phê.'},
+    ]
+  },
+  {
+    title: '3. 几乎 + V1、V2、V3',
+    formula: '几乎 + động từ 1、động từ 2、động từ 3',
+    explain: '几乎 nghĩa là "hầu như, gần như", đứng trước một loạt động từ được liệt kê để nhấn mạnh mức độ diễn ra gần như liên tục, gần như toàn bộ thời gian.',
+    examples: [
+      {zh:'几乎成天聊天儿、上网、吹牛，还有人溜出去逛街。', vn:'Hầu như suốt ngày tán gẫu, lên mạng, khoác lác, còn có người lẻn ra ngoài đi dạo phố.'},
+    ]
+  },
+  {
+    title: '4. 根本 + 不/没 + V/A',
+    formula: 'Chủ ngữ + 根本 + 不/没 + động từ/tính từ',
+    explain: '根本 nghĩa là "căn bản, hoàn toàn", đứng trước phủ định để nhấn mạnh sự phủ định một cách dứt khoát, không có ngoại lệ hay bàn cãi.',
+    examples: [
+      {zh:'我们的工作从难度上讲，和他们根本就不是一个等级。', vn:'Xét về độ khó, công việc của chúng tôi và của họ căn bản không cùng một đẳng cấp.'},
+    ]
+  },
+  {
+    title: '5. 大不了 + kết quả xấu nhất',
+    formula: '大不了 + (kết quả/hành động chấp nhận được)',
+    explain: '大不了 nghĩa là "cùng lắm là, chẳng qua là", dùng để nói về trường hợp xấu nhất có thể xảy ra mà người nói vẫn sẵn sàng chấp nhận, thể hiện thái độ không quá sợ hãi trước hậu quả.',
+    examples: [
+      {zh:'明明是在欺负人，大不了辞职。', vn:'Rõ ràng là đang bắt nạt người khác, cùng lắm thì nghỉ việc.'},
+    ]
+  },
+  {
+    title: '6. 全力以赴 + động từ',
+    formula: '全力以赴 + động từ/mệnh đề',
+    explain: 'Thành ngữ 4 chữ, nghĩa là "dốc hết toàn lực, dồn hết sức lực", diễn tả sự nỗ lực cao nhất mà chủ thể bỏ ra cho một công việc hoặc mục tiêu.',
+    examples: [
+      {zh:'全力以赴投入工作，不怠慢、不敷衍每一位客户。', vn:'Dốc toàn lực lao vào công việc, không lạnh nhạt, không làm lấy lệ với bất kỳ khách hàng nào.'},
+    ]
+  },
+  {
+    title: '7. 想方设法 + động từ',
+    formula: '想方设法 + động từ',
+    explain: 'Thành ngữ 4 chữ nghĩa là "nghĩ đủ mọi cách, tìm mọi phương pháp", diễn tả sự cố gắng tối đa để tìm ra giải pháp nhằm đạt được mục đích đề ra.',
+    examples: [
+      {zh:'想方设法做好每一单业务，多忙都不凑合。', vn:'Nghĩ đủ mọi cách để làm tốt từng đơn việc, dù bận rộn đến đâu cũng không làm qua loa cho xong.'},
+    ]
+  },
+  {
+    title: '8. 正是...的时候',
+    formula: 'A + 正是 + B + 的时候',
+    explain: 'Cấu trúc nhấn mạnh rằng hoàn cảnh/thời điểm A chính là lúc thích hợp nhất để thể hiện, phát huy điều B — thường dùng để khẳng định ý nghĩa tích cực ẩn trong một tình huống khó khăn.',
+    examples: [
+      {zh:'这个过程，正是展示你人格魅力的时候，遇到困难，也是你施展才能的时机。', vn:'Quá trình này, chính là lúc thể hiện sức hút nhân cách của bạn; gặp khó khăn cũng chính là thời cơ để bạn phát huy tài năng.'},
+    ]
+  },
+];
+
+/* ───────── TAB NAVIGATION ───────── */
+const tabs = [
+  {id:'vocab',   label:'📖 Từ vựng'},
+  {id:'transl',  label:'📜 Dịch bài khóa'},
+  {id:'grammar', label:'📐 Ngữ pháp'},
+  {id:'mc',      label:'1. Trắc nghiệm'},
+  {id:'fill',    label:'2. Điền từ'},
+  {id:'reading', label:'3. Đọc hiểu'},
+  {id:'wo',      label:'4. Tìm lỗi sai'},
+  {id:'sent',    label:'5. Dịch câu'},
+  {id:'score',   label:'6. Tổng kết'},
+];
+function buildTabs(){
+  const nav = document.getElementById('tabnav');
+  tabs.forEach((t,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (i===0?' active':'');
+    btn.textContent = t.label;
+    btn.onclick = ()=>switchTab(t.id);
+    btn.id = 'tabbtn-'+t.id;
+    nav.appendChild(btn);
+  });
+}
+function switchTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ───────── TRANSLATION OF PASSAGE ───────── */
+const translationVN = [
+  'Hôm nay là ngày đầu tiên tôi đến công ty này <span class="hl">nhậm chức</span>, <span class="hl">chức vụ</span> của tôi là chuyên viên tư vấn. Đã nghe nói từ trước rằng ở đây người cũ nhiều, người mới ít, không ít nhân viên <span class="hl">thâm niên</span> đã bắt đầu làm việc ở đây ngay từ khi công ty mới <span class="hl">thành lập</span>.',
+  'Sáng sớm đi làm, sau khi lần lượt làm quen với các đồng nghiệp mới, tôi tưởng công việc trong ngày bắt đầu từ đó, không ngờ việc đầu tiên chị Triệu làm là bận rộn <span class="hl">pha</span> trà và cà phê, bưng một bát cho anh Trương, đưa một tách cho chị Tôn... Tôi nghĩ <span class="hl">nếp sống</span> của đơn vị này thật tốt, ngày mai việc này tôi cũng sẽ làm. Đang nghĩ vậy thì chị Triệu đã ngồi xuống bắt đầu tự thưởng thức, <span class="hl">chỉ còn sót lại</span> mỗi tôi và <span class="hl">người cộng sự</span> của tôi — Tiểu Lâm, người <span class="hl">nhận việc</span> cùng ngày với tôi.',
+  'Ngay lập tức sắc mặt Tiểu Lâm thay đổi, tôi cũng có cảm giác bị <span class="hl">đẩy ra ngoài rìa</span>, nhưng tôi vẫn <span class="hl">nháy mắt ra hiệu</span> với Tiểu Lâm. Căn phòng im phăng phắc, ngày đầu tiên đã bắt đầu như vậy.',
+  'Công việc của tôi và Tiểu Lâm rất khó làm, việc nào cũng khiến người ta đau đầu, có lúc còn không hoàn thành được <span class="hl">chỉ tiêu</span>, nhưng công việc của người khác lại rất nhàn nhã, hầu như <span class="hl">suốt ngày</span> tán gẫu, lên mạng, <span class="hl">khoác lác</span>, còn có người <span class="hl">lẻn</span> ra ngoài đi dạo phố. Tôi và Tiểu Lâm tuy là người mới đến, nhưng trước đây ở công ty khác chúng tôi cũng là những tay nghề giỏi đấy chứ.',
+  'Sau này tôi phát hiện ra, khi lãnh đạo phân công công việc, luôn để nhân viên thâm niên chọn trước, phần họ chọn còn lại mới là của tôi và Tiểu Lâm. Xét về độ khó, công việc của chúng tôi và của họ căn bản không cùng một <span class="hl">đẳng cấp</span>.',
+  'Tiểu Lâm định đi tìm lãnh đạo đòi lại <span class="hl">lẽ công bằng</span>: "<span class="hl">Hừ</span>, thật là quá <span class="hl">vô lý</span>, <span class="hl">rõ ràng</span> là đang <span class="hl">bắt nạt</span> người khác, <span class="hl">cùng lắm</span> thì nghỉ việc." Tôi cũng thấy vô lý, nhưng bình tâm lại, cũng thấy chẳng có gì là không tốt, phải nói đây ngược lại chính là cơ hội tốt để chúng tôi <span class="hl">thể hiện</span> <span class="hl">tài năng</span> của mình.',
+  'Tôi và Tiểu Lâm quyết định không <span class="hl">so đo tính toán</span> với họ, <span class="hl">dốc toàn lực</span> lao vào công việc, không <span class="hl">lạnh nhạt</span>, không <span class="hl">làm lấy lệ</span> với bất kỳ khách hàng nào, <span class="hl">nghĩ đủ mọi cách</span> để làm tốt từng đơn việc, dù bận rộn đến đâu cũng không <span class="hl">làm qua loa cho xong</span>.',
+  'Trong lúc <span class="hl">bận rộn</span>, <span class="hl">thời gian</span> trôi qua rất nhanh, năng lực nghiệp vụ của chúng tôi đã được nâng cao <span class="hl">vượt bậc</span>, khách hàng chỉ định tìm chúng tôi ngày càng nhiều. Có lúc lãnh đạo sẽ nói, đối tượng phục vụ không hài lòng với anh Trương, việc này các em nhận lấy nhé; khách hàng đã <span class="hl">khiếu nại</span> chị Triệu rồi, các em xử lý giúp nhé. Chúng tôi ngày nào cũng làm việc tràn đầy <span class="hl">nhiệt huyết</span>, tận hưởng niềm vui của công việc. Trong đợt đánh giá <span class="hl">hằng năm</span>, tinh thần <span class="hl">yêu nghề</span> và thái độ làm việc <span class="hl">thận trọng tỉ mỉ</span> của tôi và Tiểu Lâm đã được khen ngợi, về kinh tế cũng nhận được sự <span class="hl">đền đáp</span> hậu hĩnh. Những tiền bối thâm niên <span class="hl">trước đây</span> không thân thiện với chúng tôi cũng trở nên nhiệt tình hơn.',
+  'Sau đó nữa, công ty có người mới đến, lãnh đạo để tôi hướng dẫn họ, tôi <span class="hl">truyền đạt</span> kinh nghiệm và <span class="hl">kỹ năng</span> làm việc cho họ, không giữ lại chút gì. Thực ra, khi bước vào một đơn vị mới, với tư cách là một người mới trong công sở, quá trình này chính là lúc thể hiện sức hút <span class="hl">nhân cách</span> của bạn, khi gặp khó khăn, cũng chính là <span class="hl">thời cơ</span> để bạn <span class="hl">phát huy</span> tài năng của mình.',
+];
+function buildTranslation(){
+  const wrap = document.getElementById('transl-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh han">${item.zh}</div>
+      <div class="passage-vn">${translationVN[i]}</div>
+    `;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── GRAMMAR ───────── */
+function buildGrammar(){
+  const wrap = document.getElementById('gram-wrap');
+  grammarData.forEach(item=>{
+    const card = document.createElement('div');
+    card.className = 'gram-card';
+    let exHtml = '';
+    item.examples.forEach(ex=>{
+      exHtml += `<div class="gram-ex"><div class="gram-ex-zh han">${ex.zh}</div><div class="gram-ex-vn">${ex.vn}</div></div>`;
+    });
+    card.innerHTML = `
+      <div class="gram-title">${item.title}</div>
+      <div class="gram-formula han">${item.formula}</div>
+      <div class="gram-explain">${item.explain}</div>
+      ${exHtml}`;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── VOCAB FLASHCARDS ───────── */
+let vocabSeen = new Set();
+function buildVocab(){
+  const grid = document.getElementById('vocab-grid');
+  vocabData.forEach((v,i)=>{
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    card.id = 'fc-'+i;
+    card.innerHTML = `
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="fc-tag">${i+1}/${vocabData.length}</span>
+          <div class="fc-zh han">${v.zh}</div>
+          <div class="fc-py">${v.py}</div>
+        </div>
+        <div class="flip-face flip-back">
+          <div class="fc-vn">${v.vn}</div>
+          <div class="fc-ex">${v.ex}</div>
+        </div>
+      </div>`;
+    card.onclick = ()=>{
+      card.classList.toggle('flipped');
+      if(!vocabSeen.has(i)){
+        vocabSeen.add(i);
+        document.getElementById('vocab-progress').textContent = vocabSeen.size + ' / ' + vocabData.length + ' đã xem';
+      }
+    };
+    grid.appendChild(card);
+  });
+}
+
+/* ───────── MULTIPLE CHOICE ───────── */
+const mcQ = [
+  {q:'<span class="han">上任</span> nghĩa là gì?',
+   opts:['Nhậm chức, bắt đầu giữ chức vụ','Từ chức, rời khỏi vị trí','Thăng chức lên cấp cao hơn'], ans:0},
+  {q:'<span class="han">资深</span> nghĩa là gì?',
+   opts:['Mới vào nghề, non nớt','Thâm niên, lâu năm','Trẻ tuổi, năng động'], ans:1},
+  {q:'<span class="han">唯独</span> dùng để làm gì trong câu?',
+   opts:['Nhấn mạnh chỉ có một đối tượng ngoại lệ, duy nhất','Liệt kê nhiều đối tượng cùng lúc','Phủ định hoàn toàn một sự việc'], ans:0},
+  {q:'<span class="han">边缘</span> nghĩa là gì?',
+   opts:['Trung tâm, nòng cốt','Ranh giới, vùng ven, rìa','Đỉnh cao, cao trào'], ans:1},
+  {q:'<span class="han">吹牛</span> nghĩa là gì?',
+   opts:['Làm việc chăm chỉ','Ba hoa, khoác lác','Giữ im lặng'], ans:1},
+  {q:'<span class="han">溜</span> nghĩa là gì trong ngữ cảnh bài đọc?',
+   opts:['Chuồn đi, lẻn đi mất','Đứng lại tại chỗ','Chạy nhanh đến'], ans:0},
+  {q:'<span class="han">不像话</span> nghĩa là gì?',
+   opts:['Hợp lý, đúng đắn','Vô lý, kỳ cục, không ra làm sao','Im lặng, không nói gì'], ans:1},
+  {q:'<span class="han">大不了</span> dùng để diễn tả điều gì?',
+   opts:['Trường hợp xấu nhất vẫn có thể chấp nhận được','Điều tốt đẹp nhất có thể xảy ra','Một khả năng chắc chắn sẽ không xảy ra'], ans:0},
+  {q:'<span class="han">全力以赴</span> miêu tả thái độ nào?',
+   opts:['Làm qua loa, hời hợt','Dốc hết toàn lực, cố gắng tối đa','Chần chừ, do dự'], ans:1},
+  {q:'<span class="han">敷衍</span> nghĩa là gì?',
+   opts:['Làm việc tận tâm, chu đáo','Làm lấy lệ, qua loa hời hợt','Từ chối thẳng thừng'], ans:1},
+  {q:'<span class="han">兢兢业业</span> miêu tả điều gì?',
+   opts:['Lười biếng, trốn tránh trách nhiệm','Thận trọng, tỉ mỉ, chăm chỉ với công việc','Nóng vội, hấp tấp'], ans:1},
+  {q:'<span class="han">施展</span> nghĩa là gì?',
+   opts:['Che giấu, thu mình lại','Phát huy, thi thố tài năng','Từ bỏ, buông xuôi'], ans:1},
+];
+let mcAns = new Array(mcQ.length).fill(-1);
+function buildMC(){
+  const wrap = document.getElementById('mc-wrap');
+  mcQ.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="q-text">${item.q}</div>
+      <div class="opts" id="mc-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkMC(${i})">Kiểm tra</button>
+      <div id="mc-fb-${i}" class="fb" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#mc-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      const isZh = /[\u4e00-\u9fff]/.test(opt);
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span><span class="${isZh?'opt-zh':''}">${opt}</span>`;
+      el.onclick = ()=>{
+        mcAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+        updateMCProgress();
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function updateMCProgress(){
+  const done = mcAns.filter(a=>a>=0).length;
+  document.getElementById('mc-prog').style.width = Math.round(done/mcQ.length*100)+'%';
+  document.getElementById('mc-prog-label').textContent = done+' / '+mcQ.length;
+}
+function checkMC(i){
+  if(mcAns[i]<0) return;
+  const optsDiv = document.getElementById(`mc-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===mcQ[i].ans) el.className = 'opt ok';
+    else if(k===mcAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`mc-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = mcAns[i]===mcQ[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][mcQ[i].ans];
+}
+
+/* ───────── FILL IN THE BLANK ───────── */
+const fillWords = ['唯独','边缘化','溜','等级','公道','明明','大不了','兢兢业业'];
+const fillRows = [
+  {pre:'赵姐已经坐在那儿开始自己享受，', ans:'唯独', suf:'剩下我和我的搭档——小林。', py:'wéidú'},
+  {pre:'我也有被', ans:'边缘化', suf:'的感觉。', py:'biānyuánhuà'},
+  {pre:'还有人', ans:'溜', suf:'出去逛街。', py:'liū'},
+  {pre:'我们的工作从难度上讲，和他们根本就不是一个', ans:'等级', suf:'。', py:'děngjí'},
+  {pre:'小林要去找领导讨说', ans:'公道', suf:'。', py:'gōngdao'},
+  {pre:'小林去找领导说：“哼，太不像话了，', ans:'明明', suf:'是在欺负人，大不了辞职。”', py:'míngmíng'},
+  {pre:'明明是在欺负人，', ans:'大不了', suf:'辞职。', py:'dàbuliǎo'},
+  {pre:'我和小林的敬业精神、', ans:'兢兢业业', suf:'的工作态度受到了表扬。', py:'jīngjīngyèyè'},
+];
+let slotAns = {};
+let selChip = null;
+function buildWB(){
+  const wb = document.getElementById('wb'); wb.innerHTML=''; selChip=null;
+  fillWords.forEach(w=>{
+    const c = document.createElement('div');
+    c.className = 'chip'; c.textContent = w; c.id = 'chip-'+w;
+    c.onclick = ()=>{
+      if(c.classList.contains('used')) return;
+      document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active-chip'));
+      selChip = w; c.classList.add('active-chip');
+    };
+    wb.appendChild(c);
+  });
+}
+function buildFill(){
+  slotAns = {};
+  const fw = document.getElementById('fill-wrap'); fw.innerHTML='';
+  fillRows.forEach((row,i)=>{
+    const r = document.createElement('div');
+    r.className = 'fill-row';
+    r.innerHTML = `<span class="rn">${i+1}.</span><span class="ft">${row.pre}</span><span class="slot"><span class="slot-box" id="slot-${i}" onclick="fillSlot(${i})"></span></span><span class="ft">${row.suf}</span>`;
+    fw.appendChild(r);
+  });
+}
+function fillSlot(i){
+  if(!selChip) return;
+  const prev = slotAns[i];
+  if(prev){ const pc = document.getElementById('chip-'+prev); if(pc) pc.classList.remove('used'); }
+  slotAns[i] = selChip;
+  const s = document.getElementById('slot-'+i);
+  s.textContent = selChip; s.className = 'slot-box filled';
+  const c = document.getElementById('chip-'+selChip);
+  if(c){ c.classList.add('used'); c.classList.remove('active-chip'); }
+  selChip = null;
+}
+function checkFill(){
+  let ok=0;
+  fillRows.forEach((row,i)=>{
+    const s = document.getElementById('slot-'+i);
+    const v = slotAns[i] || '';
+    s.onclick = null;
+    if(v===row.ans){ s.className='slot-box ok'; ok++; }
+    else{ s.className='slot-box err'; s.textContent=(v||'?')+' → '+row.ans; }
+  });
+  const fb = document.getElementById('fill-fb');
+  fb.innerHTML = `<div class="fb ${ok===fillRows.length?'fb-ok':'fb-no'}">${ok===fillRows.length?'🎉 Hoàn hảo! Điền đúng hết!':'✗ Đúng '+ok+'/'+fillRows.length+'. Ô đỏ đã hiện đáp án đúng.'}</div>`;
+}
+function resetFill(){ buildWB(); buildFill(); document.getElementById('fill-fb').innerHTML=''; }
+
+/* ───────── READING COMPREHENSION ───────── */
+const readingData = [
+  {
+    title: 'Đoạn 1 — Ngày đầu tiên nhậm chức',
+    zh: '这天是我到这家公司<span class="hl">上任</span>的第一天，我的<span class="hl">职位</span>是咨询师。早就听说这里老手多、新手少，不少<span class="hl">资深</span>员工在公司<span class="hl">创立</span>之初就开始在这里工作了。',
+    q: '"我"到这家公司担任什么职位？',
+    opts: ['咨询师', '销售员', '前台接待'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 2 — Việc đầu tiên của chị Triệu',
+    zh: '清早上班，和新同事一一认识后，我以为一天的工作就此开始，没想到赵姐工作的第一件事是忙着<span class="hl">泡</span>茶和咖啡，给张哥端一碗，给孙姐送一杯……我想这单位<span class="hl">风气</span>真好，明天这事我也做。正想着，赵姐已经坐在那儿开始自己享受，<span class="hl">唯独</span>剩下我和我的<span class="hl">搭档</span>——与我同一天<span class="hl">就职</span>的小林。',
+    q: '没想到赵姐工作的第一件事是什么？',
+    opts: ['忙着给同事泡茶倒咖啡', '立刻开始处理客户业务', '召开部门会议'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 3 — Cảm giác bị bỏ rơi',
+    zh: '顿时小林的脸色变了，我也有被<span class="hl">边缘</span>化的感觉，不过我还是向小林使了个<span class="hl">眼色</span>。屋子里鸦雀无声，第一天就这样开始了。',
+    q: '"我"和小林当时有感觉如何？',
+    opts: ['有被边缘化、被冷落的感觉', '感到十分兴奋自豪', '完全没有任何在意'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 4 — Áp lực công việc và sự khác biệt',
+    zh: '我和小林的业务很难做，件件都让人头痛，有时候还完不成<span class="hl">指标</span>，可别人的工作很轻松，几乎<span class="hl">成天</span>聊天儿、上网、<span class="hl">吹牛</span>，还有人<span class="hl">溜</span>出去逛街。我和小林虽然是新来的，可我们之前在别的公司也是好手呀。',
+    q: '和"我"与小林相比，其他同事的工作状态如何？',
+    opts: ['工作轻松，常常聊天、上网、外出闲逛', '同样很难做，也完不成指标', '比"我们"更加辛苦忙碌'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 5 — Phân công công việc bất công',
+    zh: '后来我发现，领导分配业务时，总是让资深员工先挑，他们挑剩下的才是我和小林的。我们的工作从难度上讲，和他们根本就不是一个<span class="hl">等级</span>。',
+    q: '领导分配业务的方式是怎样的？',
+    opts: ['让资深员工先挑，剩下的才给"我们"', '按抽签随机分配', '让新人先挑，资深员工后挑'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 6 — Phản ứng của Tiểu Lâm',
+    zh: '小林要去找领导讨说<span class="hl">公道</span>："<span class="hl">哼</span>，太<span class="hl">不像话</span>了，<span class="hl">明明</span>是在<span class="hl">欺负</span>人，<span class="hl">大不了</span>辞职。"我也觉得不像话，可静下来，也觉得没什么不好，应该说这反而是我们可以<span class="hl">展示</span>自己<span class="hl">才干</span>的好机会。',
+    q: '"我"最终对这件事的态度是什么？',
+    opts: ['认为这反而是展示自己才干的好机会', '决定立刻辞职离开', '打算向公司外部投诉'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 7 — Quyết tâm làm việc hết mình',
+    zh: '我和小林决定不和他们<span class="hl">计较</span>，<span class="hl">全力以赴</span>投入工作，不<span class="hl">怠慢</span>、不<span class="hl">敷衍</span>每一位客户，<span class="hl">想方设法</span>做好每一单业务，多忙都不<span class="hl">凑合</span>。',
+    q: '"我"和小林决定用什么态度对待工作？',
+    opts: ['全力以赴，认真对待每一位客户，绝不敷衍', '继续和资深员工争论计较', '按照最低标准应付了事'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 8 — Thành quả và sự công nhận',
+    zh: '<span class="hl">忙碌</span>中，<span class="hl">时光</span>过得飞快，我们的业务能力得到了<span class="hl">飞跃</span>式的提高，点名找我们的客户越来越多。有时领导会说，服务对象对张哥不满意，活儿你们接手吧；客户<span class="hl">投诉</span>赵姐了，你们处理一下吧。我们每天都充满<span class="hl">激情</span>地工作，享受着工作的快乐。<span class="hl">年度</span><span class="hl">考核</span>，我和小林的<span class="hl">敬业</span>精神、<span class="hl">兢兢业业</span>的工作态度受到了表扬，经济上也得到了丰厚的<span class="hl">回报</span>。<span class="hl">当初</span>对我们不友好的资深前辈也变得热情起来。',
+    q: '"我"和小林的业务能力提高后，发生了什么变化？',
+    opts: ['受到年度考核表扬，得到丰厚回报，前辈也变得友好', '被公司辞退', '业务能力没有任何变化'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 9 — Bài học rút ra',
+    zh: '再后来，公司来了新人，领导让我带他们，我把工作经验和<span class="hl">技巧</span><span class="hl">传授</span>给他们，毫无保留。其实，进入新单位，作为一个职场新人，这个过程，正是展示你<span class="hl">人格</span>魅力的时候，遇到困难，也是你<span class="hl">施展</span>才能的<span class="hl">时机</span>。',
+    q: '作者认为职场新人遇到困难时应该怎么看待？',
+    opts: ['把困难看作展示人格魅力、施展才能的好时机', '应该立刻请领导出面解决', '应该向同事抱怨发泄'],
+    ans: 0,
+  },
+];
+let readAns = new Array(readingData.length).fill(-1);
+function buildReading(){
+  const wrap = document.getElementById('reading-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh">${item.zh}</div>
+      <div class="q-card" style="margin-top:14px;margin-bottom:0;box-shadow:none;border:none;padding:14px 0 0;border-top:1px solid var(--line)">
+        <div class="q-text" style="font-weight:600">${item.q}</div>
+        <div class="opts" id="read-opts-${i}"></div>
+        <button class="chk-btn" onclick="checkRead(${i})">Kiểm tra</button>
+        <div id="read-fb-${i}" class="fb" style="display:none"></div>
+      </div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#read-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span>${opt}`;
+      el.onclick = ()=>{
+        readAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkRead(i){
+  if(readAns[i]<0) return;
+  const optsDiv = document.getElementById(`read-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===readingData[i].ans) el.className = 'opt ok';
+    else if(k===readAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`read-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = readAns[i]===readingData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][readingData[i].ans];
+}
+
+/* ───────── ERROR CORRECTION ───────── */
+const errorData = [
+  {
+    sentences: [
+      '这天是我到这家公司上任的第一天。',
+      '我的职位是咨询师。',
+      '这天是我到这家公司上任第一天的。',
+      '不少资深员工在公司创立之初就开始在这里工作了。',
+    ],
+    ans: 2,
+    note: 'Trợ từ 的 trong cấu trúc "上任的第一天" (ngày đầu tiên nhậm chức) phải đứng ngay trước cụm danh từ trung tâm 第一天; câu C đã đặt sai vị trí của 的, khiến câu trở nên tối nghĩa và sai ngữ pháp.'
+  },
+  {
+    sentences: [
+      '没想到赵姐工作的第一件事是忙着泡茶和咖啡。',
+      '给张哥端一碗，给孙姐送一杯。',
+      '没想到赵姐工作的第一件事是泡茶和咖啡忙着。',
+      '我想这单位风气真好。',
+    ],
+    ans: 2,
+    note: '忙着 + động từ (bận rộn làm gì) yêu cầu 忙着 đứng trước hành động cụ thể (泡茶和咖啡); câu C đã đảo ngược trật tự, đặt 忙着 ra sau khiến cấu trúc trở nên vô nghĩa.'
+  },
+  {
+    sentences: [
+      '唯独剩下我和我的搭档——与我同一天就职的小林。',
+      '顿时小林的脸色变了。',
+      '剩下唯独我和我的搭档——与我同一天就职的小林。',
+      '我也有被边缘化的感觉。',
+    ],
+    ans: 2,
+    note: '副词 唯独 (chỉ riêng, duy chỉ) phải đứng trước động từ 剩下 để nhấn mạnh tính duy nhất của chủ ngữ phía sau; câu C đã đảo ngược vị trí của 唯独 và 剩下, làm sai trật tự ngữ pháp tiếng Trung.'
+  },
+  {
+    sentences: [
+      '我和小林的业务很难做，件件都让人头痛。',
+      '有时候还完不成指标。',
+      '我和小林的业务很难做，都件件让人头痛。',
+      '可别人的工作很轻松，几乎成天聊天儿、上网、吹牛。',
+    ],
+    ans: 2,
+    note: '件件 (từng việc một) là đại từ chỉ lượng lặp lại, đóng vai trò chủ ngữ đứng trước 都; câu C đã đảo ngược trật tự 都件件 thành sai ngữ pháp, đúng phải là 件件都.'
+  },
+  {
+    sentences: [
+      '后来我发现，领导分配业务时，总是让资深员工先挑。',
+      '他们挑剩下的才是我和小林的。',
+      '后来我发现，领导分配业务时，总是让资深员工挑先。',
+      '我们的工作从难度上讲，和他们根本就不是一个等级。',
+    ],
+    ans: 2,
+    note: '副词 先 (trước) phải đứng trước động từ chính 挑 để bổ nghĩa cho hành động ("挑先" là sai); câu C đã đảo ngược thành 挑先, làm sai trật tự trạng ngữ trong tiếng Trung.'
+  },
+  {
+    sentences: [
+      '小林要去找领导讨说公道。',
+      '"哼，太不像话了，明明是在欺负人，大不了辞职。"',
+      '小林要去找领导说讨公道。',
+      '应该说这反而是我们可以展示自己才干的好机会。',
+    ],
+    ans: 2,
+    note: '讨说公道 là cụm động từ cố định (đi đòi lại lẽ công bằng), trật tự các chữ 讨 - 说 - 公道 không thể tùy ý đảo lộn; câu C đã viết sai thành 说讨公道, làm cụm từ mất nghĩa tự nhiên.'
+  },
+  {
+    sentences: [
+      '我和小林决定不和他们计较，全力以赴投入工作。',
+      '不怠慢、不敷衍每一位客户。',
+      '我和小林决定不和他们计较，投入全力以赴工作。',
+      '想方设法做好每一单业务，多忙都不凑合。',
+    ],
+    ans: 2,
+    note: 'Thành ngữ 全力以赴 phải đứng trước động từ trung tâm mà nó bổ nghĩa (投入工作); câu C đã đảo ngược trật tự thành 投入全力以赴工作, làm sai cấu trúc trạng ngữ trong câu.'
+  },
+  {
+    sentences: [
+      '忙碌中，时光过得飞快，我们的业务能力得到了飞跃式的提高。',
+      '点名找我们的客户越来越多。',
+      '忙碌中，时光过得飞快，我们的业务能力得到了提高式的飞跃。',
+      '我们每天都充满激情地工作，享受着工作的快乐。',
+    ],
+    ans: 2,
+    note: 'Cụm 飞跃式的提高 (sự nâng cao mang tính vượt bậc) có 飞跃式 làm định ngữ đứng trước danh từ trung tâm 提高; câu C đã đảo ngược thành 提高式的飞跃, làm sai quan hệ định ngữ - trung tâm ngữ.'
+  },
+  {
+    sentences: [
+      '年度考核，我和小林的敬业精神受到了表扬。',
+      '经济上也得到了丰厚的回报。',
+      '年度考核，我和小林的敬业精神受到表扬了。',
+      '当初对我们不友好的资深前辈也变得热情起来。',
+    ],
+    ans: 2,
+    note: 'Trong câu chữ 被/受到 mang tính hoàn thành, trợ từ 了 phải đứng ngay sau động từ 到 (受到了) chứ không phải đặt cuối câu; câu C đã đặt sai vị trí 了, làm câu trở nên gượng gạo và sai ngữ pháp chuẩn.'
+  },
+  {
+    sentences: [
+      '再后来，公司来了新人，领导让我带他们。',
+      '我把工作经验和技巧传授给他们，毫无保留。',
+      '再后来，公司来了新人，领导让我带他们了。',
+      '这个过程，正是展示你人格魅力的时候。',
+    ],
+    ans: 2,
+    note: '让 + đối tượng + động từ (cầu khiến) là một cấu trúc trần thuật không thêm 了 ngay sau động từ trong ngữ cảnh này vì hành động 带他们 chưa hoàn thành mà mang tính giao việc, kéo dài; câu C thêm 了 sai khiến câu lệch nghĩa so với nguyên văn.'
+  },
+];
+let errAns = new Array(errorData.length).fill(-1);
+function buildWO(){
+  const wrap = document.getElementById('wo-wrap');
+  errorData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'err-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="err-opts" id="err-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkErr(${i})">Kiểm tra</button>
+      <div id="err-fb-${i}" class="fb" style="display:none"></div>
+      <div id="err-note-${i}" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#err-opts-${i}`);
+    item.sentences.forEach((s,j)=>{
+      const el = document.createElement('div');
+      el.className = 'err-opt';
+      el.innerHTML = `<span class="err-lbl">${['A','B','C','D'][j]}</span><span class="han">${s}</span>`;
+      el.onclick = ()=>{
+        errAns[i] = j;
+        optsDiv.querySelectorAll('.err-opt').forEach((o,k)=>{ o.className = 'err-opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkErr(i){
+  if(errAns[i]<0) return;
+  const optsDiv = document.getElementById(`err-opts-${i}`);
+  optsDiv.querySelectorAll('.err-opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===errorData[i].ans) el.className = 'err-opt ok';
+    else if(k===errAns[i]) el.className = 'err-opt no';
+    else el.className = 'err-opt';
+  });
+  const fb = document.getElementById(`err-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = errAns[i]===errorData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác! Đây đúng là câu sai.' : '✗ Chưa đúng. Câu sai là: '+['A','B','C','D'][errorData[i].ans];
+  const noteDiv = document.getElementById(`err-note-${i}`);
+  noteDiv.style.display = 'block';
+  noteDiv.innerHTML = `<div class="err-note">${errorData[i].note}</div>`;
+}
+
+/* ───────── SENTENCE TRANSLATION ───────── */
+const sentData = [
+  {
+    vn: 'Hôm nay là ngày đầu tiên tôi đến công ty này nhậm chức.',
+    zh: ['这天是我到这家公司上任的第一天。'],
+    words: [
+      {zh:'这天', vn:'hôm nay, ngày này'},
+      {zh:'是', vn:'là'},
+      {zh:'我', vn:'tôi'},
+      {zh:'到这家公司', vn:'đến công ty này'},
+      {zh:'上任的', vn:'nhậm chức'},
+      {zh:'第一天', vn:'ngày đầu tiên'},
+      {zh:'。', vn:''},
+    ],
+    note: '上任的第一天 = ngày đầu tiên nhậm chức (的 nối định ngữ 上任 với danh từ trung tâm 第一天)'
+  },
+  {
+    vn: 'Không ít nhân viên thâm niên đã bắt đầu làm việc ở đây từ khi công ty mới thành lập.',
+    zh: ['不少资深员工在公司创立之初就开始在这里工作了。'],
+    words: [
+      {zh:'不少', vn:'không ít'},
+      {zh:'资深员工', vn:'nhân viên thâm niên'},
+      {zh:'在公司创立之初', vn:'từ khi công ty mới thành lập'},
+      {zh:'就', vn:'thì đã'},
+      {zh:'开始', vn:'bắt đầu'},
+      {zh:'在这里工作了', vn:'làm việc ở đây'},
+      {zh:'。', vn:''},
+    ],
+    note: '在...之初 = vào lúc mới bắt đầu... ; kết hợp với 就 nhấn mạnh việc xảy ra rất sớm'
+  },
+  {
+    vn: 'Chỉ còn sót lại mỗi tôi và người cộng sự của tôi — Tiểu Lâm, người nhận việc cùng ngày với tôi.',
+    zh: ['唯独剩下我和我的搭档——与我同一天就职的小林。'],
+    words: [
+      {zh:'唯独', vn:'chỉ riêng, duy chỉ'},
+      {zh:'剩下', vn:'còn sót lại'},
+      {zh:'我和我的搭档', vn:'tôi và cộng sự của tôi'},
+      {zh:'与我同一天', vn:'cùng ngày với tôi'},
+      {zh:'就职的', vn:'nhận việc'},
+      {zh:'小林', vn:'Tiểu Lâm'},
+      {zh:'。', vn:''},
+    ],
+    note: '唯独 + động từ/chủ ngữ = nhấn mạnh tính duy nhất, chỉ có một đối tượng ngoại lệ'
+  },
+  {
+    vn: 'Tôi cũng có cảm giác bị đẩy ra ngoài rìa, không được coi trọng.',
+    zh: ['我也有被边缘化的感觉。'],
+    words: [
+      {zh:'我', vn:'tôi'},
+      {zh:'也', vn:'cũng'},
+      {zh:'有', vn:'có'},
+      {zh:'被边缘化的', vn:'bị đẩy ra ngoài rìa'},
+      {zh:'感觉', vn:'cảm giác'},
+      {zh:'。', vn:''},
+    ],
+    note: '被 + động từ hóa (边缘化) + 的 + danh từ = câu bị động miêu tả một trạng thái cảm nhận'
+  },
+  {
+    vn: 'Áp lực công việc của chúng tôi rất lớn, hoàn toàn không cùng đẳng cấp với họ.',
+    zh: ['我们的工作压力大，和他们根本就不是一个等级。'],
+    words: [
+      {zh:'我们的工作压力大', vn:'áp lực công việc của chúng tôi rất lớn'},
+      {zh:'，', vn:''},
+      {zh:'和他们', vn:'với họ'},
+      {zh:'根本', vn:'căn bản, hoàn toàn'},
+      {zh:'就不是', vn:'không phải là'},
+      {zh:'一个等级', vn:'cùng một đẳng cấp'},
+      {zh:'。', vn:''},
+    ],
+    note: '根本 + 不是 = hoàn toàn không phải, nhấn mạnh sự phủ định dứt khoát'
+  },
+  {
+    vn: 'Rõ ràng là đang bắt nạt người khác, cùng lắm thì nghỉ việc.',
+    zh: ['明明是在欺负人，大不了辞职。'],
+    words: [
+      {zh:'明明', vn:'rõ ràng'},
+      {zh:'是在', vn:'đang'},
+      {zh:'欺负人', vn:'bắt nạt người khác'},
+      {zh:'，', vn:''},
+      {zh:'大不了', vn:'cùng lắm là'},
+      {zh:'辞职', vn:'nghỉ việc'},
+      {zh:'。', vn:''},
+    ],
+    note: '大不了 + kết quả xấu nhất = cùng lắm là..., diễn tả thái độ không quá lo sợ trước hậu quả'
+  },
+  {
+    vn: 'Đây ngược lại chính là cơ hội tốt để chúng tôi thể hiện tài năng của mình.',
+    zh: ['这反而是我们可以展示自己才干的好机会。'],
+    words: [
+      {zh:'这', vn:'điều này'},
+      {zh:'反而', vn:'ngược lại'},
+      {zh:'是', vn:'là'},
+      {zh:'我们可以', vn:'chúng tôi có thể'},
+      {zh:'展示自己才干的', vn:'thể hiện tài năng của mình'},
+      {zh:'好机会', vn:'cơ hội tốt'},
+      {zh:'。', vn:''},
+    ],
+    note: '反而 = ngược lại, trái với điều mong đợi; thường dùng để chuyển hướng đánh giá tích cực hơn'
+  },
+  {
+    vn: 'Dốc toàn lực lao vào công việc, không lạnh nhạt, không làm lấy lệ với bất kỳ khách hàng nào.',
+    zh: ['全力以赴投入工作，不怠慢、不敷衍每一位客户。'],
+    words: [
+      {zh:'全力以赴', vn:'dốc toàn lực'},
+      {zh:'投入工作', vn:'lao vào công việc'},
+      {zh:'，', vn:''},
+      {zh:'不怠慢', vn:'không lạnh nhạt'},
+      {zh:'、不敷衍', vn:'không làm lấy lệ'},
+      {zh:'每一位客户', vn:'với bất kỳ khách hàng nào'},
+      {zh:'。', vn:''},
+    ],
+    note: '全力以赴 + động từ = dốc hết toàn lực để làm gì (thành ngữ 4 chữ)'
+  },
+  {
+    vn: 'Năng lực nghiệp vụ của chúng tôi đã được nâng cao vượt bậc.',
+    zh: ['我们的业务能力得到了飞跃式的提高。'],
+    words: [
+      {zh:'我们的业务能力', vn:'năng lực nghiệp vụ của chúng tôi'},
+      {zh:'得到了', vn:'đã nhận được'},
+      {zh:'飞跃式的', vn:'mang tính vượt bậc'},
+      {zh:'提高', vn:'sự nâng cao'},
+      {zh:'。', vn:''},
+    ],
+    note: '得到 + 飞跃式的提高 = nhận được sự nâng cao mang tính nhảy vọt (cấu trúc 得到 + danh từ hóa động từ)'
+  },
+  {
+    vn: 'Quá trình này, chính là lúc thể hiện sức hút nhân cách của bạn.',
+    zh: ['这个过程，正是展示你人格魅力的时候。'],
+    words: [
+      {zh:'这个过程', vn:'quá trình này'},
+      {zh:'，', vn:''},
+      {zh:'正是', vn:'chính là'},
+      {zh:'展示你人格魅力的', vn:'thể hiện sức hút nhân cách của bạn'},
+      {zh:'时候', vn:'lúc, thời điểm'},
+      {zh:'。', vn:''},
+    ],
+    note: '正是...的时候 = chính là lúc..., nhấn mạnh thời điểm/hoàn cảnh thích hợp để làm gì'
+  },
+];
+let sentAnswers = {};
+let sentSubmitted = {};
+function normalizeChinese(s){
+  return (s||'').replace(/[，,。.！!？?；;\s]/g,'').trim();
+}
+function matchSentAns(val, item){
+  const answers = Array.isArray(item.zh) ? item.zh : [item.zh];
+  return answers.find(a => normalizeChinese(val)===normalizeChinese(a)) || null;
+}
+function getPrimaryAns(item){
+  return Array.isArray(item.zh) ? item.zh[0] : item.zh;
+}
+function buildSentences(){
+  const wrap = document.getElementById('sent-wrap');
+  sentData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'sent-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="sent-vn">${item.vn}</div>
+      <input class="sent-input" id="sent-input-${i}" placeholder="Nhập câu tiếng Trung..."
+        onkeydown="if(event.key==='Enter')checkSentSingle(${i})">
+      <button class="sent-check-btn" onclick="checkSentSingle(${i})">Kiểm tra</button>
+      <div id="sent-result-${i}"></div>`;
+    wrap.appendChild(card);
+  });
+}
+function checkSentSingle(i){
+  const input = document.getElementById('sent-input-'+i);
+  const val = input.value;
+  sentAnswers[i] = val;
+  sentSubmitted[i] = true;
+  const item = sentData[i];
+  const matched = matchSentAns(val, item);
+  const resultDiv = document.getElementById('sent-result-'+i);
+  const primary = getPrimaryAns(item);
+  let html = '';
+  if(matched){
+    html += `<div class="sent-fb fb-ok">✓ Chính xác!</div>`;
+  } else {
+    html += `<div class="sent-fb fb-no">✗ Chưa đúng. Xem phân tích đáp án bên dưới.</div>`;
+  }
+  html += `<div class="sent-explain">
+    <div class="sent-explain-zh han">${primary}</div>
+    <div class="se-words">`;
+  item.words.forEach(w=>{
+    html += `<div class="se-word"><div class="se-word-zh han">${w.zh}</div><div class="se-word-vn">${w.vn}</div></div>`;
+  });
+  html += `</div><div class="se-note">${item.note}</div></div>`;
+  resultDiv.innerHTML = html;
+}
+
+/* ───────── SCORE SUMMARY ───────── */
+function renderScoreTable(computed){
+  const mcTot=mcQ.length, fillTot=fillRows.length, readTot=readingData.length, errTot=errorData.length, sentTot=sentData.length;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pctOf = (ok,tot)=> tot>0 ? Math.round(ok/tot*100) : 0;
+  const dash = '—';
+
+  const wrap = document.getElementById('score-wrap');
+
+  if(!computed){
+    wrap.innerHTML = `
+      <div class="score-wrap">
+        <div class="score-ring"><span class="score-ring-num">${dash}</span><span class="score-ring-tot">${dash}/${totalAll}</span></div>
+        <div class="score-title">Nhấn "Tính điểm tổng kết" để xem kết quả</div>
+        <div class="score-sub">Tổng số câu của bài: ${totalAll}</div>
+        <table class="score-table">
+          <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+          <tr><td>1. Trắc nghiệm</td><td>${dash}</td><td>${mcTot}</td><td>${dash}</td></tr>
+          <tr><td>2. Điền từ</td><td>${dash}</td><td>${fillTot}</td><td>${dash}</td></tr>
+          <tr><td>3. Đọc hiểu</td><td>${dash}</td><td>${readTot}</td><td>${dash}</td></tr>
+          <tr><td>4. Tìm lỗi sai</td><td>${dash}</td><td>${errTot}</td><td>${dash}</td></tr>
+          <tr><td>5. Dịch câu</td><td>${dash}</td><td>${sentTot}</td><td>${dash}</td></tr>
+          <tr><td>TỔNG</td><td>${dash}</td><td>${totalAll}</td><td>${dash}</td></tr>
+        </table>
+      </div>`;
+    return;
+  }
+
+  const {mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict} = computed;
+  wrap.innerHTML = `
+    <div class="score-wrap">
+      <div class="score-ring"><span class="score-ring-num">${pct}%</span><span class="score-ring-tot">${totalOk}/${totalAll}</span></div>
+      <div class="score-title">${verdict}</div>
+      <div class="score-sub">Tổng số câu đúng: ${totalOk} / ${totalAll}</div>
+      <table class="score-table">
+        <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+        <tr><td>1. Trắc nghiệm</td><td>${mcOk}</td><td>${mcTot}</td><td>${pctOf(mcOk,mcTot)}%</td></tr>
+        <tr><td>2. Điền từ</td><td>${fillOk}</td><td>${fillTot}</td><td>${pctOf(fillOk,fillTot)}%</td></tr>
+        <tr><td>3. Đọc hiểu</td><td>${readOk}</td><td>${readTot}</td><td>${pctOf(readOk,readTot)}%</td></tr>
+        <tr><td>4. Tìm lỗi sai</td><td>${errOk}</td><td>${errTot}</td><td>${pctOf(errOk,errTot)}%</td></tr>
+        <tr><td>5. Dịch câu</td><td>${sentOk}</td><td>${sentTot}</td><td>${pctOf(sentOk,sentTot)}%</td></tr>
+        <tr><td>TỔNG</td><td>${totalOk}</td><td>${totalAll}</td><td>${pct}%</td></tr>
+      </table>
+    </div>`;
+}
+
+function calcScore(){
+  let mcOk=0, mcTot=mcQ.length;
+  mcAns.forEach((a,i)=>{ if(a===mcQ[i].ans) mcOk++; });
+
+  let fillOk=0, fillTot=fillRows.length;
+  fillRows.forEach((row,i)=>{ if(slotAns[i]===row.ans) fillOk++; });
+
+  let readOk=0, readTot=readingData.length;
+  readAns.forEach((a,i)=>{ if(a===readingData[i].ans) readOk++; });
+
+  let errOk=0, errTot=errorData.length;
+  errAns.forEach((a,i)=>{ if(a===errorData[i].ans) errOk++; });
+
+  let sentOk=0, sentTot=sentData.length;
+  sentData.forEach((item,i)=>{
+    if(sentSubmitted[i] && matchSentAns(sentAnswers[i]||'', item)) sentOk++;
+  });
+
+  const totalOk = mcOk+fillOk+readOk+errOk+sentOk;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pct = totalAll>0 ? Math.round(totalOk/totalAll*100) : 0;
+
+  let verdict;
+  if(pct>=90) verdict = '⭐ Xuất sắc! Bạn đã nắm rất vững bài học này.';
+  else if(pct>=70) verdict = '👍 Giỏi! Còn vài điểm nhỏ cần ôn lại.';
+  else if(pct>=50) verdict = '📖 Khá! Nên ôn lại các phần từ vựng và ngữ pháp.';
+  else verdict = '💪 Cần ôn tập lại kỹ hơn các phần từ vựng cốt lõi.';
+
+  renderScoreTable({mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict});
+  switchTab('score');
+}
+
+/* ───────── INIT ───────── */
+buildTabs();
+buildVocab();
+buildTranslation();
+buildGrammar();
+buildMC();
+buildWB();
+buildFill();
+buildReading();
+buildWO();
+buildSentences();
+renderScoreTable();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HSK 6 – Bài 8: 遇见原来的我 | Ôn tập Từ vựng &amp; Ngữ pháp</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:      #1C1A24;
+  --ink-soft: #4A4658;
+  --paper:    #FBF9F4;
+  --paper2:   #F2EEE3;
+  --line:     #DDD6C5;
+  --gold:     #9C7A2E;
+  --gold-d:   #6E5620;
+  --gold-bg:  #F3E7C8;
+  --jade:     #2F5D50;
+  --jade-d:   #1E3F37;
+  --jade-bg:  #DCEAE4;
+  --plum:     #6B3550;
+  --plum-bg:  #F1DEE6;
+  --rust:     #8C3A2B;
+  --rust-bg:  #F5E0D6;
+  --ok:       #1E5E2E;
+  --ok-bg:    #DEEDE0;
+  --bad:      #8C2C2C;
+  --bad-bg:   #F6DEDE;
+  --shadow:   0 6px 24px rgba(28,26,36,.08);
+  --r:        4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.5}
+.han{font-family:'Noto Serif SC',serif}
+
+/* ─── HERO ─── */
+.hero{
+  background:linear-gradient(160deg,var(--jade-d) 0%, var(--jade) 55%, #28473D 100%);
+  padding:40px 20px 64px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;opacity:.06;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 38px,#fff 38px,#fff 39px);
+}
+.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-bg);font-weight:700;margin-bottom:10px;opacity:.85}
+.hero-title-zh{font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px}
+.hero-title-vn{font-size:15px;color:rgba(255,255,255,.78);margin-bottom:18px;font-style:italic}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hmeta-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:5px 14px;font-size:12px;color:#fff;font-weight:600}
+
+/* ─── NAV TABS ─── */
+.tabnav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tabnav-inner{max-width:760px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.tabnav-inner::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;padding:13px 16px;font-size:13px;font-weight:600;color:var(--ink-soft);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:'Source Sans 3',sans-serif;transition:all .15s}
+.tab-btn.active{color:var(--jade-d);border-bottom-color:var(--jade)}
+.tab-btn:hover{color:var(--jade-d)}
+
+/* ─── MAIN ─── */
+main{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+.tab-pane{display:none}
+.tab-pane.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.section-head{margin-bottom:20px}
+.section-title{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.section-sub{font-size:13px;color:var(--ink-soft)}
+
+/* ─── PROGRESS ─── */
+.progress-row{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.progress-track{flex:1;height:5px;background:var(--paper2);border-radius:3px;overflow:hidden}
+.progress-fill{height:5px;background:var(--jade);border-radius:3px;transition:width .35s}
+.progress-label{font-size:11px;color:var(--ink-soft);white-space:nowrap;font-weight:600}
+
+/* ─── VOCAB FLASHCARDS ─── */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.flip-card{position:relative;height:140px;perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;border-radius:8px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;border:1px solid var(--line)}
+.flip-front{background:var(--paper);box-shadow:var(--shadow)}
+.flip-back{background:var(--jade-d);color:#fff;transform:rotateY(180deg)}
+.fc-zh{font-family:'Noto Serif SC',serif;font-size:25px;font-weight:700;color:var(--ink);margin-bottom:4px;text-align:center}
+.fc-py{font-size:11px;color:var(--gold-d);font-weight:600}
+.fc-tag{position:absolute;top:8px;right:10px;font-size:9px;color:var(--ink-soft);opacity:.5}
+.fc-vn{font-size:14px;font-weight:700;color:#fff;text-align:center;margin-bottom:6px;padding:0 4px}
+.fc-ex{font-size:10.5px;color:rgba(255,255,255,.75);text-align:center;padding:0 8px;font-family:'Noto Serif SC',serif;line-height:1.45}
+.vocab-progress{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:16px;font-weight:600}
+
+/* ─── MC ─── */
+.q-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.q-tag{font-size:11px;color:var(--ink-soft);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.q-text{font-size:15px;color:var(--ink);margin-bottom:12px;line-height:1.6}
+.q-text .han{font-size:17px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:14px;color:var(--ink);transition:all .12s;background:#fff}
+.opt:hover{background:var(--paper2)}
+.opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opt-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.opt-zh{font-family:'Noto Serif SC',serif;font-weight:600}
+.chk-btn{margin-top:10px;padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.chk-btn:hover{background:var(--jade-bg)}
+.fb{font-size:13px;margin-top:9px;padding:8px 12px;border-radius:6px;font-weight:600}
+.fb-ok{background:var(--ok-bg);color:var(--ok)}
+.fb-no{background:var(--bad-bg);color:var(--bad)}
+
+/* ─── FILL ─── */
+.wb-box{background:var(--gold-bg);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid var(--line)}
+.wb-label{font-size:11px;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.06em;margin-bottom:9px}
+.wb-chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:#fff;border:1px solid var(--gold-d);border-radius:20px;padding:6px 15px;font-size:15px;font-family:'Noto Serif SC',serif;font-weight:600;color:var(--gold-d);cursor:pointer;transition:all .12s}
+.chip:hover{background:var(--gold-bg)}
+.chip.used{background:var(--paper2);border-color:var(--line);color:var(--ink-soft);text-decoration:line-through;cursor:default}
+.chip.active-chip{outline:2px solid var(--gold-d);outline-offset:1px}
+.fill-rows{display:flex;flex-direction:column;gap:9px}
+.fill-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.rn{font-size:12px;color:var(--ink-soft);font-weight:700;min-width:20px}
+.ft{font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink)}
+.slot{display:inline-flex;flex-direction:column;align-items:center}
+.slot-box{min-width:62px;height:34px;border:none;border-bottom:2px solid var(--gold);background:transparent;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--gold-d);font-weight:700;text-align:center;cursor:pointer;border-radius:0;padding:0 4px}
+.slot-box:empty::before{content:'＿＿';color:var(--ink-soft);font-weight:400;font-size:14px}
+.slot-box.filled{border-bottom-color:var(--gold-d)}
+.slot-box.ok{background:var(--ok-bg);color:var(--ok);border-bottom-color:var(--ok);border-radius:4px}
+.slot-box.err{background:var(--bad-bg);color:var(--bad);border-bottom-color:var(--bad);border-radius:4px}
+.fill-actions{display:flex;gap:8px;margin-top:14px}
+.fill-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--gold-d);background:transparent;color:var(--gold-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.fill-btn:hover{background:var(--gold-bg)}
+.reset-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--ink-soft);background:transparent;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+
+/* ─── GRAMMAR ─── */
+.gram-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
+.gram-title{font-size:16px;font-weight:700;color:var(--plum);margin-bottom:9px;font-family:'Noto Serif SC',serif}
+.gram-formula{background:var(--gold-bg);color:var(--gold-d);padding:9px 12px;border-radius:6px;font-size:14.5px;font-weight:700;margin-bottom:10px;font-family:'Noto Serif SC',serif;display:inline-block}
+.gram-explain{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px;line-height:1.65}
+.gram-ex{background:var(--paper2);border-radius:6px;padding:10px 12px;margin-bottom:7px}
+.gram-ex:last-child{margin-bottom:0}
+.gram-ex-zh{font-size:15.5px;font-weight:600;color:var(--ink);font-family:'Noto Serif SC',serif}
+.gram-ex-vn{font-size:12px;color:var(--ink-soft);margin-top:3px;font-style:italic}
+
+/* ─── DIALOGUE/READING ─── */
+.passage-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:16px;box-shadow:var(--shadow)}
+.passage-title{font-size:13px;font-weight:700;color:var(--plum);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+.passage-zh{font-family:'Noto Serif SC',serif;font-size:16px;line-height:2;color:var(--ink);text-align:justify}
+.passage-zh .hl{background:var(--gold-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--gold-d)}
+.passage-vn{font-size:14.5px;line-height:1.85;color:var(--ink-soft);text-align:justify;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.passage-vn .hl{background:var(--jade-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--jade-d)}
+
+/* ─── ERROR CORRECTION ─── */
+.err-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.err-sentence{font-family:'Noto Serif SC',serif;font-size:17px;line-height:1.8;color:var(--ink);margin-bottom:14px;padding:10px 12px;background:var(--rust-bg);border-radius:6px;border-left:3px solid var(--rust)}
+.err-sentence u{text-decoration:none;background:#fff;border-bottom:2px solid var(--rust);padding:0 2px;font-weight:700;color:var(--rust)}
+.err-opts{display:flex;flex-direction:column;gap:7px}
+.err-opt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:15px;font-family:'Noto Serif SC',serif;color:var(--ink);transition:all .12s;background:#fff;line-height:1.6}
+.err-opt:hover{background:var(--paper2)}
+.err-opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.err-opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.err-opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.err-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;font-family:'Source Sans 3',sans-serif}
+.err-note{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:12.5px;color:var(--ink-soft);font-style:italic;line-height:1.55}
+
+/* ─── TRANSLATION ─── */
+.sent-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.sent-vn{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.55}
+.sent-input{width:100%;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink);outline:none}
+.sent-input:focus{border-color:var(--jade)}
+.sent-check-btn{margin-top:8px;padding:7px 16px;font-size:12px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.sent-fb{font-size:13px;margin-top:9px;padding:9px 12px;border-radius:6px;font-weight:600}
+.sent-explain{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:13px}
+.sent-explain-zh{font-family:'Noto Serif SC',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.se-words{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.se-word{background:#fff;border:1px solid var(--line);border-radius:5px;padding:5px 9px;text-align:center}
+.se-word-zh{font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;color:var(--ink)}
+.se-word-vn{font-size:10px;color:var(--ink-soft);margin-top:1px}
+.se-note{font-size:12.5px;color:var(--ink-soft);font-style:italic;border-top:1px solid var(--line);padding-top:8px}
+
+/* ─── SCORE ─── */
+.score-wrap{background:linear-gradient(160deg,var(--jade-d),var(--jade));border-radius:10px;padding:24px 20px;color:#fff;text-align:center;margin-bottom:20px}
+.score-ring{width:90px;height:90px;border-radius:50%;border:4px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px}
+.score-ring-num{font-size:24px;font-weight:800}
+.score-ring-tot{font-size:11px;opacity:.75}
+.score-title{font-size:17px;font-weight:700;margin-bottom:5px}
+.score-sub{font-size:13px;opacity:.85}
+.score-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}
+.score-table th{text-align:left;padding:9px 10px;background:rgba(255,255,255,.12);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+.score-table td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.15)}
+.score-table tr:last-child td{border-bottom:none;font-weight:700}
+.submit-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--jade),var(--jade-d));color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;box-shadow:0 4px 16px rgba(47,93,80,.35);margin-bottom:18px}
+.submit-btn:hover{transform:translateY(-1px)}
+
+/* ─── NAV ARROWS ─── */
+.pane-nav{display:flex;justify-content:space-between;margin-top:24px}
+.nav-arrow{padding:9px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.nav-arrow:hover{border-color:var(--jade);color:var(--jade-d)}
+
+footer.wm{text-align:center;font-size:11.5px;color:var(--ink-soft);padding:18px;font-style:italic;border-top:1px solid var(--line)}
+
+@media(max-width:480px){
+  .vocab-grid{grid-template-columns:1fr}
+  .hero-title-zh{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Tiếng Trung Halaoshi · HSK 6 · 标准教程 6上 第8课</div>
+    <div class="hero-title-zh">遇见原来的我</div>
+    <div class="hero-title-vn">Gặp lại con người ban đầu của mình — Ôn tập từ vựng &amp; ngữ pháp</div>
+    <div class="hero-meta">
+      <span class="hmeta-chip">📖 41 từ vựng</span>
+      <span class="hmeta-chip">⏱ ~25 phút</span>
+      <span class="hmeta-chip">🎯 7 phần</span>
+    </div>
+  </div>
+</div>
+
+<nav class="tabnav">
+  <div class="tabnav-inner" id="tabnav"></div>
+</nav>
+
+<main>
+
+  <!-- VOCAB -->
+  <section class="tab-pane active" id="pane-vocab">
+    <div class="section-head">
+      <div class="section-title">Từ vựng bài học</div>
+      <div class="section-sub">Nhấn vào thẻ để lật — xem pinyin, nghĩa và ví dụ trong văn cảnh bài đọc.</div>
+    </div>
+    <div class="vocab-grid" id="vocab-grid"></div>
+    <div class="vocab-progress" id="vocab-progress">0 / 41 đã xem</div>
+  </section>
+
+  <!-- TRANSLATION OF PASSAGE -->
+  <section class="tab-pane" id="pane-transl">
+    <div class="section-head">
+      <div class="section-title">Dịch bài khóa</div>
+      <div class="section-sub">Bản dịch tiếng Việt theo từng đoạn — từ mới và thành ngữ được tô màu tương ứng ở cả bản tiếng Trung (vàng) và bản dịch (xanh ngọc).</div>
+    </div>
+    <div id="transl-wrap"></div>
+  </section>
+
+  <!-- GRAMMAR -->
+  <section class="tab-pane" id="pane-grammar">
+    <div class="section-head">
+      <div class="section-title">Ôn ngữ pháp chính trong bài khóa</div>
+      <div class="section-sub">Các cấu trúc ngữ pháp trọng tâm xuất hiện trong bài đọc, kèm ví dụ trích trực tiếp từ bài khóa.</div>
+    </div>
+    <div id="gram-wrap"></div>
+  </section>
+
+  <!-- MC -->
+  <section class="tab-pane" id="pane-mc">
+    <div class="section-head">
+      <div class="section-title">Phần 1 — Trắc nghiệm</div>
+      <div class="section-sub">Chọn nghĩa hoặc cách dùng đúng nhất cho mỗi từ / cấu trúc.</div>
+    </div>
+    <div class="progress-row"><div class="progress-track"><div class="progress-fill" id="mc-prog" style="width:0%"></div></div><div class="progress-label" id="mc-prog-label">0 / 15</div></div>
+    <div id="mc-wrap"></div>
+  </section>
+
+  <!-- FILL -->
+  <section class="tab-pane" id="pane-fill">
+    <div class="section-head">
+      <div class="section-title">Phần 2 — Điền từ vào chỗ trống</div>
+      <div class="section-sub">Chọn từ trong khung gợi ý, sau đó nhấn vào ô trống để điền.</div>
+    </div>
+    <div class="wb-box">
+      <div class="wb-label">📦 Ngân hàng từ</div>
+      <div class="wb-chips" id="wb"></div>
+    </div>
+    <div class="fill-rows" id="fill-wrap"></div>
+    <div class="fill-actions">
+      <button class="fill-btn" onclick="checkFill()">Kiểm tra</button>
+      <button class="reset-btn" onclick="resetFill()">↺ Làm lại</button>
+    </div>
+    <div id="fill-fb" style="margin-top:10px"></div>
+  </section>
+
+  <!-- READING -->
+  <section class="tab-pane" id="pane-reading">
+    <div class="section-head">
+      <div class="section-title">Phần 3 — Đọc hiểu trích đoạn</div>
+      <div class="section-sub">Đọc đoạn văn gốc, các từ vựng trọng tâm được tô vàng, sau đó trả lời câu hỏi.</div>
+    </div>
+    <div id="reading-wrap"></div>
+  </section>
+
+  <!-- ERROR CORRECTION -->
+  <section class="tab-pane" id="pane-wo">
+    <div class="section-head">
+      <div class="section-title">Phần 4 — Tìm lỗi sai</div>
+      <div class="section-sub">Trong 4 câu A, B, C, D dưới đây, chỉ có 1 câu chứa lỗi sai. Hãy chọn ra câu đó.</div>
+    </div>
+    <div id="wo-wrap"></div>
+  </section>
+
+  <!-- TRANSLATION -->
+  <section class="tab-pane" id="pane-sent">
+    <div class="section-head">
+      <div class="section-title">Phần 5 — Dịch câu sang tiếng Trung</div>
+      <div class="section-sub">Gõ câu tiếng Trung tương ứng. Sau khi kiểm tra sẽ có phân tích từ và ngữ pháp.</div>
+    </div>
+    <div id="sent-wrap"></div>
+  </section>
+
+  <!-- SCORE -->
+  <section class="tab-pane" id="pane-score">
+    <div class="section-head">
+      <div class="section-title">Phần 6 — Tổng kết điểm số</div>
+      <div class="section-sub">Tổng hợp kết quả toàn bộ các phần đã làm.</div>
+    </div>
+    <div id="score-wrap"></div>
+    <button class="submit-btn" onclick="calcScore()">🎯 Tính điểm tổng kết</button>
+  </section>
+
+</main>
+
+<footer class="wm">© Tiếng Trung Halaoshi — Tài liệu ôn tập HSK 6, Bài 8</footer>
+
+<script>
+const vocabData = [
+  {zh:'婴儿', py:"yīng'ér", vn:'trẻ sơ sinh', ex:'如果有一天，你看到自己婴儿时期的一张照片，你能认出自己吗？', exvn:'Nếu một ngày nào đó, bạn nhìn thấy một tấm ảnh chụp thời còn là trẻ sơ sinh của chính mình, liệu bạn có nhận ra mình không?'},
+  {zh:'翻天覆地', py:'fāntiān-fùdì', vn:'long trời lở đất, thay đổi to lớn/hoàn toàn', ex:'你的身上已经发生了翻天覆地的变化。', exvn:'Cơ thể bạn đã trải qua những thay đổi long trời lở đất.'},
+  {zh:'更新', py:'gēngxīn', vn:'đổi mới, thay mới', ex:'皮肤自你出生以来已经被更新130次了。', exvn:'Làn da của bạn kể từ khi sinh ra đã được đổi mới tới 130 lần.'},
+  {zh:'酒窝', py:'jiǔwō', vn:'lúm đồng tiền', ex:'你的酒窝不见了。', exvn:'Lúm đồng tiền của bạn đã biến mất.'},
+  {zh:'蹦', py:'bèng', vn:'nhảy', ex:'5岁那年，你从高处往下蹦，跌了一跤。', exvn:'Năm bạn 5 tuổi, bạn nhảy từ trên cao xuống, ngã một cú.'},
+  {zh:'跌', py:'diē', vn:'té, ngã', ex:'你从高处往下蹦，跌了一跤，脸上留下的疤掩盖了它。', exvn:'Bạn nhảy từ trên cao xuống, ngã một cú, một vết sẹo để lại trên mặt đã che giấu nó đi.'},
+  {zh:'疤', py:'bā', vn:'vết sẹo', ex:'脸上留下的疤掩盖了它。', exvn:'Một vết sẹo để lại trên mặt đã che giấu nó đi.'},
+  {zh:'掩盖', py:'yǎngài', vn:'che, phủ, che giấu', ex:'脸上留下的疤掩盖了它。', exvn:'Một vết sẹo để lại trên mặt đã che giấu nó đi.'},
+  {zh:'大脑', py:'dànǎo', vn:'bộ óc, bộ não', ex:'你的大脑已经比拍照时增加了2~3倍的重量。', exvn:'Bộ não của bạn hiện đã nặng hơn 2-3 lần so với lúc chụp bức ảnh đó.'},
+  {zh:'确信', py:'quèxìn', vn:'tin chắc', ex:'如果你确信你就是你，不管怎样变化。', exvn:'Nếu bạn tin chắc rằng mình vẫn là mình, dù có thay đổi thế nào đi nữa.'},
+  {zh:'比喻', py:'bǐyù', vn:'ví như', ex:'赫拉克利特把自我比喻为一条河。', exvn:'Heraclitus ví bản thân mình như một dòng sông.'},
+  {zh:'呈现', py:'chéngxiàn', vn:'thể hiện, lộ ra', ex:'河流动时会呈现出不同的状态。', exvn:'Dòng nước tuy luôn thể hiện những trạng thái khác nhau.'},
+  {zh:'固有', py:'gùyǒu', vn:'vốn có, cố hữu', ex:'但它始终是固有的那条河。', exvn:'Nhưng nó vẫn luôn là dòng sông vốn có đó.'},
+  {zh:'阐述', py:'chǎnshù', vn:'trình bày, nêu rõ', ex:'他将自己的观点阐述为：不管你变化了多少，始终只有一个你。', exvn:'Ông trình bày quan điểm của mình rằng: dù bạn thay đổi bao nhiêu đi nữa, thì mãi mãi chỉ có một "bạn" mà thôi.'},
+  {zh:'陈述', py:'chénshù', vn:'phát biểu, tuyên bố, nói rõ', ex:'他是这样陈述自己的观点的。', exvn:'Ông phát biểu quan điểm của mình như sau.'},
+  {zh:'见解', py:'jiànjiě', vn:'cách nhìn, quan điểm', ex:'每个人对本体问题都有自己的见解。', exvn:'Mỗi người đều có cách nhìn riêng của mình về vấn đề bản thể.'},
+  {zh:'演变', py:'yǎnbiàn', vn:'diễn biến, biến đổi, tiến hóa', ex:'我们的思想，是连续不断的认知组成的演变过程。', exvn:'Tư tưởng của chúng ta là một quá trình diễn biến được tạo thành từ những nhận thức liên tục không ngừng.'},
+  {zh:'推测', py:'tuīcè', vn:'suy đoán, dự đoán', ex:'你可以推测，婴儿大卫的油画里呈现的是一个与成年大卫类似的人。', exvn:'Bạn có thể suy đoán, bức tranh sơn dầu về David lúc còn nhỏ thể hiện một người có nét giống với David khi trưởng thành.'},
+  {zh:'譬如', py:'pìrú', vn:'ví dụ, như', ex:'譬如，婴儿大卫的油画里呈现的是一个与成年大卫类似的人。', exvn:'Ví dụ, bức tranh sơn dầu về David lúc còn nhỏ thể hiện một người có nét giống với David khi trưởng thành.'},
+  {zh:'各抒己见', py:'gèshū-jǐjiàn', vn:'mỗi người phát biểu ý kiến riêng của mình', ex:'哲学家们对本体的问题各抒己见。', exvn:'Các nhà triết học ai nấy đều phát biểu ý kiến riêng của mình về vấn đề bản thể.'},
+  {zh:'通缉', py:'tōngjī', vn:'truy nã, truy bắt (tội phạm)', ex:'一个被通缉了15年的罪犯，今天还应该受到惩罚吗？', exvn:'Một tên tội phạm bị truy nã suốt 15 năm, hôm nay liệu có nên chịu sự trừng phạt hay không?'},
+  {zh:'触犯', py:'chùfàn', vn:'vi phạm, xâm phạm', ex:'今天还应该为当初触犯法律的行为受到惩罚吗？', exvn:'Hôm nay liệu có nên vì hành vi vi phạm pháp luật khi xưa mà chịu sự trừng phạt hay không?'},
+  {zh:'惩罚', py:'chéngfá', vn:'trừng phạt, trừng trị', ex:'今天还应该为当初触犯法律的行为受到惩罚吗？', exvn:'Hôm nay liệu có nên vì hành vi vi phạm pháp luật khi xưa mà chịu sự trừng phạt hay không?'},
+  {zh:'忧郁', py:'yōuyù', vn:'sầu muộn, buồn thương', ex:'你因为过于忧郁而吃药。', exvn:'Bạn uống thuốc vì quá sầu muộn.'},
+  {zh:'肺', py:'fèi', vn:'phổi', ex:'你做了心脏、肺或者其他器官的移植手术。', exvn:'Bạn trải qua ca cấy ghép tim, phổi hoặc các cơ quan khác.'},
+  {zh:'器官', py:'qìguān', vn:'bộ phận, cơ quan (sinh vật học)', ex:'你做了心脏、肺或者其他器官的移植手术。', exvn:'Bạn trải qua ca cấy ghép tim, phổi hoặc các cơ quan khác.'},
+  {zh:'移植', py:'yízhí', vn:'cấy, ghép', ex:'你做了心脏、肺或者其他器官的移植手术。', exvn:'Bạn trải qua ca cấy ghép tim, phổi hoặc các cơ quan khác.'},
+  {zh:'面貌', py:'miànmào', vn:'bộ mặt, diện mạo, tướng mạo', ex:'这些都会逐渐改变你的面貌、情绪和行为。', exvn:'Tất cả những điều này đều sẽ dần dần thay đổi diện mạo, cảm xúc và hành vi của bạn.'},
+  {zh:'极端', py:'jíduān', vn:'cực đoan, quá khích', ex:'德里克·帕菲特有一个空前绝后的极端假设。', exvn:'Derek Parfit có một giả thuyết cực đoan có một không hai.'},
+  {zh:'空前绝后', py:'kōngqián-juéhòu', vn:'có một không hai', ex:'德里克·帕菲特有一个空前绝后的极端假设。', exvn:'Derek Parfit có một giả thuyết cực đoan có một không hai.'},
+  {zh:'昏迷', py:'hūnmí', vn:'hôn mê, bất tỉnh', ex:'两个人术后从昏迷中清醒过来。', exvn:'Sau ca phẫu thuật cả hai người khi tỉnh lại từ trạng thái hôn mê.'},
+  {zh:'清醒', py:'qīngxǐng', vn:'tỉnh lại, tỉnh táo', ex:'两个人术后从昏迷中清醒过来。', exvn:'Sau ca phẫu thuật cả hai người khi tỉnh lại từ trạng thái hôn mê.'},
+  {zh:'言论', py:'yánlùn', vn:'lời nói, lời bàn', ex:'哲学家们的言论、学说离我们十分遥远。', exvn:'Những lời bàn, học thuyết của các nhà triết học xa vời chúng ta.'},
+  {zh:'学说', py:'xuéshuō', vn:'học thuyết', ex:'哲学家们的言论、学说离我们十分遥远。', exvn:'Những lời bàn, học thuyết của các nhà triết học xa vời chúng ta.'},
+  {zh:'遥远', py:'yáoyuǎn', vn:'xa xôi, xa vời', ex:'哲学家们的言论、学说离我们十分遥远。', exvn:'Những lời bàn, học thuyết của các nhà triết học xa vời chúng ta.'},
+  {zh:'陷入', py:'xiànrù', vn:'rơi vào, sa vào', ex:'我们不会陷入本体的思索。', exvn:'Chúng ta sẽ không rơi vào những suy nghĩ tìm tòi về bản thể.'},
+  {zh:'思索', py:'sīsuǒ', vn:'suy nghĩ tìm tòi', ex:'我们不会陷入本体的思索。', exvn:'Chúng ta sẽ không rơi vào những suy nghĩ tìm tòi về bản thể.'},
+  {zh:'设想', py:'shèxiǎng', vn:'tưởng tượng', ex:'我们也不会设想有大脑移植出两个人。', exvn:'Chúng ta cũng sẽ không tưởng tượng ra việc cấy ghép não để tạo ra hai người.'},
+  {zh:'性命', py:'xìngmìng', vn:'tính mạng, mạng sống', ex:'那简直就是拿自己的性命开玩笑。', exvn:'Điều đó chẳng khác nào đem tính mạng của mình ra đùa giỡn.'},
+  {zh:'无忧无虑', py:'wúyōu-wúlǜ', vn:'vô tư lự, không lo lắng gì hết', ex:'我们只想无忧无虑地过日子。', exvn:'Chúng ta chỉ muốn sống vô tư lự qua ngày.'},
+  {zh:'崭新', py:'zhǎnxīn', vn:'hoàn toàn mới, mới tinh', ex:'感觉今天的我不像原来的我，而像是一个崭新的我了。', exvn:'Cảm thấy "tôi" của hôm nay không còn giống "tôi" của trước kia, mà giống như một "tôi" hoàn toàn mới tinh vậy.'},
+];
+
+const grammarData = [
+  {
+    title: '1. 不管...，始终...',
+    formula: '不管 + điều kiện/cách thức，始终 + kết quả không đổi',
+    explain: 'Dùng để nhấn mạnh rằng bất kể điều kiện, hoàn cảnh phía trước thay đổi thế nào, thì kết quả hoặc bản chất phía sau vẫn luôn không đổi.',
+    examples: [
+      {zh:'不管你变化了多少，始终只有一个你。', vn:'Dù bạn thay đổi bao nhiêu đi nữa, thì mãi mãi chỉ có một "bạn" mà thôi.'},
+    ]
+  },
+  {
+    title: '2. 譬如，...',
+    formula: '譬如 + ví dụ minh họa cụ thể',
+    explain: '譬如 nghĩa là "ví dụ như", tương đương 比如 nhưng mang sắc thái văn viết trang trọng hơn, dùng để đưa ra ví dụ minh họa cho luận điểm vừa nêu.',
+    examples: [
+      {zh:'譬如，你去整形，你因为过于忧郁而吃药……这些都会逐渐改变你的面貌、情绪和行为。', vn:'Ví dụ, bạn đi phẫu thuật thẩm mỹ, bạn uống thuốc vì quá sầu muộn... tất cả những điều này đều sẽ dần dần thay đổi diện mạo, cảm xúc và hành vi của bạn.'},
+    ]
+  },
+  {
+    title: '3. 假如...，那么...',
+    formula: '假如 + giả thiết，那么 + kết quả suy ra',
+    explain: 'Cấu trúc câu điều kiện giả định, dùng để đặt ra một tình huống giả thiết rồi suy luận ra hệ quả logic của nó.',
+    examples: [
+      {zh:'假如休谟是对的，那么从现在开始，10年后你就会成为另一个人。', vn:'Giả sử Hume đúng, thì kể từ bây giờ, 10 năm sau bạn sẽ trở thành một người khác.'},
+    ]
+  },
+  {
+    title: '4. 由此，得出结论',
+    formula: '由此，+ chủ ngữ + 得出结论："..."',
+    explain: '由此 nghĩa là "từ đó, do đó", dùng để dẫn dắt vào một kết luận được rút ra từ những lập luận, dẫn chứng đã trình bày trước đó.',
+    examples: [
+      {zh:'由此，他得出结论："个人的本体并不是真正重要的事情。"', vn:'Từ đó, ông đưa ra kết luận: "Bản thể của mỗi cá nhân thực ra không phải là điều thực sự quan trọng."'},
+    ]
+  },
+  {
+    title: '5. 不瞒你说',
+    formula: '不瞒你说，+ nội dung chia sẻ thành thật',
+    explain: 'Cụm từ mở đầu mang tính khẩu ngữ, nghĩa là "nói thật với bạn, không giấu giếm gì", dùng khi người nói sắp chia sẻ một suy nghĩ hoặc sự thật riêng tư, thành thật.',
+    examples: [
+      {zh:'不瞒你说，对这个问题，我是刚开始想……', vn:'Thành thật mà nói, đối với vấn đề này, ban đầu tôi từng nghĩ...'},
+    ]
+  },
+  {
+    title: '6. 会不会有一天，...了呢？',
+    formula: '会不会有一天，+ mệnh đề giả định + 了呢？',
+    explain: 'Cấu trúc nghi vấn tu từ, dùng để đặt ra một khả năng có thể xảy ra trong tương lai, thường mang sắc thái suy tư, tự vấn.',
+    examples: [
+      {zh:'会不会有一天，你醒来，感觉今天的我不像原来的我，而像是一个崭新的我了呢？', vn:'Liệu có một ngày nào đó, khi bạn tỉnh dậy, cảm thấy "tôi" của hôm nay không còn giống "tôi" của trước kia, mà giống như một "tôi" hoàn toàn mới tinh vậy không?'},
+    ]
+  },
+  {
+    title: '7. 那简直就是 + động từ',
+    formula: '那简直就是 + hành động/cụm động từ (mang tính phóng đại)',
+    explain: '简直 nghĩa là "quả thực, đơn giản là", dùng để nhấn mạnh mức độ cực đoan, phóng đại của một nhận định, thường mang sắc thái cảm thán.',
+    examples: [
+      {zh:'那简直就是拿自己的性命开玩笑。', vn:'Điều đó chẳng khác nào đem tính mạng của mình ra đùa giỡn.'},
+    ]
+  },
+  {
+    title: '8. 对...各抒己见',
+    formula: '(chủ ngữ) + 对 + vấn đề + 各抒己见',
+    explain: '各抒己见 là thành ngữ 4 chữ, nghĩa là "mỗi người phát biểu ý kiến riêng của mình", dùng khi nói về một vấn đề mà nhiều người có quan điểm khác nhau, không thống nhất.',
+    examples: [
+      {zh:'哲学家们对本体的问题各抒己见。', vn:'Các nhà triết học ai nấy đều phát biểu ý kiến riêng của mình về vấn đề bản thể.'},
+    ]
+  },
+];
+
+const mcQ = [
+  {q:'<span class="han">翻天覆地</span> nghĩa là gì?',
+   opts:['Thay đổi to lớn, biến đổi hoàn toàn','Bình yên, không có gì thay đổi','Chậm rãi, từ từ'], ans:0},
+  {q:'<span class="han">酒窝</span> nghĩa là gì?',
+   opts:['Vết sẹo trên mặt','Lúm đồng tiền','Nốt ruồi'], ans:1},
+  {q:'<span class="han">掩盖</span> nghĩa là gì?',
+   opts:['Phơi bày, để lộ ra','Che giấu, che phủ','Xóa bỏ hoàn toàn'], ans:1},
+  {q:'<span class="han">确信</span> nghĩa là gì?',
+   opts:['Nghi ngờ, không chắc chắn','Quên mất','Tin chắc, tin tưởng tuyệt đối'], ans:2},
+  {q:'<span class="han">比喻</span> nghĩa là gì?',
+   opts:['Ví như, so sánh ẩn dụ','Phản đối','Chứng minh bằng số liệu'], ans:0},
+  {q:'<span class="han">呈现</span> nghĩa là gì?',
+   opts:['Biến mất hoàn toàn','Thể hiện ra, lộ ra','Bị che giấu'], ans:1},
+  {q:'<span class="han">阐述</span> nghĩa là gì?',
+   opts:['Trình bày, nêu rõ (quan điểm)','Giữ im lặng, không nói gì','Phủ nhận hoàn toàn'], ans:0},
+  {q:'<span class="han">演变</span> nghĩa là gì?',
+   opts:['Diễn biến, biến đổi dần theo thời gian','Giữ nguyên không đổi','Kết thúc đột ngột'], ans:0},
+  {q:'<span class="han">推测</span> nghĩa là gì?',
+   opts:['Khẳng định chắc chắn','Suy đoán, dự đoán','Ghi chép lại'], ans:1},
+  {q:'<span class="han">各抒己见</span> nghĩa là gì?',
+   opts:['Mỗi người phát biểu ý kiến riêng của mình','Tất cả đều đồng ý với nhau','Không ai dám phát biểu'], ans:0},
+  {q:'<span class="han">通缉</span> nghĩa là gì?',
+   opts:['Khen thưởng công khai','Truy nã, truy bắt (tội phạm)','Tha bổng, miễn tội'], ans:1},
+  {q:'<span class="han">惩罚</span> nghĩa là gì?',
+   opts:['Trừng phạt, trừng trị','Khen ngợi, biểu dương','Giúp đỡ, hỗ trợ'], ans:0},
+  {q:'<span class="han">空前绝后</span> nghĩa là gì?',
+   opts:['Bình thường, không có gì đặc biệt','Có một không hai, chưa từng có và sẽ không lặp lại','Lặp đi lặp lại nhiều lần'], ans:1},
+  {q:'<span class="han">清醒</span> nghĩa là gì?',
+   opts:['Tỉnh táo, tỉnh lại (sau khi hôn mê)','Vẫn còn hôn mê, bất tỉnh','Buồn ngủ, lơ mơ'], ans:0},
+  {q:'<span class="han">无忧无虑</span> nghĩa là gì?',
+   opts:['Đầy lo âu, phiền muộn','Vô tư lự, không lo lắng gì','Bận rộn không ngừng nghỉ'], ans:1},
+];
+
+const fillWords = ['翻天覆地','确信','比喻','阐述','各抒己见','通缉','惩罚','空前绝后','陷入','无忧无虑'];
+const fillRows = [
+  {pre:'从拍照片的那一刻起，你的身上已经发生了', ans:'翻天覆地', suf:'的变化。', py:'fāntiān-fùdì'},
+  {pre:'如果你', ans:'确信', suf:'你就是你，不管怎样变化……', py:'quèxìn'},
+  {pre:'赫拉克利特把自我', ans:'比喻', suf:'为一条河。', py:'bǐyù'},
+  {pre:'他将自己的观点', ans:'阐述', suf:'为：不管你变化了多少，始终只有一个你。', py:'chǎnshù'},
+  {pre:'哲学家们对本体的问题', ans:'各抒己见', suf:'。', py:'gèshū-jǐjiàn'},
+  {pre:'一个被', ans:'通缉', suf:'了15年的罪犯，今天还应该受到惩罚吗？', py:'tōngjī'},
+  {pre:'今天还应该为当初触犯法律的行为受到', ans:'惩罚', suf:'吗？', py:'chéngfá'},
+  {pre:'德里克·帕菲特有一个', ans:'空前绝后', suf:'的极端假设。', py:'kōngqián-juéhòu'},
+  {pre:'我们不会', ans:'陷入', suf:'本体的思索。', py:'xiànrù'},
+  {pre:'我们只想', ans:'无忧无虑', suf:'地过日子。', py:'wúyōu-wúlǜ'},
+];
+
+const readingData = [
+  {
+    title: 'Đoạn 1 — Những đổi thay từ khi chào đời',
+    zh: '如果有一天，你看到自己<span class="hl">婴儿</span>时期的一张照片，你能认出自己吗？也许你会一下子认出自己，因为你觉得你一直都是你，但实际上，从拍照片的那一刻起，你的身上已经发生了<span class="hl">翻天覆地</span>的变化。比如说，皮肤自你出生以来已经被<span class="hl">更新</span>130次了。你的<span class="hl">酒窝</span>不见了，5岁那年，你从高处往下<span class="hl">蹦</span>，<span class="hl">跌</span>了一跤，脸上留下的<span class="hl">疤</span><span class="hl">掩盖</span>了它。你的<span class="hl">大脑</span>已经比拍照时增加了2~3倍的重量。',
+    q: '根据第一段，从拍照片那一刻起，你的身体发生了什么变化？',
+    opts: ['只有身高发生了变化', '皮肤、酒窝、疤痕、大脑都发生了很大变化', '什么都没有变化'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 2 — Bạn của quá khứ, bạn của hiện tại',
+    zh: '如果你<span class="hl">确信</span>你就是你，不管怎样变化，那么，照片上的婴儿到底是不是你？是现在的你，还是一个不同的过去的你？如果是过去的你，有多少个过去的你？你用电脑生成一张你50岁时的图片，对你而言，就像看一个陌生人。',
+    q: '作者提出"过去的你"这一连串问题，主要是想说明什么？',
+    opts: ['想说明电脑技术很先进', '想说明"你"这个概念其实很复杂，值得思考', '想说明照片没有意义'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 3 — Câu hỏi triết học ngàn năm về bản thể',
+    zh: '有关本体的问题，困扰了哲学家2500多年。什么是本体？这里说的本体就是我们的思想或身体。',
+    q: '这里说的"本体"指的是什么？',
+    opts: ['我们的姓名', '我们的思想或身体', '我们的照片'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 4 — Ẩn dụ dòng sông của Heraclitus',
+    zh: '赫拉克利特把自我<span class="hl">比喻</span>为一条河，河流动时会<span class="hl">呈现</span>出不同的状态，但它始终是<span class="hl">固有</span>的那条河。他将自己的观点<span class="hl">阐述</span>为：不管你变化了多少，始终只有一个你。',
+    q: '赫拉克利特认为，"自我"就像什么？',
+    opts: ['一面镜子', '一条不断流动、状态不同、但始终是同一条的河', '一本书'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 5 — Quan điểm phản bác của David Hume',
+    zh: '大卫·休谟不同意"连续的自我"的观点。他是这样<span class="hl">陈述</span>自己的观点的："我们的思想，是连续不断的认知组成的<span class="hl">演变</span>过程。"而你可以<span class="hl">推测</span>，譬如，婴儿大卫的油画里呈现的是一个与成年大卫类似的人，并非完全相同。',
+    q: '大卫·休谟对"连续的自我"持什么态度？',
+    opts: ['完全同意赫拉克利特的观点', '不同意，认为思想只是不断演变的认知过程', '认为这个问题毫无意义'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 6 — Những hệ quả thực tế của quan điểm bản thể',
+    zh: '哲学家们对本体的问题<span class="hl">各抒己见</span>。我们却在想一些更为实际的问题，假如休谟是对的，那么从现在开始，10年后你就会成为另一个人，你还要遵守现在的你做出的承诺吗？或者说，一个被<span class="hl">通缉</span>了15年的罪犯，今天还应该为当初<span class="hl">触犯</span>法律的行为受到<span class="hl">惩罚</span>吗？',
+    q: '如果休谟的观点是对的，作者提出了什么现实问题？',
+    opts: ['未来的手机会是什么样子', '10年后的你是否还要遵守现在的承诺、罪犯是否该为过去负责', '未来的天气会怎样'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 7 — Sự thay đổi qua phẫu thuật và bệnh tật',
+    zh: '我们每个人都会发生变化。譬如，你去整形，你因为过于<span class="hl">忧郁</span>而吃药，你做了心脏、<span class="hl">肺</span>或者其他<span class="hl">器官</span>的<span class="hl">移植</span>手术，这些都会逐渐改变你的<span class="hl">面貌</span>、情绪和行为，你还是你吗？',
+    q: '根据文章，哪些因素会逐渐改变一个人的面貌、情绪和行为？',
+    opts: ['读书、旅游、运动', '整形、吃药、器官移植手术等', '和别人聊天'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 8 — Giả thuyết chia đôi bộ não của Derek Parfit',
+    zh: '德里克·帕菲特有一个<span class="hl">空前绝后</span>的<span class="hl">极端</span>假设，例如将他的大脑一分为二，移植进另外两个身体中，两个人术后从<span class="hl">昏迷</span>中<span class="hl">清醒</span>过来，都会认为："我是德里克。"但是，德里克不可能是两个人，他也不可能只是其中的一个。由此，他得出结论："个人的本体并不是真正重要的事情。"',
+    q: '德里克·帕菲特的假设最终得出了什么结论？',
+    opts: ['大脑移植手术是不可能实现的', '个人的本体并不是真正重要的事情', '一个人不可能变成两个人'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 9 — Suy ngẫm của tác giả',
+    zh: '不瞒你说，对这个问题，我是刚开始想：哲学家们的<span class="hl">言论</span>、<span class="hl">学说</span>离我们十分<span class="hl">遥远</span>，我们不会<span class="hl">陷入</span>本体的<span class="hl">思索</span>，我们也不会<span class="hl">设想</span>有大脑移植出两个人，那简直就是拿自己的<span class="hl">性命</span>开玩笑，我们只想<span class="hl">无忧无虑</span>地过日子。可是，会不会有一天，你醒来，感觉今天的我不像原来的我，而像是一个<span class="hl">崭新</span>的我了呢？',
+    q: '文章最后，作者对"本体"问题的态度是怎样的？',
+    opts: ['完全不关心这个问题', '一开始觉得离自己很遥远，但也好奇自己是否会变成"崭新的我"', '认为这个问题非常荒谬，不值一提'],
+    ans: 1,
+  },
+];
+
+const errorData = [
+  {
+    sentences: [
+      '赫拉克利特把自我比喻为一条河。',
+      '他将自己的观点阐述为：不管你变化了多少，始终只有一个你。',
+      '大卫·休谟不同意"连续的自我"的观点，他是这样阐述自己的观点的。',
+      '他是这样陈述自己的观点的："我们的思想，是连续不断的认知组成的演变过程。"',
+    ],
+    ans: 2,
+    note: '阐述 nhấn mạnh việc trình bày, làm rõ một lập luận mang tính lý luận; 陈述 nhấn mạnh việc thuật lại, trình bày một cách khách quan, tuần tự. Trong văn cảnh này, câu nói về David Hume nên dùng 陈述 (như câu D) thay vì 阐述 — câu C đã dùng sai.'
+  },
+  {
+    sentences: [
+      '一个被通缉了15年的罪犯，今天还应该受到惩罚吗？',
+      '一个被惩罚了15年的罪犯，今天还应该受到通缉吗？',
+      '今天还应该为当初触犯法律的行为受到惩罚吗？',
+      '一个被通缉多年的罪犯终于落网了。',
+    ],
+    ans: 1,
+    note: '通缉 nghĩa là "truy nã, truy lùng tội phạm đang lẩn trốn"; 惩罚 nghĩa là "trừng phạt, xử phạt sau khi đã bị bắt/xét xử". Câu B đã đảo ngược vị trí hai từ, làm sai lệch trình tự logic: phải "bị 通缉" rồi mới "受到惩罚", không thể ngược lại.'
+  },
+  {
+    sentences: [
+      '两个人术后从昏迷中清醒过来。',
+      '两个人术后从清醒中昏迷过来。',
+      '他昏迷了好几天才醒过来。',
+      '医生说病人已经清醒了，情况稳定。',
+    ],
+    ans: 1,
+    note: '昏迷 (hôn mê, bất tỉnh) và 清醒 (tỉnh táo, tỉnh lại) là một cặp trái nghĩa; phải nói "从昏迷中清醒过来" (tỉnh lại từ trạng thái hôn mê), không thể nói ngược "从清醒中昏迷过来" như câu B.'
+  },
+  {
+    sentences: [
+      '河流动时会呈现出不同的状态，但它始终是固有的那条河。',
+      '河流动时会固有出不同的状态，但它始终是固有的那条河。',
+      '那个人物具有典型的性格特点。',
+      '呈现在我们眼前的是一幅美丽的画面。',
+    ],
+    ans: 1,
+    note: '固有 (vốn có, cố hữu) là tính từ mang tính trạng thái, không thể kết hợp với bổ ngữ xu hướng 出 như 呈现出; phải dùng 呈现出 (thể hiện ra) mới đúng ngữ pháp. Câu B đã dùng sai 固有 thay vì 呈现.'
+  },
+  {
+    sentences: [
+      '一个被通缉了15年的罪犯，今天还应该为当初触犯法律的行为受到惩罚吗？',
+      '一个被通缉了15年的罪犯，今天还应该为当初惩罚法律的行为受到触犯吗？',
+      '他因触犯法律而被判刑。',
+      '这项规定不能被随意触犯。',
+    ],
+    ans: 1,
+    note: '触犯 (vi phạm, xâm phạm) thường đi với danh từ như 法律、规定; 惩罚 (trừng phạt) là hành động áp dụng lên chủ thể vi phạm. Câu B đã đảo ngược hai từ, làm câu vô nghĩa.'
+  },
+  {
+    sentences: [
+      '你感觉今天的我不像原来的我，而像是一个崭新的我了。',
+      '你感觉今天的我不像原来的我，而像是一个崭新我了。',
+      '这是一款崭新的产品，刚刚上市。',
+      '经过装修，房子变得崭新明亮。',
+    ],
+    ans: 1,
+    note: '崭新 là tính từ, khi đứng trước danh từ làm định ngữ phải có trợ từ 的 nối giữa: "崭新的 + danh từ"; câu B đã thiếu 的 giữa 崭新 và 我.'
+  },
+  {
+    sentences: [
+      '我们只想无忧无虑地过日子。',
+      '我们只想无忧无虑过日子。',
+      '孩子们无忧无虑地在草地上玩耍。',
+      '他向往无忧无虑的生活。',
+    ],
+    ans: 1,
+    note: '无忧无虑 là thành ngữ 4 chữ mang tính miêu tả trạng thái, khi làm trạng ngữ bổ nghĩa cho động từ phía sau cần có trợ từ 地; câu B đã thiếu 地 trước 过日子.'
+  },
+  {
+    sentences: [
+      '你可以推测，婴儿大卫的油画里呈现的是一个与成年大卫类似的人。',
+      '你可以确信，婴儿大卫的油画里呈现的是一个与成年大卫完全相同的人。',
+      '我们的思想，是连续不断的认知组成的演变过程。',
+      '大卫·休谟不同意"连续的自我"的观点。',
+    ],
+    ans: 1,
+    note: 'Theo nội dung bài, tác giả chỉ dùng 推测 (suy đoán) để nói rằng bức tranh trẻ thơ và người trưởng thành "类似" (giống nhau) chứ "并非完全相同" (không hoàn toàn giống nhau); câu B đã đổi thành 确信...完全相同, làm sai lệch nội dung gốc.'
+  },
+  {
+    sentences: [
+      '德里克·帕菲特有一个空前绝后的极端假设。',
+      '德里克·帕菲特有一个空前绝后极端假设。',
+      '这是一次空前绝后的演出。',
+      '他做出了一个极端的决定。',
+    ],
+    ans: 1,
+    note: 'Khi hai định ngữ (空前绝后 và 极端) cùng bổ nghĩa cho danh từ trung tâm 假设, cần có trợ từ 的 ngăn cách trước danh từ: "空前绝后的极端假设"; câu B đã thiếu 的.'
+  },
+  {
+    sentences: [
+      '哲学家们的言论、学说离我们十分遥远。',
+      '我们不会陷入本体的思索。',
+      '哲学家们的言论、学说离我们十分陷入。',
+      '我们也不会设想有大脑移植出两个人。',
+    ],
+    ans: 2,
+    note: '遥远 (tính từ, "xa xôi, xa vời") dùng để miêu tả khoảng cách/mức độ liên quan; 陷入 (động từ, "rơi vào, sa vào") dùng cho việc lâm vào một trạng thái/tình huống. Hai từ khác từ loại, không thể thay thế cho nhau; câu C đã dùng sai 陷入 thay vì 遥远.'
+  },
+];
+
+const sentData = [
+  {
+    vn: 'Cơ thể bạn đã trải qua những thay đổi long trời lở đất.',
+    zh: ['你的身上发生了翻天覆地的变化。','你的身体发生了翻天覆地的变化。'],
+    words: [
+      {zh:'你的身上', vn:'trên người/cơ thể bạn'},
+      {zh:'发生了', vn:'đã xảy ra'},
+      {zh:'翻天覆地', vn:'long trời lở đất'},
+      {zh:'的变化', vn:'sự thay đổi'},
+      {zh:'。', vn:''},
+    ],
+    note: '翻天覆地 là thành ngữ 4 chữ miêu tả sự thay đổi cực kỳ to lớn, thường làm định ngữ cho 变化.'
+  },
+  {
+    vn: 'Nếu bạn tin chắc rằng mình vẫn là mình, dù có thay đổi thế nào đi nữa.',
+    zh: ['如果你确信你就是你，不管怎样变化。','如果你确信你就是你，不管怎么变化。'],
+    words: [
+      {zh:'如果', vn:'nếu'},
+      {zh:'你确信', vn:'bạn tin chắc'},
+      {zh:'你就是你', vn:'bạn vẫn là bạn'},
+      {zh:'，', vn:''},
+      {zh:'不管', vn:'dù, bất kể'},
+      {zh:'怎样变化', vn:'thay đổi thế nào'},
+      {zh:'。', vn:''},
+    ],
+    note: '不管 + cách thức/điều kiện = dù...thế nào đi nữa, thường kết hợp với 始终/也/都 ở vế sau.'
+  },
+  {
+    vn: 'Vấn đề về bản thể đã làm các nhà triết học trăn trở suốt hơn 2500 năm.',
+    zh: '有关本体的问题，困扰了哲学家2500多年。',
+    words: [
+      {zh:'有关', vn:'liên quan đến, về'},
+      {zh:'本体', vn:'bản thể'},
+      {zh:'的问题', vn:'vấn đề'},
+      {zh:'，', vn:''},
+      {zh:'困扰了', vn:'đã làm trăn trở, gây khó khăn'},
+      {zh:'哲学家', vn:'các nhà triết học'},
+      {zh:'2500多年', vn:'hơn 2500 năm'},
+      {zh:'。', vn:''},
+    ],
+    note: '困扰 nghĩa là "gây phiền nhiễu, làm trăn trở", thường dùng với các vấn đề khó giải quyết trong thời gian dài.'
+  },
+  {
+    vn: 'Ông ví bản thân mình như một dòng sông.',
+    zh: ['他把自我比喻为一条河。','他把自己比喻为一条河。'],
+    words: [
+      {zh:'他', vn:'ông ấy'},
+      {zh:'把自我', vn:'đem bản thân/cái tôi'},
+      {zh:'比喻为', vn:'ví như, ví von thành'},
+      {zh:'一条河', vn:'một dòng sông'},
+      {zh:'。', vn:''},
+    ],
+    note: '把 + A + 比喻为 + B = ví A như B (cấu trúc chữ 把).'
+  },
+  {
+    vn: 'Dù bạn thay đổi bao nhiêu đi nữa, thì mãi mãi chỉ có một "bạn" mà thôi.',
+    zh: ['不管你变化了多少，始终只有一个你。','不管你变化多少，始终只有一个你。'],
+    words: [
+      {zh:'不管', vn:'dù, bất kể'},
+      {zh:'你变化了多少', vn:'bạn thay đổi bao nhiêu'},
+      {zh:'，', vn:''},
+      {zh:'始终', vn:'luôn luôn, mãi mãi'},
+      {zh:'只有一个你', vn:'chỉ có một "bạn"'},
+      {zh:'。', vn:''},
+    ],
+    note: '不管...，始终... = dù...thế nào, thì vẫn luôn luôn... (nhấn mạnh sự bất biến).'
+  },
+  {
+    vn: 'Giả sử Hume đúng, thì kể từ bây giờ, 10 năm sau bạn sẽ trở thành một người khác.',
+    zh: ['假如休谟是对的，那么从现在开始，10年后你就会成为另一个人。','假如休谟是对的，那从现在开始，10年后你就会成为另一个人。'],
+    words: [
+      {zh:'假如', vn:'giả sử, nếu như'},
+      {zh:'休谟是对的', vn:'Hume đúng'},
+      {zh:'，', vn:''},
+      {zh:'那么', vn:'thì, vậy thì'},
+      {zh:'从现在开始', vn:'kể từ bây giờ'},
+      {zh:'10年后', vn:'10 năm sau'},
+      {zh:'你就会成为', vn:'bạn sẽ trở thành'},
+      {zh:'另一个人', vn:'một người khác'},
+      {zh:'。', vn:''},
+    ],
+    note: '假如...，那么... = nếu như...，thì... (câu điều kiện giả định).'
+  },
+  {
+    vn: 'Tất cả những điều này đều sẽ dần dần thay đổi diện mạo, cảm xúc và hành vi của bạn.',
+    zh: ['这些都会逐渐改变你的面貌、情绪和行为。','这些都会渐渐改变你的面貌、情绪和行为。'],
+    words: [
+      {zh:'这些', vn:'những điều này'},
+      {zh:'都会逐渐', vn:'đều sẽ dần dần'},
+      {zh:'改变', vn:'thay đổi'},
+      {zh:'你的面貌、情绪和行为', vn:'diện mạo, cảm xúc và hành vi của bạn'},
+      {zh:'。', vn:''},
+    ],
+    note: '逐渐 nghĩa là "dần dần, từ từ", nhấn mạnh quá trình thay đổi diễn ra chậm rãi theo thời gian.'
+  },
+  {
+    vn: 'Từ đó, ông đưa ra kết luận: "Bản thể của mỗi cá nhân thực ra không phải là điều thực sự quan trọng."',
+    zh: '由此，他得出结论："个人的本体并不是真正重要的事情。"',
+    words: [
+      {zh:'由此', vn:'từ đó, do đó'},
+      {zh:'，', vn:''},
+      {zh:'他得出结论', vn:'ông đưa ra kết luận'},
+      {zh:'：', vn:''},
+      {zh:'个人的本体', vn:'bản thể của mỗi cá nhân'},
+      {zh:'并不是', vn:'thực ra không phải là'},
+      {zh:'真正重要的事情', vn:'điều thực sự quan trọng'},
+      {zh:'。', vn:''},
+    ],
+    note: '由此 = từ đó, do đó, dùng để dẫn vào một kết luận được rút ra từ lập luận phía trước.'
+  },
+  {
+    vn: 'Điều đó chẳng khác nào đem tính mạng của mình ra đùa giỡn.',
+    zh: ['那简直就是拿自己的性命开玩笑。','那简直是拿自己的性命开玩笑。'],
+    words: [
+      {zh:'那', vn:'điều đó'},
+      {zh:'简直就是', vn:'chẳng khác nào, quả thực là'},
+      {zh:'拿自己的性命', vn:'đem tính mạng của mình'},
+      {zh:'开玩笑', vn:'ra đùa giỡn'},
+      {zh:'。', vn:''},
+    ],
+    note: '简直就是 = quả thực là, chẳng khác nào, dùng để nhấn mạnh mức độ phóng đại của một nhận định.'
+  },
+  {
+    vn: 'Liệu có một ngày nào đó, bạn tỉnh dậy, cảm thấy mình giống như một "tôi" hoàn toàn mới tinh?',
+    zh: ['会不会有一天，你醒来，感觉自己像是一个崭新的我了呢？','会不会有一天，你醒来，觉得自己像是一个崭新的我了呢？'],
+    words: [
+      {zh:'会不会有一天', vn:'liệu có một ngày nào đó'},
+      {zh:'，', vn:''},
+      {zh:'你醒来', vn:'bạn tỉnh dậy'},
+      {zh:'，', vn:''},
+      {zh:'感觉自己', vn:'cảm thấy mình'},
+      {zh:'像是', vn:'giống như là'},
+      {zh:'一个崭新的我', vn:'một "tôi" hoàn toàn mới tinh'},
+      {zh:'了呢', vn:'(trợ từ nghi vấn, tu từ)'},
+      {zh:'？', vn:''},
+    ],
+    note: '会不会有一天...了呢？= cấu trúc nghi vấn tu từ, dùng để đặt ra một khả năng có thể xảy ra trong tương lai, mang sắc thái tự vấn, suy tư.'
+  },
+];
+
+/* ───────── TAB NAVIGATION ───────── */
+const tabs = [
+  {id:'vocab',   label:'📖 Từ vựng'},
+  {id:'transl',  label:'📜 Dịch bài khóa'},
+  {id:'grammar', label:'📐 Ngữ pháp'},
+  {id:'mc',      label:'1. Trắc nghiệm'},
+  {id:'fill',    label:'2. Điền từ'},
+  {id:'reading', label:'3. Đọc hiểu'},
+  {id:'wo',      label:'4. Tìm lỗi sai'},
+  {id:'sent',    label:'5. Dịch câu'},
+  {id:'score',   label:'6. Tổng kết'},
+];
+function buildTabs(){
+  const nav = document.getElementById('tabnav');
+  tabs.forEach((t,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (i===0?' active':'');
+    btn.textContent = t.label;
+    btn.onclick = ()=>switchTab(t.id);
+    btn.id = 'tabbtn-'+t.id;
+    nav.appendChild(btn);
+  });
+}
+function switchTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ───────── TRANSLATION OF PASSAGE ───────── */
+const translationVN = [
+  'Nếu một ngày nào đó, bạn nhìn thấy một tấm ảnh chụp thời còn là <span class="hl">trẻ sơ sinh</span> của chính mình, liệu bạn có nhận ra mình không? Có lẽ bạn sẽ nhận ra ngay lập tức, vì bạn cho rằng mình vẫn luôn là mình, nhưng thực tế, kể từ khoảnh khắc bức ảnh được chụp, cơ thể bạn đã trải qua những thay đổi <span class="hl">long trời lở đất</span>. Ví dụ, làn da của bạn kể từ khi sinh ra đã được <span class="hl">đổi mới</span> tới 130 lần. <span class="hl">Lúm đồng tiền</span> của bạn đã biến mất, năm bạn 5 tuổi, bạn <span class="hl">nhảy</span> từ trên cao xuống, <span class="hl">ngã</span> một cú, một <span class="hl">vết sẹo</span> để lại trên mặt đã <span class="hl">che giấu</span> nó đi. <span class="hl">Bộ não</span> của bạn hiện đã nặng hơn 2-3 lần so với lúc chụp bức ảnh đó.',
+  'Nếu bạn <span class="hl">tin chắc</span> rằng mình vẫn là mình, dù có thay đổi thế nào đi nữa, thì đứa trẻ sơ sinh trong bức ảnh kia rốt cuộc có phải là bạn không? Là bạn của hiện tại, hay là một "bạn" khác của quá khứ? Nếu là bạn của quá khứ, thì có bao nhiêu phiên bản "bạn" trong quá khứ? Bạn dùng máy tính tạo ra một bức ảnh của mình lúc 50 tuổi, đối với bạn, điều đó chẳng khác nào nhìn một người xa lạ.',
+  'Vấn đề về bản thể đã làm các nhà triết học trăn trở suốt hơn 2500 năm. Bản thể là gì? Bản thể được nhắc đến ở đây chính là tư tưởng hoặc thể xác của chúng ta.',
+  'Heraclitus <span class="hl">ví</span> bản thân mình như một dòng sông, dòng nước tuy luôn <span class="hl">thể hiện</span> những trạng thái khác nhau, nhưng nó vẫn luôn là dòng sông <span class="hl">vốn có</span> đó. Ông <span class="hl">trình bày</span> quan điểm của mình rằng: dù bạn thay đổi bao nhiêu đi nữa, thì mãi mãi chỉ có một "bạn" mà thôi.',
+  'David Hume không đồng ý với quan điểm "cái tôi liên tục". Ông <span class="hl">phát biểu</span> quan điểm của mình như sau: "Tư tưởng của chúng ta là một quá trình <span class="hl">diễn biến</span> được tạo thành từ những nhận thức liên tục không ngừng." Và bạn có thể <span class="hl">suy đoán</span>, ví dụ, bức tranh sơn dầu về David lúc còn nhỏ thể hiện một người có nét giống với David khi trưởng thành, chứ không hoàn toàn giống nhau.',
+  'Các nhà triết học ai nấy đều <span class="hl">phát biểu ý kiến riêng</span> của mình về vấn đề bản thể. Còn chúng ta lại nghĩ đến một số vấn đề thực tế hơn, giả sử Hume đúng, thì kể từ bây giờ, 10 năm sau bạn sẽ trở thành một người khác, liệu bạn có còn phải giữ những lời hứa mà "bạn" của hiện tại đã đưa ra không? Hay nói cách khác, một tên tội phạm bị <span class="hl">truy nã</span> suốt 15 năm, hôm nay liệu có nên vì hành vi <span class="hl">vi phạm</span> pháp luật khi xưa mà chịu sự <span class="hl">trừng phạt</span> hay không?',
+  'Mỗi chúng ta đều sẽ thay đổi. Ví dụ, bạn đi phẫu thuật thẩm mỹ, bạn uống thuốc vì quá <span class="hl">sầu muộn</span>, bạn trải qua ca <span class="hl">cấy ghép</span> tim, <span class="hl">phổi</span> hoặc các <span class="hl">cơ quan</span> khác, tất cả những điều này đều sẽ dần dần thay đổi <span class="hl">diện mạo</span>, cảm xúc và hành vi của bạn, vậy bạn có còn là bạn nữa không?',
+  'Derek Parfit có một giả thuyết <span class="hl">cực đoan</span> <span class="hl">có một không hai</span>, ví dụ như chia bộ não của ông ra làm hai, cấy ghép vào hai cơ thể khác, sau ca phẫu thuật cả hai người khi <span class="hl">tỉnh lại</span> từ trạng thái <span class="hl">hôn mê</span> đều sẽ cho rằng: "Tôi là Derek." Nhưng, Derek không thể là hai người, ông cũng không thể chỉ là một trong hai người đó. Từ đó, ông đưa ra kết luận: "Bản thể của mỗi cá nhân thực ra không phải là điều thực sự quan trọng."',
+  'Thành thật mà nói, đối với vấn đề này, ban đầu tôi từng nghĩ: những <span class="hl">lời bàn</span>, <span class="hl">học thuyết</span> của các nhà triết học <span class="hl">xa vời</span> chúng ta, chúng ta sẽ không <span class="hl">rơi vào</span> những <span class="hl">suy nghĩ tìm tòi</span> về bản thể, chúng ta cũng sẽ không <span class="hl">tưởng tượng</span> ra việc cấy ghép não để tạo ra hai người, điều đó chẳng khác nào đem <span class="hl">tính mạng</span> của mình ra đùa giỡn, chúng ta chỉ muốn sống <span class="hl">vô tư lự</span>. Nhưng, liệu có một ngày nào đó, khi bạn tỉnh dậy, cảm thấy "tôi" của hôm nay không còn giống "tôi" của trước kia, mà giống như một "tôi" <span class="hl">hoàn toàn mới tinh</span> vậy không?',
+];
+function buildTranslation(){
+  const wrap = document.getElementById('transl-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh han">${item.zh}</div>
+      <div class="passage-vn">${translationVN[i]}</div>
+    `;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── GRAMMAR ───────── */
+function buildGrammar(){
+  const wrap = document.getElementById('gram-wrap');
+  grammarData.forEach(item=>{
+    const card = document.createElement('div');
+    card.className = 'gram-card';
+    let exHtml = '';
+    item.examples.forEach(ex=>{
+      exHtml += `<div class="gram-ex"><div class="gram-ex-zh han">${ex.zh}</div><div class="gram-ex-vn">${ex.vn}</div></div>`;
+    });
+    card.innerHTML = `
+      <div class="gram-title">${item.title}</div>
+      <div class="gram-formula han">${item.formula}</div>
+      <div class="gram-explain">${item.explain}</div>
+      ${exHtml}`;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── VOCAB FLASHCARDS ───────── */
+let vocabSeen = new Set();
+function buildVocab(){
+  const grid = document.getElementById('vocab-grid');
+  vocabData.forEach((v,i)=>{
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    card.id = 'fc-'+i;
+    card.innerHTML = `
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="fc-tag">${i+1}/${vocabData.length}</span>
+          <div class="fc-zh han">${v.zh}</div>
+          <div class="fc-py">${v.py}</div>
+        </div>
+        <div class="flip-face flip-back">
+          <div class="fc-vn">${v.vn}</div>
+          <div class="fc-ex">${v.ex}</div>
+        </div>
+      </div>`;
+    card.onclick = ()=>{
+      card.classList.toggle('flipped');
+      if(!vocabSeen.has(i)){
+        vocabSeen.add(i);
+        document.getElementById('vocab-progress').textContent = vocabSeen.size + ' / ' + vocabData.length + ' đã xem';
+      }
+    };
+    grid.appendChild(card);
+  });
+}
+
+/* ───────── MULTIPLE CHOICE ───────── */
+let mcAns = new Array(mcQ.length).fill(-1);
+function buildMC(){
+  const wrap = document.getElementById('mc-wrap');
+  mcQ.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="q-text">${item.q}</div>
+      <div class="opts" id="mc-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkMC(${i})">Kiểm tra</button>
+      <div id="mc-fb-${i}" class="fb" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#mc-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      const isZh = /[\u4e00-\u9fff]/.test(opt);
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span><span class="${isZh?'opt-zh':''}">${opt}</span>`;
+      el.onclick = ()=>{
+        mcAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+        updateMCProgress();
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function updateMCProgress(){
+  const done = mcAns.filter(a=>a>=0).length;
+  document.getElementById('mc-prog').style.width = Math.round(done/mcQ.length*100)+'%';
+  document.getElementById('mc-prog-label').textContent = done+' / '+mcQ.length;
+}
+function checkMC(i){
+  if(mcAns[i]<0) return;
+  const optsDiv = document.getElementById(`mc-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===mcQ[i].ans) el.className = 'opt ok';
+    else if(k===mcAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`mc-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = mcAns[i]===mcQ[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][mcQ[i].ans];
+}
+
+/* ───────── FILL IN THE BLANK ───────── */
+let slotAns = {};
+let selChip = null;
+function buildWB(){
+  const wb = document.getElementById('wb'); wb.innerHTML=''; selChip=null;
+  fillWords.forEach(w=>{
+    const c = document.createElement('div');
+    c.className = 'chip'; c.textContent = w; c.id = 'chip-'+w;
+    c.onclick = ()=>{
+      if(c.classList.contains('used')) return;
+      document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active-chip'));
+      selChip = w; c.classList.add('active-chip');
+    };
+    wb.appendChild(c);
+  });
+}
+function buildFill(){
+  slotAns = {};
+  const fw = document.getElementById('fill-wrap'); fw.innerHTML='';
+  fillRows.forEach((row,i)=>{
+    const r = document.createElement('div');
+    r.className = 'fill-row';
+    r.innerHTML = `<span class="rn">${i+1}.</span><span class="ft">${row.pre}</span><span class="slot"><span class="slot-box" id="slot-${i}" onclick="fillSlot(${i})"></span></span><span class="ft">${row.suf}</span>`;
+    fw.appendChild(r);
+  });
+}
+function fillSlot(i){
+  if(!selChip) return;
+  const prev = slotAns[i];
+  if(prev){ const pc = document.getElementById('chip-'+prev); if(pc) pc.classList.remove('used'); }
+  slotAns[i] = selChip;
+  const s = document.getElementById('slot-'+i);
+  s.textContent = selChip; s.className = 'slot-box filled';
+  const c = document.getElementById('chip-'+selChip);
+  if(c){ c.classList.add('used'); c.classList.remove('active-chip'); }
+  selChip = null;
+}
+function checkFill(){
+  let ok=0;
+  fillRows.forEach((row,i)=>{
+    const s = document.getElementById('slot-'+i);
+    const v = slotAns[i] || '';
+    s.onclick = null;
+    if(v===row.ans){ s.className='slot-box ok'; ok++; }
+    else{ s.className='slot-box err'; s.textContent=(v||'?')+' → '+row.ans; }
+  });
+  const fb = document.getElementById('fill-fb');
+  fb.innerHTML = `<div class="fb ${ok===fillRows.length?'fb-ok':'fb-no'}">${ok===fillRows.length?'🎉 Hoàn hảo! Điền đúng hết!':'✗ Đúng '+ok+'/'+fillRows.length+'. Ô đỏ đã hiện đáp án đúng.'}</div>`;
+}
+function resetFill(){ buildWB(); buildFill(); document.getElementById('fill-fb').innerHTML=''; }
+
+/* ───────── READING COMPREHENSION ───────── */
+let readAns = new Array(readingData.length).fill(-1);
+function buildReading(){
+  const wrap = document.getElementById('reading-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh">${item.zh}</div>
+      <div class="q-card" style="margin-top:14px;margin-bottom:0;box-shadow:none;border:none;padding:14px 0 0;border-top:1px solid var(--line)">
+        <div class="q-text" style="font-weight:600">${item.q}</div>
+        <div class="opts" id="read-opts-${i}"></div>
+        <button class="chk-btn" onclick="checkRead(${i})">Kiểm tra</button>
+        <div id="read-fb-${i}" class="fb" style="display:none"></div>
+      </div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#read-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span>${opt}`;
+      el.onclick = ()=>{
+        readAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkRead(i){
+  if(readAns[i]<0) return;
+  const optsDiv = document.getElementById(`read-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===readingData[i].ans) el.className = 'opt ok';
+    else if(k===readAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`read-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = readAns[i]===readingData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][readingData[i].ans];
+}
+
+/* ───────── ERROR CORRECTION ───────── */
+let errAns = new Array(errorData.length).fill(-1);
+function buildWO(){
+  const wrap = document.getElementById('wo-wrap');
+  errorData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'err-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="err-opts" id="err-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkErr(${i})">Kiểm tra</button>
+      <div id="err-fb-${i}" class="fb" style="display:none"></div>
+      <div id="err-note-${i}" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#err-opts-${i}`);
+    item.sentences.forEach((s,j)=>{
+      const el = document.createElement('div');
+      el.className = 'err-opt';
+      el.innerHTML = `<span class="err-lbl">${['A','B','C','D'][j]}</span><span class="han">${s}</span>`;
+      el.onclick = ()=>{
+        errAns[i] = j;
+        optsDiv.querySelectorAll('.err-opt').forEach((o,k)=>{ o.className = 'err-opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkErr(i){
+  if(errAns[i]<0) return;
+  const optsDiv = document.getElementById(`err-opts-${i}`);
+  optsDiv.querySelectorAll('.err-opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===errorData[i].ans) el.className = 'err-opt ok';
+    else if(k===errAns[i]) el.className = 'err-opt no';
+    else el.className = 'err-opt';
+  });
+  const fb = document.getElementById(`err-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = errAns[i]===errorData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác! Đây đúng là câu sai.' : '✗ Chưa đúng. Câu sai là: '+['A','B','C','D'][errorData[i].ans];
+  const noteDiv = document.getElementById(`err-note-${i}`);
+  noteDiv.style.display = 'block';
+  noteDiv.innerHTML = `<div class="err-note">${errorData[i].note}</div>`;
+}
+
+/* ───────── SENTENCE TRANSLATION ───────── */
+let sentAnswers = {};
+let sentSubmitted = {};
+function normalizeChinese(s){
+  return (s||'').replace(/[，,。.！!？?；;\s]/g,'').trim();
+}
+function matchSentAns(val, item){
+  const answers = Array.isArray(item.zh) ? item.zh : [item.zh];
+  return answers.find(a => normalizeChinese(val)===normalizeChinese(a)) || null;
+}
+function getPrimaryAns(item){
+  return Array.isArray(item.zh) ? item.zh[0] : item.zh;
+}
+function buildSentences(){
+  const wrap = document.getElementById('sent-wrap');
+  sentData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'sent-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="sent-vn">${item.vn}</div>
+      <input class="sent-input" id="sent-input-${i}" placeholder="Nhập câu tiếng Trung..."
+        onkeydown="if(event.key==='Enter')checkSentSingle(${i})">
+      <button class="sent-check-btn" onclick="checkSentSingle(${i})">Kiểm tra</button>
+      <div id="sent-result-${i}"></div>`;
+    wrap.appendChild(card);
+  });
+}
+function checkSentSingle(i){
+  const input = document.getElementById('sent-input-'+i);
+  const val = input.value;
+  sentAnswers[i] = val;
+  sentSubmitted[i] = true;
+  const item = sentData[i];
+  const matched = matchSentAns(val, item);
+  const resultDiv = document.getElementById('sent-result-'+i);
+  const primary = getPrimaryAns(item);
+  let html = '';
+  if(matched){
+    html += `<div class="sent-fb fb-ok">✓ Chính xác!</div>`;
+  } else {
+    html += `<div class="sent-fb fb-no">✗ Chưa đúng. Xem phân tích đáp án bên dưới.</div>`;
+  }
+  html += `<div class="sent-explain">
+    <div class="sent-explain-zh han">${primary}</div>
+    <div class="se-words">`;
+  item.words.forEach(w=>{
+    html += `<div class="se-word"><div class="se-word-zh han">${w.zh}</div><div class="se-word-vn">${w.vn}</div></div>`;
+  });
+  html += `</div><div class="se-note">${item.note}</div></div>`;
+  resultDiv.innerHTML = html;
+}
+
+/* ───────── SCORE SUMMARY ───────── */
+function renderScoreTable(computed){
+  const mcTot=mcQ.length, fillTot=fillRows.length, readTot=readingData.length, errTot=errorData.length, sentTot=sentData.length;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pctOf = (ok,tot)=> tot>0 ? Math.round(ok/tot*100) : 0;
+  const dash = '—';
+
+  const wrap = document.getElementById('score-wrap');
+
+  if(!computed){
+    wrap.innerHTML = `
+      <div class="score-wrap">
+        <div class="score-ring"><span class="score-ring-num">${dash}</span><span class="score-ring-tot">${dash}/${totalAll}</span></div>
+        <div class="score-title">Nhấn "Tính điểm tổng kết" để xem kết quả</div>
+        <div class="score-sub">Tổng số câu của bài: ${totalAll}</div>
+        <table class="score-table">
+          <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+          <tr><td>1. Trắc nghiệm</td><td>${dash}</td><td>${mcTot}</td><td>${dash}</td></tr>
+          <tr><td>2. Điền từ</td><td>${dash}</td><td>${fillTot}</td><td>${dash}</td></tr>
+          <tr><td>3. Đọc hiểu</td><td>${dash}</td><td>${readTot}</td><td>${dash}</td></tr>
+          <tr><td>4. Tìm lỗi sai</td><td>${dash}</td><td>${errTot}</td><td>${dash}</td></tr>
+          <tr><td>5. Dịch câu</td><td>${dash}</td><td>${sentTot}</td><td>${dash}</td></tr>
+          <tr><td>TỔNG</td><td>${dash}</td><td>${totalAll}</td><td>${dash}</td></tr>
+        </table>
+      </div>`;
+    return;
+  }
+
+  const {mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict} = computed;
+  wrap.innerHTML = `
+    <div class="score-wrap">
+      <div class="score-ring"><span class="score-ring-num">${pct}%</span><span class="score-ring-tot">${totalOk}/${totalAll}</span></div>
+      <div class="score-title">${verdict}</div>
+      <div class="score-sub">Tổng số câu đúng: ${totalOk} / ${totalAll}</div>
+      <table class="score-table">
+        <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+        <tr><td>1. Trắc nghiệm</td><td>${mcOk}</td><td>${mcTot}</td><td>${pctOf(mcOk,mcTot)}%</td></tr>
+        <tr><td>2. Điền từ</td><td>${fillOk}</td><td>${fillTot}</td><td>${pctOf(fillOk,fillTot)}%</td></tr>
+        <tr><td>3. Đọc hiểu</td><td>${readOk}</td><td>${readTot}</td><td>${pctOf(readOk,readTot)}%</td></tr>
+        <tr><td>4. Tìm lỗi sai</td><td>${errOk}</td><td>${errTot}</td><td>${pctOf(errOk,errTot)}%</td></tr>
+        <tr><td>5. Dịch câu</td><td>${sentOk}</td><td>${sentTot}</td><td>${pctOf(sentOk,sentTot)}%</td></tr>
+        <tr><td>TỔNG</td><td>${totalOk}</td><td>${totalAll}</td><td>${pct}%</td></tr>
+      </table>
+    </div>`;
+}
+
+function calcScore(){
+  let mcOk=0, mcTot=mcQ.length;
+  mcAns.forEach((a,i)=>{ if(a===mcQ[i].ans) mcOk++; });
+
+  let fillOk=0, fillTot=fillRows.length;
+  fillRows.forEach((row,i)=>{ if(slotAns[i]===row.ans) fillOk++; });
+
+  let readOk=0, readTot=readingData.length;
+  readAns.forEach((a,i)=>{ if(a===readingData[i].ans) readOk++; });
+
+  let errOk=0, errTot=errorData.length;
+  errAns.forEach((a,i)=>{ if(a===errorData[i].ans) errOk++; });
+
+  let sentOk=0, sentTot=sentData.length;
+  sentData.forEach((item,i)=>{
+    if(sentSubmitted[i] && matchSentAns(sentAnswers[i]||'', item)) sentOk++;
+  });
+
+  const totalOk = mcOk+fillOk+readOk+errOk+sentOk;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pct = totalAll>0 ? Math.round(totalOk/totalAll*100) : 0;
+
+  let verdict;
+  if(pct>=90) verdict = '⭐ Xuất sắc! Bạn đã nắm rất vững bài học này.';
+  else if(pct>=70) verdict = '👍 Giỏi! Còn vài điểm nhỏ cần ôn lại.';
+  else if(pct>=50) verdict = '📖 Khá! Nên ôn lại các phần từ vựng và ngữ pháp.';
+  else verdict = '💪 Cần ôn tập lại kỹ hơn các phần từ vựng cốt lõi.';
+
+  renderScoreTable({mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict});
+  switchTab('score');
+}
+
+/* ───────── INIT ───────── */
+buildTabs();
+buildVocab();
+buildTranslation();
+buildGrammar();
+buildMC();
+buildWB();
+buildFill();
+buildReading();
+buildWO();
+buildSentences();
+renderScoreTable();
+
+</script>
+</body>
+</html>

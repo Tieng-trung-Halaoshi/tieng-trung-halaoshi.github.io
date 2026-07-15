@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HSK 6 – Bài 3: 一盒月饼 | Ôn tập Từ vựng &amp; Ngữ pháp</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:      #1B2233;
+  --ink-soft: #4B5568;
+  --paper:    #F7F9FC;
+  --paper2:   #EBF0F7;
+  --line:     #D6DEEA;
+  --gold:     #8C6F2E;
+  --gold-d:   #6A5420;
+  --gold-bg:  #EFE5C6;
+  --jade:     #35507D;
+  --jade-d:   #223452;
+  --jade-bg:  #DCE3F0;
+  --plum:     #6B3550;
+  --plum-bg:  #F1DEE6;
+  --rust:     #8C3A2B;
+  --rust-bg:  #F5E0D6;
+  --ok:       #1E5E2E;
+  --ok-bg:    #DEEDE0;
+  --bad:      #8C2C2C;
+  --bad-bg:   #F6DEDE;
+  --shadow:   0 6px 24px rgba(27,34,51,.08);
+  --r:        4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.5}
+.han{font-family:'Noto Serif SC',serif}
+
+/* ─── HERO ─── */
+.hero{
+  background:linear-gradient(160deg,var(--jade-d) 0%, var(--jade) 55%, #5C2415 100%);
+  padding:40px 20px 64px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;opacity:.06;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 38px,#fff 38px,#fff 39px);
+}
+.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-bg);font-weight:700;margin-bottom:10px;opacity:.85}
+.hero-title-zh{font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px}
+.hero-title-vn{font-size:15px;color:rgba(255,255,255,.78);margin-bottom:18px;font-style:italic}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hmeta-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:5px 14px;font-size:12px;color:#fff;font-weight:600}
+
+/* ─── NAV TABS ─── */
+.tabnav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tabnav-inner{max-width:760px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.tabnav-inner::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;padding:13px 16px;font-size:13px;font-weight:600;color:var(--ink-soft);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:'Source Sans 3',sans-serif;transition:all .15s}
+.tab-btn.active{color:var(--jade-d);border-bottom-color:var(--jade)}
+.tab-btn:hover{color:var(--jade-d)}
+
+/* ─── MAIN ─── */
+main{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+.tab-pane{display:none}
+.tab-pane.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.section-head{margin-bottom:20px}
+.section-title{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.section-sub{font-size:13px;color:var(--ink-soft)}
+
+/* ─── PROGRESS ─── */
+.progress-row{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.progress-track{flex:1;height:5px;background:var(--paper2);border-radius:3px;overflow:hidden}
+.progress-fill{height:5px;background:var(--jade);border-radius:3px;transition:width .35s}
+.progress-label{font-size:11px;color:var(--ink-soft);white-space:nowrap;font-weight:600}
+
+/* ─── VOCAB FLASHCARDS ─── */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.flip-card{position:relative;height:140px;perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;border-radius:8px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;border:1px solid var(--line)}
+.flip-front{background:var(--paper);box-shadow:var(--shadow)}
+.flip-back{background:var(--jade-d);color:#fff;transform:rotateY(180deg)}
+.fc-zh{font-family:'Noto Serif SC',serif;font-size:25px;font-weight:700;color:var(--ink);margin-bottom:4px;text-align:center}
+.fc-py{font-size:11px;color:var(--gold-d);font-weight:600}
+.fc-tag{position:absolute;top:8px;right:10px;font-size:9px;color:var(--ink-soft);opacity:.5}
+.fc-vn{font-size:14px;font-weight:700;color:#fff;text-align:center;margin-bottom:6px;padding:0 4px}
+.fc-ex{font-size:10.5px;color:rgba(255,255,255,.75);text-align:center;padding:0 8px;font-family:'Noto Serif SC',serif;line-height:1.45}
+.vocab-progress{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:16px;font-weight:600}
+
+/* ─── MC ─── */
+.q-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.q-tag{font-size:11px;color:var(--ink-soft);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.q-text{font-size:15px;color:var(--ink);margin-bottom:12px;line-height:1.6}
+.q-text .han{font-size:17px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:14px;color:var(--ink);transition:all .12s;background:#fff}
+.opt:hover{background:var(--paper2)}
+.opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opt-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.opt-zh{font-family:'Noto Serif SC',serif;font-weight:600}
+.chk-btn{margin-top:10px;padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.chk-btn:hover{background:var(--jade-bg)}
+.fb{font-size:13px;margin-top:9px;padding:8px 12px;border-radius:6px;font-weight:600}
+.fb-ok{background:var(--ok-bg);color:var(--ok)}
+.fb-no{background:var(--bad-bg);color:var(--bad)}
+
+/* ─── FILL ─── */
+.wb-box{background:var(--gold-bg);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid var(--line)}
+.wb-label{font-size:11px;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.06em;margin-bottom:9px}
+.wb-chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:#fff;border:1px solid var(--gold-d);border-radius:20px;padding:6px 15px;font-size:15px;font-family:'Noto Serif SC',serif;font-weight:600;color:var(--gold-d);cursor:pointer;transition:all .12s}
+.chip:hover{background:var(--gold-bg)}
+.chip.used{background:var(--paper2);border-color:var(--line);color:var(--ink-soft);text-decoration:line-through;cursor:default}
+.chip.active-chip{outline:2px solid var(--gold-d);outline-offset:1px}
+.fill-rows{display:flex;flex-direction:column;gap:9px}
+.fill-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.rn{font-size:12px;color:var(--ink-soft);font-weight:700;min-width:20px}
+.ft{font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink)}
+.slot{display:inline-flex;flex-direction:column;align-items:center}
+.slot-box{min-width:62px;height:34px;border:none;border-bottom:2px solid var(--gold);background:transparent;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--gold-d);font-weight:700;text-align:center;cursor:pointer;border-radius:0;padding:0 4px}
+.slot-box:empty::before{content:'＿＿';color:var(--ink-soft);font-weight:400;font-size:14px}
+.slot-box.filled{border-bottom-color:var(--gold-d)}
+.slot-box.ok{background:var(--ok-bg);color:var(--ok);border-bottom-color:var(--ok);border-radius:4px}
+.slot-box.err{background:var(--bad-bg);color:var(--bad);border-bottom-color:var(--bad);border-radius:4px}
+.fill-actions{display:flex;gap:8px;margin-top:14px}
+.fill-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--gold-d);background:transparent;color:var(--gold-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.fill-btn:hover{background:var(--gold-bg)}
+.reset-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--ink-soft);background:transparent;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+
+/* ─── GRAMMAR ─── */
+.gram-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
+.gram-title{font-size:16px;font-weight:700;color:var(--plum);margin-bottom:9px;font-family:'Noto Serif SC',serif}
+.gram-formula{background:var(--gold-bg);color:var(--gold-d);padding:9px 12px;border-radius:6px;font-size:14.5px;font-weight:700;margin-bottom:10px;font-family:'Noto Serif SC',serif;display:inline-block}
+.gram-explain{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px;line-height:1.65}
+.gram-ex{background:var(--paper2);border-radius:6px;padding:10px 12px;margin-bottom:7px}
+.gram-ex:last-child{margin-bottom:0}
+.gram-ex-zh{font-size:15.5px;font-weight:600;color:var(--ink);font-family:'Noto Serif SC',serif}
+.gram-ex-vn{font-size:12px;color:var(--ink-soft);margin-top:3px;font-style:italic}
+
+/* ─── DIALOGUE/READING ─── */
+.passage-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:16px;box-shadow:var(--shadow)}
+.passage-title{font-size:13px;font-weight:700;color:var(--plum);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+.passage-zh{font-family:'Noto Serif SC',serif;font-size:16px;line-height:2;color:var(--ink);text-align:justify}
+.passage-zh .hl{background:var(--gold-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--gold-d)}
+.passage-vn{font-size:14.5px;line-height:1.85;color:var(--ink-soft);text-align:justify;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.passage-vn .hl{background:var(--jade-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--jade-d)}
+
+/* ─── ERROR CORRECTION ─── */
+.err-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.err-sentence{font-family:'Noto Serif SC',serif;font-size:17px;line-height:1.8;color:var(--ink);margin-bottom:14px;padding:10px 12px;background:var(--rust-bg);border-radius:6px;border-left:3px solid var(--rust)}
+.err-sentence u{text-decoration:none;background:#fff;border-bottom:2px solid var(--rust);padding:0 2px;font-weight:700;color:var(--rust)}
+.err-opts{display:flex;flex-direction:column;gap:7px}
+.err-opt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:15px;font-family:'Noto Serif SC',serif;color:var(--ink);transition:all .12s;background:#fff;line-height:1.6}
+.err-opt:hover{background:var(--paper2)}
+.err-opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.err-opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.err-opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.err-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;font-family:'Source Sans 3',sans-serif}
+.err-note{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:12.5px;color:var(--ink-soft);font-style:italic;line-height:1.55}
+
+/* ─── TRANSLATION ─── */
+.sent-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.sent-vn{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.55}
+.sent-input{width:100%;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink);outline:none}
+.sent-input:focus{border-color:var(--jade)}
+.sent-check-btn{margin-top:8px;padding:7px 16px;font-size:12px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.sent-fb{font-size:13px;margin-top:9px;padding:9px 12px;border-radius:6px;font-weight:600}
+.sent-explain{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:13px}
+.sent-explain-zh{font-family:'Noto Serif SC',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.se-words{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.se-word{background:#fff;border:1px solid var(--line);border-radius:5px;padding:5px 9px;text-align:center}
+.se-word-zh{font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;color:var(--ink)}
+.se-word-vn{font-size:10px;color:var(--ink-soft);margin-top:1px}
+.se-note{font-size:12.5px;color:var(--ink-soft);font-style:italic;border-top:1px solid var(--line);padding-top:8px}
+
+/* ─── SCORE ─── */
+.score-wrap{background:linear-gradient(160deg,var(--jade-d),var(--jade));border-radius:10px;padding:24px 20px;color:#fff;text-align:center;margin-bottom:20px}
+.score-ring{width:90px;height:90px;border-radius:50%;border:4px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px}
+.score-ring-num{font-size:24px;font-weight:800}
+.score-ring-tot{font-size:11px;opacity:.75}
+.score-title{font-size:17px;font-weight:700;margin-bottom:5px}
+.score-sub{font-size:13px;opacity:.85}
+.score-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}
+.score-table th{text-align:left;padding:9px 10px;background:rgba(255,255,255,.12);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+.score-table td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.15)}
+.score-table tr:last-child td{border-bottom:none;font-weight:700}
+.submit-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--jade),var(--jade-d));color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;box-shadow:0 4px 16px rgba(122,51,28,.35);margin-bottom:18px}
+.submit-btn:hover{transform:translateY(-1px)}
+
+/* ─── NAV ARROWS ─── */
+.pane-nav{display:flex;justify-content:space-between;margin-top:24px}
+.nav-arrow{padding:9px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.nav-arrow:hover{border-color:var(--jade);color:var(--jade-d)}
+
+footer.wm{text-align:center;font-size:11.5px;color:var(--ink-soft);padding:18px;font-style:italic;border-top:1px solid var(--line)}
+
+@media(max-width:480px){
+  .vocab-grid{grid-template-columns:1fr}
+  .hero-title-zh{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Tiếng Trung Halaoshi · HSK 6 · 标准教程 6上 第3课</div>
+    <div class="hero-title-zh">一盒月饼</div>
+    <div class="hero-title-vn">Một hộp bánh Trung thu — Ôn tập từ vựng &amp; ngữ pháp</div>
+    <div class="hero-meta">
+      <span class="hmeta-chip">📖 42 từ vựng</span>
+      <span class="hmeta-chip">⏱ ~25 phút</span>
+      <span class="hmeta-chip">🎯 6 phần luyện tập</span>
+    </div>
+  </div>
+</div>
+
+<nav class="tabnav">
+  <div class="tabnav-inner" id="tabnav"></div>
+</nav>
+
+<main>
+
+  <!-- VOCAB -->
+  <section class="tab-pane active" id="pane-vocab">
+    <div class="section-head">
+      <div class="section-title">Từ vựng bài học</div>
+      <div class="section-sub">Nhấn vào thẻ để lật — xem pinyin, nghĩa và ví dụ trong văn cảnh bài đọc.</div>
+    </div>
+    <div class="vocab-grid" id="vocab-grid"></div>
+    <div class="vocab-progress" id="vocab-progress">0 / 42 đã xem</div>
+  </section>
+
+  <!-- TRANSLATION OF PASSAGE -->
+  <section class="tab-pane" id="pane-transl">
+    <div class="section-head">
+      <div class="section-title">Dịch bài khóa</div>
+      <div class="section-sub">Bản dịch tiếng Việt theo từng đoạn — từ mới và thành ngữ được tô màu tương ứng ở cả bản tiếng Trung (vàng) và bản dịch (chàm xanh).</div>
+    </div>
+    <div id="transl-wrap"></div>
+  </section>
+
+  <!-- GRAMMAR -->
+  <section class="tab-pane" id="pane-grammar">
+    <div class="section-head">
+      <div class="section-title">Ôn ngữ pháp chính trong bài khóa</div>
+      <div class="section-sub">Các cấu trúc ngữ pháp trọng tâm xuất hiện trong bài đọc, kèm ví dụ trích trực tiếp từ bài khóa.</div>
+    </div>
+    <div id="gram-wrap"></div>
+  </section>
+
+  <!-- MC -->
+  <section class="tab-pane" id="pane-mc">
+    <div class="section-head">
+      <div class="section-title">Phần 1 — Trắc nghiệm</div>
+      <div class="section-sub">Chọn nghĩa hoặc cách dùng đúng nhất cho mỗi từ / cấu trúc.</div>
+    </div>
+    <div class="progress-row"><div class="progress-track"><div class="progress-fill" id="mc-prog" style="width:0%"></div></div><div class="progress-label" id="mc-prog-label">0 / 12</div></div>
+    <div id="mc-wrap"></div>
+  </section>
+
+  <!-- FILL -->
+  <section class="tab-pane" id="pane-fill">
+    <div class="section-head">
+      <div class="section-title">Phần 2 — Điền từ vào chỗ trống</div>
+      <div class="section-sub">Chọn từ trong khung gợi ý, sau đó nhấn vào ô trống để điền.</div>
+    </div>
+    <div class="wb-box">
+      <div class="wb-label">📦 Ngân hàng từ</div>
+      <div class="wb-chips" id="wb"></div>
+    </div>
+    <div class="fill-rows" id="fill-wrap"></div>
+    <div class="fill-actions">
+      <button class="fill-btn" onclick="checkFill()">Kiểm tra</button>
+      <button class="reset-btn" onclick="resetFill()">↺ Làm lại</button>
+    </div>
+    <div id="fill-fb" style="margin-top:10px"></div>
+  </section>
+
+  <!-- READING -->
+  <section class="tab-pane" id="pane-reading">
+    <div class="section-head">
+      <div class="section-title">Phần 3 — Đọc hiểu trích đoạn</div>
+      <div class="section-sub">Đọc đoạn văn gốc, các từ vựng trọng tâm được tô vàng, sau đó trả lời câu hỏi.</div>
+    </div>
+    <div id="reading-wrap"></div>
+  </section>
+
+  <!-- ERROR CORRECTION -->
+  <section class="tab-pane" id="pane-wo">
+    <div class="section-head">
+      <div class="section-title">Phần 4 — Tìm lỗi sai</div>
+      <div class="section-sub">Trong 4 câu A, B, C, D dưới đây, chỉ có 1 câu chứa lỗi sai. Hãy chọn ra câu đó.</div>
+    </div>
+    <div id="wo-wrap"></div>
+  </section>
+
+  <!-- TRANSLATION -->
+  <section class="tab-pane" id="pane-sent">
+    <div class="section-head">
+      <div class="section-title">Phần 5 — Dịch câu sang tiếng Trung</div>
+      <div class="section-sub">Gõ câu tiếng Trung tương ứng. Sau khi kiểm tra sẽ có phân tích từ và ngữ pháp.</div>
+    </div>
+    <div id="sent-wrap"></div>
+  </section>
+
+  <!-- SCORE -->
+  <section class="tab-pane" id="pane-score">
+    <div class="section-head">
+      <div class="section-title">Phần 6 — Tổng kết điểm số</div>
+      <div class="section-sub">Tổng hợp kết quả toàn bộ các phần đã làm.</div>
+    </div>
+    <div id="score-wrap"></div>
+    <button class="submit-btn" onclick="calcScore()">🎯 Tính điểm tổng kết</button>
+  </section>
+
+</main>
+
+<footer class="wm">© Tiếng Trung Halaoshi — Tài liệu ôn tập HSK 6, Bài 3</footer>
+
+<script>
+const vocabData = [
+  {zh:'月饼',py:'yuèbǐng',vn:'bánh Trung thu',ex:'中秋节快到了，要给他寄盒月饼。',exvn:'Trung thu sắp đến, muốn gửi cho ông ấy một hộp bánh Trung thu.'},
+  {zh:'清晨',py:'qīngchén',vn:'sáng sớm',ex:'清晨上班，走到公司楼下。',exvn:'Sáng sớm đi làm, đi đến dưới tòa nhà công ty.'},
+  {zh:'迎面',py:'yíngmiàn',vn:'trước mặt, đối diện',ex:'迎面站着一位农民工模样的男人。',exvn:'Trước mặt đứng một người đàn ông có dáng vẻ công nhân.'},
+  {zh:'模样',py:'múyàng',vn:'vẻ bề ngoài, diện mạo',ex:'迎面站着一位农民工模样的男人。',exvn:'Trước mặt đứng một người đàn ông có dáng vẻ công nhân.'},
+  {zh:'打量',py:'dǎliang',vn:'quan sát (quần áo, diện mạo)',ex:'他打量了我一番，到嘴边的话又咽了。',exvn:'Ông ấy quan sát tôi một lượt, lời đến miệng lại nuốt vào.'},
+  {zh:'番',py:'fān',vn:'lượt, hồi, lần',ex:'他打量了我一番。',exvn:'Ông ấy quan sát tôi một lượt.'},
+  {zh:'搓',py:'cuō',vn:'xoa, vò',ex:'他搓着手，迟疑地说。',exvn:'Ông ấy xoa xoa hai tay, ngập ngừng nói.'},
+  {zh:'迟疑',py:'chíyí',vn:'chần chừ, ngập ngừng',ex:'他搓着手，迟疑地说。',exvn:'Ông ấy xoa xoa hai tay, ngập ngừng nói.'},
+  {zh:'拜托',py:'bàituō',vn:'xin nhờ',ex:'有件事想拜托你。',exvn:'Có việc muốn nhờ anh.'},
+  {zh:'饱经沧桑',py:'bǎojīng-cāngsāng',vn:'nếm đủ mùi đời, từng trải',ex:'饱经沧桑的脸上流露出朴实。',exvn:'Gương mặt từng trải phong sương lộ vẻ chất phác.'},
+  {zh:'流露',py:'liúlù',vn:'bộc lộ, để lộ ra',ex:'饱经沧桑的脸上流露出朴实。',exvn:'Gương mặt từng trải phong sương lộ vẻ chất phác.'},
+  {zh:'朴实',py:'pǔshí',vn:'thật thà, chất phác',ex:'饱经沧桑的脸上流露出朴实。',exvn:'Gương mặt từng trải phong sương lộ vẻ chất phác.'},
+  {zh:'过于',py:'guòyú',vn:'quá',ex:'一双过于操劳的大手。',exvn:'Một đôi bàn tay to, làm việc quá vất vả.'},
+  {zh:'操劳',py:'cāoláo',vn:'làm việc vất vả',ex:'一双过于操劳的大手。',exvn:'Một đôi bàn tay to, làm việc quá vất vả.'},
+  {zh:'胡须',py:'húxū',vn:'râu',ex:'胡须起码一个星期没刮了。',exvn:'Râu ít nhất một tuần chưa cạo.'},
+  {zh:'起码',py:'qǐmǎ',vn:'ít nhất, tối thiểu',ex:'胡须起码一个星期没刮了。',exvn:'Râu ít nhất một tuần chưa cạo.'},
+  {zh:'口音',py:'kǒuyīn',vn:'giọng',ex:'南方口音。',exvn:'Giọng miền Nam.'},
+  {zh:'乡镇',py:'xiāngzhèn',vn:'thị trấn nhỏ',ex:'他来自南方的一个乡镇。',exvn:'Ông ấy đến từ một thị trấn nhỏ ở miền Nam.'},
+  {zh:'原先',py:'yuánxiān',vn:'ban đầu, trước kia',ex:'原先是裁缝。',exvn:'Trước kia là thợ may.'},
+  {zh:'裁缝',py:'cáifeng',vn:'thợ may',ex:'原先是裁缝，现在在港口干活。',exvn:'Trước kia là thợ may, bây giờ làm việc ở bến cảng.'},
+  {zh:'港口',py:'gǎngkǒu',vn:'bến cảng',ex:'现在在我们寄住的港口干活。',exvn:'Bây giờ làm việc ở bến cảng nơi chúng tôi trọ.'},
+  {zh:'斯文',py:'sīwén',vn:'lịch sự, nhã nhặn',ex:'斯斯文文的，一看就读过书。',exvn:'Nhã nhặn lịch sự, nhìn là biết có học.'},
+  {zh:'心眼儿',py:'xīnyǎnr',vn:'bụng dạ, lòng',ex:'心眼儿好，守信誉，怎么会欺骗我呢？',exvn:'Bụng dạ tốt, giữ chữ tín, sao có thể lừa gạt tôi được?'},
+  {zh:'信誉',py:'xìnyù',vn:'uy tín, danh dự',ex:'心眼儿好，守信誉。',exvn:'Bụng dạ tốt, giữ chữ tín.'},
+  {zh:'欺骗',py:'qīpiàn',vn:'lừa gạt',ex:'怎么会欺骗我呢？',exvn:'Sao có thể lừa gạt tôi được?'},
+  {zh:'学位',py:'xuéwèi',vn:'học vị',ex:'他说女儿念了硕士，有学位。',exvn:'Ông ấy nói con gái học thạc sĩ, có học vị.'},
+  {zh:'一流',py:'yīliú',vn:'hạng nhất',ex:'在一家一流的公司上班。',exvn:'Làm việc ở một công ty hạng nhất.'},
+  {zh:'主管',py:'zhǔguǎn',vn:'người quản lý',ex:'是主管，还有助手。',exvn:'Là quản lý, còn có trợ lý.'},
+  {zh:'助手',py:'zhùshǒu',vn:'trợ lý',ex:'是主管，还有助手。',exvn:'Là quản lý, còn có trợ lý.'},
+  {zh:'骨干',py:'gǔgàn',vn:'trụ cột, rường cột',ex:'怎么也算得上是公司的骨干。',exvn:'Thế nào cũng được coi là trụ cột của công ty.'},
+  {zh:'小心翼翼',py:'xiǎoxīn-yìyì',vn:'thận trọng, dè dặt',ex:'他小心翼翼地收起来。',exvn:'Ông ấy cẩn thận, dè dặt cất đi.'},
+  {zh:'喜悦',py:'xǐyuè',vn:'vui sướng',ex:'满脸的喜悦。',exvn:'Cả gương mặt đầy vui sướng.'},
+  {zh:'拨',py:'bō',vn:'gọi (điện thoại)',ex:'我马上拨打张师傅的电话。',exvn:'Tôi lập tức gọi điện cho thầy Trương.'},
+  {zh:'仍旧',py:'réngjiù',vn:'vẫn',ex:'仍旧没有音信。',exvn:'Vẫn không có tin tức gì.'},
+  {zh:'隐约',py:'yǐnyuē',vn:'lờ mờ, mang máng, mập mờ',ex:'我心里隐约有些不安。',exvn:'Trong lòng tôi thấp thoáng có chút bất an.'},
+  {zh:'浑身',py:'húnshēn',vn:'toàn thân, khắp người',ex:'浑身汗水的张师傅来了。',exvn:'Thầy Trương mồ hôi đầm đìa khắp người đến.'},
+  {zh:'惦记',py:'diànjì',vn:'nhớ đến, lo lắng',ex:'别惦记，好好工作。',exvn:'Đừng lo lắng, làm việc cho tốt.'},
+  {zh:'丢人',py:'diūrén',vn:'mất mặt, mất thể diện',ex:'别给爸爸丢人啊。',exvn:'Đừng làm bố mất mặt nhé.'},
+  {zh:'炫耀',py:'xuànyào',vn:'khoe khoang',ex:'张师傅还恋恋不舍地向我炫耀他的女儿。',exvn:'Thầy Trương còn quyến luyến khoe khoang về con gái mình với tôi.'},
+  {zh:'面子',py:'miànzi',vn:'thể diện, sĩ diện',ex:'要面子着呢。',exvn:'Rất coi trọng thể diện đấy.'},
+  {zh:'辜负',py:'gūfù',vn:'phụ lòng',ex:'从来没有辜负过我的期望。',exvn:'Chưa bao giờ phụ lòng mong đợi của tôi.'},
+  {zh:'期望',py:'qīwàng',vn:'kỳ vọng, mong đợi',ex:'从来没有辜负过我的期望。',exvn:'Chưa bao giờ phụ lòng mong đợi của tôi.'},
+];
+const mcQ = [
+  {q:'<span class="han">打量</span> nghĩa là gì?',
+   opts:['Quan sát kỹ dáng vẻ, quần áo của ai đó','Bỏ qua, không để ý đến ai đó','Chào hỏi một cách vội vàng'], ans:0},
+  {q:'<span class="han">迟疑</span> nghĩa là gì?',
+   opts:['Trả lời nhanh gọn, dứt khoát','Chần chừ, ngập ngừng trước khi nói/làm','Tức giận, gắt gỏng'], ans:1},
+  {q:'<span class="han">饱经沧桑</span> dùng để miêu tả điều gì?',
+   opts:['Gương mặt/con người từng trải phong sương','Một món ăn ngon','Một nơi mới xây dựng'], ans:0},
+  {q:'<span class="han">朴实</span> nghĩa là gì?',
+   opts:['Xa hoa, lộng lẫy','Thật thà, chất phác, giản dị','Kiêu ngạo, hống hách'], ans:1},
+  {q:'<span class="han">起码</span> nghĩa là gì?',
+   opts:['Nhiều nhất, tối đa','Ít nhất, tối thiểu','Vừa đủ, chính xác'], ans:1},
+  {q:'<span class="han">斯文</span> nghĩa là gì?',
+   opts:['Lịch sự, nhã nhặn, có học thức','Thô lỗ, cục cằn','Nhút nhát, sợ sệt'], ans:0},
+  {q:'<span class="han">心眼儿</span> (trong câu <span class="han">心眼儿好</span>) nghĩa là gì?',
+   opts:['Đôi mắt','Bụng dạ, tấm lòng','Trí thông minh'], ans:1},
+  {q:'<span class="han">小心翼翼</span> miêu tả trạng thái nào?',
+   opts:['Vội vàng, hấp tấp','Thận trọng, dè dặt, cẩn thận','Thờ ơ, hờ hững'], ans:1},
+  {q:'<span class="han">隐约</span> nghĩa là gì?',
+   opts:['Rõ ràng, chắc chắn','Lờ mờ, mang máng, mập mờ','Mạnh mẽ, dữ dội'], ans:1},
+  {q:'<span class="han">丢人</span> nghĩa là gì?',
+   opts:['Mất mặt, mất thể diện','Đánh mất đồ vật','Bị lạc đường'], ans:0},
+  {q:'<span class="han">炫耀</span> nghĩa là gì?',
+   opts:['Giấu giếm, che đậy','Khoe khoang, phô trương','Từ chối, khước từ'], ans:1},
+  {q:'<span class="han">辜负</span> nghĩa là gì?',
+   opts:['Đáp lại, không phụ lòng','Phụ lòng, làm thất vọng kỳ vọng của ai đó','Giúp đỡ hết mình'], ans:1},
+];
+
+const fillWords = ['打量','迟疑','拜托','朴实','小心翼翼','隐约','惦记','辜负'];
+const fillRows = [
+  {pre:'他', ans:'打量', suf:'了我一番，到嘴边的话又咽了。', py:'dǎliang'},
+  {pre:'我停住脚步，疑惑地问他有事吗，他搓着手，', ans:'迟疑', suf:'地说："有件事想拜托你。"', py:'chíyí'},
+  {pre:'他说："您说吧，只要能帮的，我一定帮。"其实他是想', ans:'拜托', suf:'我帮他收一下包裹。', py:'bàituō'},
+  {pre:'这回轮到我打量他了，饱经沧桑的脸上流露出', ans:'朴实', suf:'。', py:'pǔshí'},
+  {pre:'我记下了他的电话，给了他一张我的名片，他', ans:'小心翼翼', suf:'地收起来，满脸的喜悦。', py:'xiǎoxīn-yìyì'},
+  {pre:'我心里', ans:'隐约', suf:'有些不安，找着包裹就往工地跑。', py:'yǐnyuē'},
+  {pre:'"心心，月饼爸爸收到了……你身体好呢，别', ans:'惦记', suf:'，好好工作。"', py:'diànjì'},
+  {pre:'"要面子着呢，从来没有', ans:'辜负', suf:'过我的期望。"', py:'gūfù'},
+];
+const readingData = [
+  {
+    title: 'Đoạn 1 — Cuộc gặp bất ngờ trước cổng công ty',
+    zh: '<span class="hl">清晨</span>上班，走到公司楼下，<span class="hl">迎面</span>站着一位农民工<span class="hl">模样</span>的男人，他<span class="hl">打量</span>了我一<span class="hl">番</span>，到嘴边的话又咽了。',
+    q: '关于"我"和那位农民工模样的男人第一次相遇的场景，下列哪项正确？',
+    opts: ['男人一见面就直接说明了来意','男人打量了"我"一番，话到嘴边又咽了回去，欲言又止','男人对"我"视而不见，径直走开了'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 2 — Lời nhờ vả ngập ngừng',
+    zh: '我停住脚步，疑惑地问："您有事吗？"他<span class="hl">搓</span>着手，<span class="hl">迟疑</span>地说："有件事想<span class="hl">拜托</span>你。""您说吧，只要能帮的，我一定帮。"这回轮到我打量他了：<span class="hl">饱经沧桑</span>的脸上<span class="hl">流露</span>出<span class="hl">朴实</span>；一双<span class="hl">过于</span><span class="hl">操劳</span>的大手；<span class="hl">胡须</span><span class="hl">起码</span>一个星期没刮了；南方<span class="hl">口音</span>。',
+    q: '"我"停下脚步询问后，男人是什么反应？他给"我"留下了怎样的印象？',
+    opts: ['男人立刻大声说出了自己的要求','男人搓着手，迟疑地开口相求，"我"从他的外貌看出他是个朴实、辛苦劳作的南方人','男人一言不发，转身离开了'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 3 — Người cha xa quê',
+    zh: '果然，他来自南方的一个<span class="hl">乡镇</span>，<span class="hl">原先</span>是<span class="hl">裁缝</span>，现在在我们寄住的<span class="hl">港口</span>干活。他女儿在上海，中秋节快到了，要给他寄盒月饼，可他白天在工地，地址没法写，想请我帮他代收一下。',
+    q: '关于这位农民工的背景和请求，下列哪项正确？',
+    opts: ['他原来是老师，现在在学校工作','他原先是裁缝，现在在港口打工，女儿要给他寄月饼，请"我"代收','他是本地人，从未离开过家乡'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 4 — Niềm tự hào về con gái',
+    zh: '"这个忙好帮，您不怕我把收到的月饼给吃了？"我半开玩笑地说。他笑着说："不会，你和我女儿一样，<span class="hl">斯文</span>斯文的，一看就读过书，<span class="hl">心眼儿</span>好，守<span class="hl">信誉</span>，怎么会<span class="hl">欺骗</span>我呢？"他说女儿念了硕士，有<span class="hl">学位</span>，在一家<span class="hl">一流</span>的公司上班，是<span class="hl">主管</span>，还有<span class="hl">助手</span>，怎么也算得上是公司的<span class="hl">骨干</span>。说起女儿，他满脸的骄傲。',
+    q: '男人说起女儿时，表现出怎样的态度？他为什么相信"我"不会欺骗他？',
+    opts: ['他满脸骄傲，认为女儿信誉好、有学位、是公司骨干，也因此相信"我"是个可靠的人','他满脸担忧，怕女儿在外面受欺负','他毫不在意，觉得女儿的事跟自己无关'],
+    ans: 0,
+  },
+  {
+    title: 'Đoạn 5 — Bưu kiện bí ẩn',
+    zh: '我记下了他的电话，给了他一张我的名片。他<span class="hl">小心翼翼</span>地收起来，满脸的<span class="hl">喜悦</span>。第三天中午，我收到了一个重重的包裹，发件人叫"张以悦"。我马上<span class="hl">拨</span>打张师傅的电话，却无人接听，给他发短信，他也不回，直到下班，<span class="hl">仍旧</span>没有音信。',
+    q: '第三天中午发生了什么事？"我"当时的处境如何？',
+    opts: ['"我"收到了张师傅亲自送来的包裹','"我"收到了一个署名"张以悦"的包裹，但联系不上张师傅本人','张师傅亲自来"我"公司取走了包裹'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 6 — Chạy đến công trường',
+    zh: '我心里<span class="hl">隐约</span>有些不安，找着包裹就往工地跑，找一位工人，请他帮忙找张师傅来。一会儿，<span class="hl">浑身</span>汗水的张师傅来了。他觉得又是道歉又是感谢，说今天特别忙，手机没电了都不知道。看着就要拆包，我拦住他说："月饼可不能拆。我说家里孩子想吃盒装的月饼还有，还是赶快给女儿打电话吧。"',
+    q: '张师傅赶来后是什么状态？"我"为什么要拦住他，不让他拆包？',
+    opts: ['张师傅十分平静，"我"也没有阻止他拆包','张师傅浑身汗水、又道歉又感谢，"我"提醒他应该先给女儿打电话，而不是急着拆包','张师傅拒绝收下这个包裹'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 7 — Cuộc điện thoại đầy tự hào',
+    zh: '电话通了，张师傅满脸慈爱，笑得别提多灿烂了："心心，月饼爸爸收到了，……你身体好呢，别<span class="hl">惦记</span>，好好工作，别给爸爸<span class="hl">丢人</span>啊……"讲完电话，张师傅还恋恋不舍地向我<span class="hl">炫耀</span>他的女儿，"要<span class="hl">面子</span>着呢，从来没有<span class="hl">辜负</span>过我的<span class="hl">期望</span>。"',
+    q: '张师傅在电话里对女儿说了什么？这体现出他怎样的父爱？',
+    opts: ['他只关心月饼有没有被路上吃掉','他叮嘱女儿注意身体、好好工作，事后还骄傲地向"我"炫耀女儿的优秀，体现出深沉又骄傲的父爱','他责备女儿寄月饼太浪费钱'],
+    ans: 1,
+  },
+];
+const translationVN = [
+  '<span class="hl">Sáng sớm</span> đi làm, đi đến dưới tòa nhà công ty, <span class="hl">trước mặt</span> đứng một người đàn ông có <span class="hl">dáng vẻ</span> công nhân, ông ấy <span class="hl">quan sát</span> tôi một <span class="hl">lượt</span>, lời đã đến miệng lại nuốt vào.',
+  'Tôi dừng bước, nghi hoặc hỏi: "Ông có việc gì không?" Ông ấy <span class="hl">xoa</span> hai tay, <span class="hl">ngập ngừng</span> nói: "Có việc muốn <span class="hl">nhờ</span> anh." "Ông cứ nói đi, chỉ cần giúp được, tôi nhất định sẽ giúp." Lần này đến lượt tôi quan sát ông ấy: gương mặt <span class="hl">từng trải phong sương</span> <span class="hl">lộ ra</span> vẻ <span class="hl">chất phác</span>; một đôi bàn tay <span class="hl">quá</span> <span class="hl">vất vả</span>; <span class="hl">râu</span> <span class="hl">ít nhất</span> một tuần chưa cạo; <span class="hl">giọng</span> miền Nam.',
+  'Quả nhiên, ông ấy đến từ một <span class="hl">thị trấn nhỏ</span> ở miền Nam, <span class="hl">trước kia</span> là <span class="hl">thợ may</span>, bây giờ làm việc ở <span class="hl">bến cảng</span> nơi chúng tôi trọ. Con gái ông ấy ở Thượng Hải, Trung thu sắp đến, muốn gửi cho ông một hộp bánh Trung thu, nhưng ban ngày ông ở công trường, không thể viết địa chỉ, nên muốn nhờ tôi nhận giúp.',
+  '"Việc này dễ giúp thôi, ông không sợ tôi ăn mất bánh Trung thu nhận được à?" Tôi nửa đùa nửa thật nói. Ông ấy cười nói: "Không đâu, anh cũng giống con gái tôi, <span class="hl">nhã nhặn</span> lịch sự, nhìn là biết có học, <span class="hl">bụng dạ</span> tốt, giữ <span class="hl">chữ tín</span>, sao có thể <span class="hl">lừa gạt</span> tôi được?" Ông ấy nói con gái học thạc sĩ, có <span class="hl">học vị</span>, làm việc ở một công ty <span class="hl">hạng nhất</span>, là <span class="hl">quản lý</span>, còn có <span class="hl">trợ lý</span>, thế nào cũng được coi là <span class="hl">trụ cột</span> của công ty. Nhắc đến con gái, ông ấy cả gương mặt đầy tự hào.',
+  'Tôi ghi lại số điện thoại của ông ấy, đưa cho ông một tấm danh thiếp của mình. Ông ấy <span class="hl">thận trọng, dè dặt</span> cất đi, cả gương mặt đầy <span class="hl">vui sướng</span>. Trưa ngày thứ ba, tôi nhận được một bưu kiện khá nặng, người gửi tên là "Trương Dĩ Duyệt". Tôi lập tức <span class="hl">gọi</span> điện cho thầy Trương, nhưng không ai nghe máy, nhắn tin cho ông cũng không trả lời, cho đến khi tan làm, <span class="hl">vẫn</span> không có tin tức gì.',
+  'Trong lòng tôi <span class="hl">thấp thoáng</span> có chút bất an, cầm bưu kiện liền chạy ra công trường, tìm một người công nhân, nhờ anh ta gọi giúp thầy Trương ra. Một lát sau, thầy Trương <span class="hl">toàn thân</span> mồ hôi đến. Ông vừa xin lỗi vừa cảm ơn rối rít, nói hôm nay đặc biệt bận, điện thoại hết pin cũng không hay biết. Thấy ông sắp mở gói ra, tôi ngăn lại nói: "Bánh Trung thu không thể mở ra đâu. Tôi nói ở nhà bọn trẻ muốn ăn bánh còn nguyên hộp, ông cứ mau gọi điện cho con gái đi."',
+  'Điện thoại kết nối, gương mặt thầy Trương tràn đầy hiền từ, cười tươi không thể tả: "Tâm Tâm à, bánh Trung thu bố nhận được rồi... con giữ gìn sức khỏe nhé, đừng <span class="hl">lo lắng</span>, cứ chăm chỉ làm việc, đừng để bố <span class="hl">mất mặt</span> nhé..." Nói điện thoại xong, thầy Trương vẫn còn quyến luyến <span class="hl">khoe khoang</span> về con gái mình với tôi, "Con bé rất coi trọng <span class="hl">thể diện</span> đấy, chưa bao giờ <span class="hl">phụ lòng</span> <span class="hl">kỳ vọng</span> của tôi."',
+];
+const errorData = [
+  {
+    sentences: [
+      '他打量了我一番，从头看到脚。',
+      '做决定之前要好好衡量利弊。',
+      '他衡量了我一番，从头看到脚。',
+      '老板正在打量这批新员工。',
+    ],
+    ans: 2,
+    note: '打量 dùng để quan sát ngoại hình, dáng vẻ cụ thể của người hoặc vật (从头看到脚); 衡量 dùng để cân nhắc, đánh giá những điều trừu tượng như lợi hại, được mất. Câu C dùng nhầm 衡量 để tả hành động nhìn ngắm người, phải dùng 打量.'
+  },
+  {
+    sentences: [
+      '他搓着手，迟疑地说有件事想拜托我。',
+      '面对两个工作机会，她犹豫了很久。',
+      '说话之前他迟疑了一下。',
+      '面对两个工作机会，她迟疑了很久，最终选了那份稳定的工作。',
+    ],
+    ans: 3,
+    note: '迟疑 tả sự chần chừ thoáng qua, ngắn ngủi ngay trước một hành động cụ thể (nói, quyết định tức thời); 犹豫 tả sự phân vân kéo dài giữa nhiều lựa chọn. Câu D dùng 迟疑 cho tình huống cân nhắc lâu dài là chưa chuẩn, phải dùng 犹豫.'
+  },
+  {
+    sentences: [
+      '饱经沧桑的脸上流露出朴实。',
+      '他是个老实巴交的人，从不撒谎。',
+      '这篇文章写得很朴实，没有华丽的辞藻。',
+      '饱经沧桑的脸上流露出老实。',
+    ],
+    ans: 3,
+    note: '朴实 nhấn mạnh sự giản dị, mộc mạc, chân chất, có thể dùng cho vẻ ngoài, phong cách viết, đồ vật; 老实 nhấn mạnh tính cách thật thà, không dối trá, chủ yếu tả người. Câu D dùng 老实 để tả biểu cảm khuôn mặt là không phù hợp, phải dùng 朴实.'
+  },
+  {
+    sentences: [
+      '胡须起码一个星期没刮了。',
+      '这个箱子起码有十公斤重。',
+      '现在大约是晚上八点。',
+      '胡须大约一个星期没刮了。',
+    ],
+    ans: 3,
+    note: '起码 nhấn mạnh mức tối thiểu chắc chắn đạt được ("ít nhất là..., còn có thể nhiều hơn"); 大约 chỉ mức độ ước lượng, không chắc chắn ("khoảng chừng"). Câu D dùng 大约 làm mất đi sắc thái "chắc chắn tối thiểu" của câu gốc, phải dùng 起码.'
+  },
+  {
+    sentences: [
+      '你和我女儿一样，斯斯文文的，一看就读过书。',
+      '她性格文静，不太爱说话。',
+      '他是个很文静的男孩，很少和人吵架。',
+      '你和我女儿一样，斯斯文文的，性格却很文静，一点也不爱说话。',
+    ],
+    ans: 3,
+    note: '斯文 nhấn mạnh dáng vẻ, cử chỉ nho nhã, lịch thiệp, có học thức (thường nhận biết qua ngoại hình); 文静 nhấn mạnh tính cách trầm tĩnh, ít nói. Hai từ có thể cùng tồn tại nhưng câu D dùng "却" tạo quan hệ tương phản vô lý giữa hai từ vốn không đối lập nhau, khiến câu trở nên khó hiểu và không tự nhiên.'
+  },
+  {
+    sentences: [
+      '心眼儿好，守信誉，怎么会欺骗我呢？',
+      '今天她心情特别好，一直在笑。',
+      '心情好，守信誉，怎么会欺骗我呢？',
+      '他是个心眼儿好的人，从不占别人便宜。',
+    ],
+    ans: 2,
+    note: '心眼儿 (trong ngữ cảnh này) chỉ bụng dạ, phẩm chất đạo đức của một người (tốt bụng, lương thiện); 心情 chỉ trạng thái cảm xúc nhất thời (vui, buồn). Câu C dùng 心情 thay 心眼儿 khiến lý do "không lừa gạt" trở nên vô lý — tâm trạng tốt không đồng nghĩa với việc không lừa gạt ai.'
+  },
+  {
+    sentences: [
+      '他小心翼翼地收起来，满脸的喜悦。',
+      '医生小心翼翼地为病人做手术。',
+      '他漫不经心地收起来，满脸的喜悦。',
+      '面对陌生的环境，孩子小心翼翼地迈出了第一步。',
+    ],
+    ans: 2,
+    note: '小心翼翼 nghĩa là thận trọng, dè dặt, tỉ mỉ từng chút một; 漫不经心 nghĩa hoàn toàn trái ngược — hờ hững, không để tâm. Câu C dùng 漫不经心 lại đi kèm "满脸的喜悦" (vui sướng, trân trọng) là mâu thuẫn về sắc thái, phải dùng 小心翼翼.'
+  },
+  {
+    sentences: [
+      '我心里隐约有些不安。',
+      '远处隐约传来歌声。',
+      '我心里明显有些不安，脸都白了。',
+      '我心里隐约有些不安，脸都白了。',
+    ],
+    ans: 3,
+    note: '隐约 diễn tả cảm giác/âm thanh mơ hồ, lờ mờ, chưa rõ ràng; nếu đã "脸都白了" (mặt tái mét) thì cảm xúc bất an đã rất rõ ràng, mạnh mẽ, không còn "mơ hồ" nữa. Câu D dùng 隐约 mâu thuẫn với mức độ biểu hiện rõ rệt ở vế sau, nên dùng 明显 mới hợp lý.'
+  },
+  {
+    sentences: [
+      '别给爸爸丢人啊。',
+      '他不小心把钱包丢了。',
+      '别给爸爸丢失啊。',
+      '考试没考好，他觉得很丢人。',
+    ],
+    ans: 2,
+    note: '丢人 nghĩa là mất mặt, mất thể diện (dùng cho danh dự, uy tín); 丢失 nghĩa là làm mất, đánh mất một đồ vật cụ thể. Hai từ đều chứa chữ 丢 nhưng nghĩa khác hẳn — câu C dùng nhầm 丢失 (đánh mất đồ vật) thay vì 丢人 (mất thể diện), khiến câu trở nên vô nghĩa.'
+  },
+  {
+    sentences: [
+      '他从来没有辜负过我的期望。',
+      '他违背了自己许下的诺言。',
+      '他从来没有违背过我的期望。',
+      '做人不能辜负别人的信任。',
+    ],
+    ans: 2,
+    note: '辜负 thường đi cùng 期望/希望/信任, nghĩa là "phụ lòng, làm thất vọng kỳ vọng của ai đó"; 违背 thường đi cùng 诺言/规定/原则, nghĩa là "làm trái, đi ngược lại một quy tắc hoặc lời hứa". Câu C dùng 违背 với 期望 là kết hợp không tự nhiên trong tiếng Trung, phải dùng 辜负.'
+  },
+];
+const sentData = [
+  {
+    vn: 'Trước mặt đứng một người đàn ông có dáng vẻ công nhân.',
+    zh: ['迎面站着一位农民工模样的男人。'],
+    words: [
+      {zh:'迎面', vn:'trước mặt'},
+      {zh:'站着', vn:'đang đứng'},
+      {zh:'一位', vn:'một (người)'},
+      {zh:'农民工模样的', vn:'có dáng vẻ công nhân'},
+      {zh:'男人', vn:'người đàn ông'},
+      {zh:'。', vn:''},
+    ],
+    note: '迎面 + V + 着 = trước mặt đang... (miêu tả người/vật xuất hiện ngay trước mắt)'
+  },
+  {
+    vn: 'Ông ấy xoa xoa hai tay, ngập ngừng nói có việc muốn nhờ tôi giúp.',
+    zh: ['他搓着手，迟疑地说有件事想拜托我。'],
+    words: [
+      {zh:'他', vn:'ông ấy'},
+      {zh:'搓着手', vn:'xoa xoa hai tay'},
+      {zh:'，', vn:''},
+      {zh:'迟疑地', vn:'ngập ngừng'},
+      {zh:'说', vn:'nói'},
+      {zh:'有件事', vn:'có việc'},
+      {zh:'想拜托我', vn:'muốn nhờ tôi'},
+      {zh:'。', vn:''},
+    ],
+    note: 'V着 + V = vừa làm A vừa làm B (diễn tả hai hành động diễn ra đồng thời)'
+  },
+  {
+    vn: 'Gương mặt từng trải phong sương của ông ấy lộ ra vẻ chất phác.',
+    zh: ['他饱经沧桑的脸上流露出朴实。'],
+    words: [
+      {zh:'他', vn:'ông ấy'},
+      {zh:'饱经沧桑的', vn:'từng trải phong sương'},
+      {zh:'脸上', vn:'trên gương mặt'},
+      {zh:'流露出', vn:'lộ ra, để lộ'},
+      {zh:'朴实', vn:'chất phác'},
+      {zh:'。', vn:''},
+    ],
+    note: '流露出 + tính từ/danh từ trừu tượng = để lộ ra (cảm xúc, tính cách)'
+  },
+  {
+    vn: 'Một đôi bàn tay to, làm việc quá vất vả.',
+    zh: ['一双过于操劳的大手。'],
+    words: [
+      {zh:'一双', vn:'một đôi'},
+      {zh:'过于', vn:'quá'},
+      {zh:'操劳的', vn:'vất vả (do làm việc nhiều)'},
+      {zh:'大手', vn:'bàn tay to'},
+      {zh:'。', vn:''},
+    ],
+    note: '过于 + tính từ/động từ = quá... (mang sắc thái vượt mức, hơi tiêu cực)'
+  },
+  {
+    vn: 'Ông ấy trước kia là thợ may, bây giờ làm việc ở bến cảng.',
+    zh: ['他原先是裁缝，现在在港口干活。'],
+    words: [
+      {zh:'他', vn:'ông ấy'},
+      {zh:'原先', vn:'trước kia'},
+      {zh:'是裁缝', vn:'là thợ may'},
+      {zh:'，', vn:''},
+      {zh:'现在', vn:'bây giờ'},
+      {zh:'在港口', vn:'ở bến cảng'},
+      {zh:'干活', vn:'làm việc'},
+      {zh:'。', vn:''},
+    ],
+    note: '原先...现在... = trước kia... bây giờ... (cấu trúc đối lập về thời gian)'
+  },
+  {
+    vn: 'Bụng dạ tốt, giữ chữ tín, sao có thể lừa gạt tôi được?',
+    zh: ['心眼儿好，守信誉，怎么会欺骗我呢？'],
+    words: [
+      {zh:'心眼儿好', vn:'bụng dạ tốt'},
+      {zh:'，', vn:''},
+      {zh:'守信誉', vn:'giữ chữ tín'},
+      {zh:'，', vn:''},
+      {zh:'怎么会', vn:'sao có thể'},
+      {zh:'欺骗我', vn:'lừa gạt tôi'},
+      {zh:'呢', vn:'(trợ từ nghi vấn)'},
+      {zh:'？', vn:''},
+    ],
+    note: '怎么会...呢？ = câu hỏi tu từ phủ định mạnh, nghĩa là "làm sao có thể... được"'
+  },
+  {
+    vn: 'Ông ấy cẩn thận, dè dặt cất tấm danh thiếp đi, cả khuôn mặt đầy vui sướng.',
+    zh: ['他小心翼翼地收起来，满脸的喜悦。'],
+    words: [
+      {zh:'他', vn:'ông ấy'},
+      {zh:'小心翼翼地', vn:'cẩn thận, dè dặt'},
+      {zh:'收起来', vn:'cất đi'},
+      {zh:'，', vn:''},
+      {zh:'满脸的', vn:'cả khuôn mặt đầy'},
+      {zh:'喜悦', vn:'vui sướng'},
+      {zh:'。', vn:''},
+    ],
+    note: '小心翼翼地 + V = cẩn thận, dè dặt làm gì; 满脸的 + N = cả khuôn mặt đầy...'
+  },
+  {
+    vn: 'Tôi lập tức gọi điện cho thầy Trương, nhưng không ai nghe máy.',
+    zh: ['我马上拨打张师傅的电话，却无人接听。'],
+    words: [
+      {zh:'我', vn:'tôi'},
+      {zh:'马上', vn:'lập tức'},
+      {zh:'拨打', vn:'gọi (điện thoại)'},
+      {zh:'张师傅的电话', vn:'điện thoại của thầy Trương'},
+      {zh:'，', vn:''},
+      {zh:'却', vn:'nhưng, lại'},
+      {zh:'无人接听', vn:'không ai nghe máy'},
+      {zh:'。', vn:''},
+    ],
+    note: '却 = nhưng, lại (biểu thị sự chuyển ý, tương phản với điều được kỳ vọng)'
+  },
+  {
+    vn: 'Trong lòng tôi thấp thoáng có chút bất an, liền cầm bưu kiện chạy ra công trường.',
+    zh: ['我心里隐约有些不安，找着包裹就往工地跑。'],
+    words: [
+      {zh:'我心里', vn:'trong lòng tôi'},
+      {zh:'隐约', vn:'thấp thoáng, mơ hồ'},
+      {zh:'有些不安', vn:'có chút bất an'},
+      {zh:'，', vn:''},
+      {zh:'找着包裹', vn:'cầm lấy bưu kiện'},
+      {zh:'就', vn:'liền'},
+      {zh:'往工地跑', vn:'chạy ra công trường'},
+      {zh:'。', vn:''},
+    ],
+    note: '隐约 + có/mang tính chất gì đó = mơ hồ, thấp thoáng cảm thấy...'
+  },
+  {
+    vn: 'Ông ấy chưa bao giờ phụ lòng mong đợi của tôi.',
+    zh: ['他从来没有辜负过我的期望。'],
+    words: [
+      {zh:'他', vn:'ông ấy'},
+      {zh:'从来没有', vn:'chưa bao giờ'},
+      {zh:'辜负过', vn:'phụ lòng'},
+      {zh:'我的期望', vn:'kỳ vọng của tôi'},
+      {zh:'。', vn:''},
+    ],
+    note: '辜负 + 期望/希望/信任 = phụ lòng mong đợi/kỳ vọng/niềm tin của ai đó'
+  },
+];
+const grammarData = [
+  {
+    title: '起码 + thời gian + 没 + V + 了',
+    formula: '起码 + [khoảng thời gian] + 没 + Động từ + 了',
+    explain: 'Diễn tả khoảng thời gian tối thiểu mà một hành động chưa xảy ra, nhấn mạnh "ít nhất cũng đã bao lâu rồi không làm gì", ngụ ý thực tế có thể còn lâu hơn thế.',
+    examples: [
+      {zh:'胡须起码一个星期没刮了。', vn:'Râu ít nhất một tuần chưa cạo.'},
+      {zh:'我起码三天没给他打电话了。', vn:'Tôi ít nhất ba ngày chưa gọi điện cho anh ấy.'},
+    ]
+  },
+  {
+    title: 'V + 得上 (算得上)',
+    formula: '算得上 + là gì / 算不上 + là gì',
+    explain: '算得上 nghĩa là "có thể coi là, xứng đáng được gọi là", dùng để đánh giá, khẳng định một điều gì đó đạt tiêu chuẩn nhất định. Phủ định là 算不上.',
+    examples: [
+      {zh:'怎么也算得上是公司的骨干。', vn:'Thế nào cũng được coi là trụ cột của công ty.'},
+      {zh:'他的中文水平算得上是一流的。', vn:'Trình độ tiếng Trung của anh ấy có thể coi là hạng nhất.'},
+    ]
+  },
+  {
+    title: '怎么会...呢？',
+    formula: '怎么会 + Động từ/Tính từ + 呢？',
+    explain: 'Câu hỏi tu từ, dùng để phủ định mạnh mẽ một khả năng nào đó, tương đương "làm sao có thể... được", thường mang hàm ý khẳng định điều ngược lại.',
+    examples: [
+      {zh:'心眼儿好，守信誉，怎么会欺骗我呢？', vn:'Bụng dạ tốt, giữ chữ tín, sao có thể lừa gạt tôi được?'},
+      {zh:'他那么忙，怎么会有时间呢？', vn:'Anh ấy bận như thế, sao có thể có thời gian được?'},
+    ]
+  },
+  {
+    title: '满脸的 + Danh từ / Tính từ',
+    formula: '满脸(的) + danh từ/tính từ biểu cảm',
+    explain: 'Cấu trúc miêu tả một biểu cảm rõ rệt, bao trùm cả khuôn mặt, thường dùng để tả niềm tự hào, vui sướng, xót xa...',
+    examples: [
+      {zh:'说起女儿，他满脸的骄傲。', vn:'Nhắc đến con gái, cả khuôn mặt ông ấy đầy tự hào.'},
+      {zh:'他小心翼翼地收起来，满脸的喜悦。', vn:'Ông ấy cẩn thận cất đi, cả khuôn mặt đầy vui sướng.'},
+    ]
+  },
+  {
+    title: 'Từ láy đôi + 地 làm trạng ngữ chỉ cách thức',
+    formula: 'AABB/ABAB + 地 + Động từ',
+    explain: 'Từ láy đôi (thường là dạng nhân đôi của tính từ hoặc động từ) kết hợp với 地 để làm trạng ngữ, miêu tả cách thức thực hiện hành động một cách sinh động, giàu hình ảnh.',
+    examples: [
+      {zh:'他小心翼翼地收起来。', vn:'Ông ấy cẩn thận, dè dặt cất đi.'},
+      {zh:'张师傅还恋恋不舍地向我炫耀他的女儿。', vn:'Thầy Trương còn quyến luyến khoe khoang về con gái với tôi.'},
+    ]
+  },
+  {
+    title: '别提多 + Tính từ + 了',
+    formula: 'V得 / Adj 得 + 别提多 + Tính từ + 了',
+    explain: 'Cấu trúc khẩu ngữ nhấn mạnh mức độ rất cao của điều gì đó, mang nghĩa "không thể tả hết được bao nhiêu...", thường dùng trong văn nói.',
+    examples: [
+      {zh:'笑得别提多灿烂了。', vn:'Cười tươi rói không thể tả được.'},
+      {zh:'今天别提多高兴了。', vn:'Hôm nay vui không thể tả được.'},
+    ]
+  },
+  {
+    title: '却 — biểu thị chuyển ý, tương phản',
+    formula: 'Mệnh đề A, 却 + Mệnh đề B',
+    explain: '却 diễn tả sự chuyển ý, tương phản với những gì được kỳ vọng hoặc dự đoán ở phần trước, thường dịch là "nhưng, lại".',
+    examples: [
+      {zh:'我马上拨打张师傅的电话，却无人接听。', vn:'Tôi lập tức gọi điện cho thầy Trương, nhưng không ai nghe máy.'},
+      {zh:'他很努力，却没有成功。', vn:'Anh ấy rất cố gắng, nhưng lại không thành công.'},
+    ]
+  },
+];
+
+/* ───────── TAB NAVIGATION ───────── */
+const tabs = [
+  {id:'vocab',   label:'📖 Từ vựng'},
+  {id:'transl',  label:'📜 Dịch bài khóa'},
+  {id:'grammar', label:'📐 Ngữ pháp'},
+  {id:'mc',      label:'1. Trắc nghiệm'},
+  {id:'fill',    label:'2. Điền từ'},
+  {id:'reading', label:'3. Đọc hiểu'},
+  {id:'wo',      label:'4. Tìm lỗi sai'},
+  {id:'sent',    label:'5. Dịch câu'},
+  {id:'score',   label:'6. Tổng kết'},
+];
+function buildTabs(){
+  const nav = document.getElementById('tabnav');
+  tabs.forEach((t,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (i===0?' active':'');
+    btn.textContent = t.label;
+    btn.onclick = ()=>switchTab(t.id);
+    btn.id = 'tabbtn-'+t.id;
+    nav.appendChild(btn);
+  });
+}
+function switchTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ───────── TRANSLATION OF PASSAGE ───────── */
+function buildTranslation(){
+  const wrap = document.getElementById('transl-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh han">${item.zh}</div>
+      <div class="passage-vn">${translationVN[i]}</div>
+    `;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── GRAMMAR ───────── */
+function buildGrammar(){
+  const wrap = document.getElementById('gram-wrap');
+  grammarData.forEach(item=>{
+    const card = document.createElement('div');
+    card.className = 'gram-card';
+    let exHtml = '';
+    item.examples.forEach(ex=>{
+      exHtml += `<div class="gram-ex"><div class="gram-ex-zh han">${ex.zh}</div><div class="gram-ex-vn">${ex.vn}</div></div>`;
+    });
+    card.innerHTML = `
+      <div class="gram-title">${item.title}</div>
+      <div class="gram-formula han">${item.formula}</div>
+      <div class="gram-explain">${item.explain}</div>
+      ${exHtml}`;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── VOCAB FLASHCARDS ───────── */
+let vocabSeen = new Set();
+function buildVocab(){
+  const grid = document.getElementById('vocab-grid');
+  vocabData.forEach((v,i)=>{
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    card.id = 'fc-'+i;
+    card.innerHTML = `
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="fc-tag">${i+1}/44</span>
+          <div class="fc-zh han">${v.zh}</div>
+          <div class="fc-py">${v.py}</div>
+        </div>
+        <div class="flip-face flip-back">
+          <div class="fc-vn">${v.vn}</div>
+          <div class="fc-ex">${v.ex}</div>
+        </div>
+      </div>`;
+    card.onclick = ()=>{
+      card.classList.toggle('flipped');
+      if(!vocabSeen.has(i)){
+        vocabSeen.add(i);
+        document.getElementById('vocab-progress').textContent = vocabSeen.size + ' / ' + vocabData.length + ' đã xem';
+      }
+    };
+    grid.appendChild(card);
+  });
+}
+
+/* ───────── MULTIPLE CHOICE ───────── */
+let mcAns = new Array(mcQ.length).fill(-1);
+function buildMC(){
+  const wrap = document.getElementById('mc-wrap');
+  mcQ.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="q-text">${item.q}</div>
+      <div class="opts" id="mc-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkMC(${i})">Kiểm tra</button>
+      <div id="mc-fb-${i}" class="fb" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#mc-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      const isZh = /[\u4e00-\u9fff]/.test(opt);
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span><span class="${isZh?'opt-zh':''}">${opt}</span>`;
+      el.onclick = ()=>{
+        mcAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+        updateMCProgress();
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function updateMCProgress(){
+  const done = mcAns.filter(a=>a>=0).length;
+  document.getElementById('mc-prog').style.width = Math.round(done/mcQ.length*100)+'%';
+  document.getElementById('mc-prog-label').textContent = done+' / '+mcQ.length;
+}
+function checkMC(i){
+  if(mcAns[i]<0) return;
+  const optsDiv = document.getElementById(`mc-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===mcQ[i].ans) el.className = 'opt ok';
+    else if(k===mcAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`mc-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = mcAns[i]===mcQ[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][mcQ[i].ans];
+}
+
+/* ───────── FILL IN THE BLANK ───────── */
+let slotAns = {};
+let selChip = null;
+function buildWB(){
+  const wb = document.getElementById('wb'); wb.innerHTML=''; selChip=null;
+  fillWords.forEach(w=>{
+    const c = document.createElement('div');
+    c.className = 'chip'; c.textContent = w; c.id = 'chip-'+w;
+    c.onclick = ()=>{
+      if(c.classList.contains('used')) return;
+      document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active-chip'));
+      selChip = w; c.classList.add('active-chip');
+    };
+    wb.appendChild(c);
+  });
+}
+function buildFill(){
+  slotAns = {};
+  const fw = document.getElementById('fill-wrap'); fw.innerHTML='';
+  fillRows.forEach((row,i)=>{
+    const r = document.createElement('div');
+    r.className = 'fill-row';
+    r.innerHTML = `<span class="rn">${i+1}.</span><span class="ft">${row.pre}</span><span class="slot"><span class="slot-box" id="slot-${i}" onclick="fillSlot(${i})"></span></span><span class="ft">${row.suf}</span>`;
+    fw.appendChild(r);
+  });
+}
+function fillSlot(i){
+  if(!selChip) return;
+  const prev = slotAns[i];
+  if(prev){ const pc = document.getElementById('chip-'+prev); if(pc) pc.classList.remove('used'); }
+  slotAns[i] = selChip;
+  const s = document.getElementById('slot-'+i);
+  s.textContent = selChip; s.className = 'slot-box filled';
+  const c = document.getElementById('chip-'+selChip);
+  if(c){ c.classList.add('used'); c.classList.remove('active-chip'); }
+  selChip = null;
+}
+function checkFill(){
+  let ok=0;
+  fillRows.forEach((row,i)=>{
+    const s = document.getElementById('slot-'+i);
+    const v = slotAns[i] || '';
+    s.onclick = null;
+    if(v===row.ans){ s.className='slot-box ok'; ok++; }
+    else{ s.className='slot-box err'; s.textContent=(v||'?')+' → '+row.ans; }
+  });
+  const fb = document.getElementById('fill-fb');
+  fb.innerHTML = `<div class="fb ${ok===fillRows.length?'fb-ok':'fb-no'}">${ok===fillRows.length?'🎉 Hoàn hảo! Điền đúng hết!':'✗ Đúng '+ok+'/'+fillRows.length+'. Ô đỏ đã hiện đáp án đúng.'}</div>`;
+}
+function resetFill(){ buildWB(); buildFill(); document.getElementById('fill-fb').innerHTML=''; }
+
+/* ───────── READING COMPREHENSION ───────── */
+let readAns = new Array(readingData.length).fill(-1);
+function buildReading(){
+  const wrap = document.getElementById('reading-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh">${item.zh}</div>
+      <div class="q-card" style="margin-top:14px;margin-bottom:0;box-shadow:none;border:none;padding:14px 0 0;border-top:1px solid var(--line)">
+        <div class="q-text" style="font-weight:600">${item.q}</div>
+        <div class="opts" id="read-opts-${i}"></div>
+        <button class="chk-btn" onclick="checkRead(${i})">Kiểm tra</button>
+        <div id="read-fb-${i}" class="fb" style="display:none"></div>
+      </div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#read-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span>${opt}`;
+      el.onclick = ()=>{
+        readAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkRead(i){
+  if(readAns[i]<0) return;
+  const optsDiv = document.getElementById(`read-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===readingData[i].ans) el.className = 'opt ok';
+    else if(k===readAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`read-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = readAns[i]===readingData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][readingData[i].ans];
+}
+
+/* ───────── ERROR CORRECTION ───────── */
+let errAns = new Array(errorData.length).fill(-1);
+function buildWO(){
+  const wrap = document.getElementById('wo-wrap');
+  errorData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'err-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="err-opts" id="err-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkErr(${i})">Kiểm tra</button>
+      <div id="err-fb-${i}" class="fb" style="display:none"></div>
+      <div id="err-note-${i}" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#err-opts-${i}`);
+    item.sentences.forEach((s,j)=>{
+      const el = document.createElement('div');
+      el.className = 'err-opt';
+      el.innerHTML = `<span class="err-lbl">${['A','B','C','D'][j]}</span><span class="han">${s}</span>`;
+      el.onclick = ()=>{
+        errAns[i] = j;
+        optsDiv.querySelectorAll('.err-opt').forEach((o,k)=>{ o.className = 'err-opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkErr(i){
+  if(errAns[i]<0) return;
+  const optsDiv = document.getElementById(`err-opts-${i}`);
+  optsDiv.querySelectorAll('.err-opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===errorData[i].ans) el.className = 'err-opt ok';
+    else if(k===errAns[i]) el.className = 'err-opt no';
+    else el.className = 'err-opt';
+  });
+  const fb = document.getElementById(`err-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = errAns[i]===errorData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác! Đây đúng là câu sai.' : '✗ Chưa đúng. Câu sai là: '+['A','B','C','D'][errorData[i].ans];
+  const noteDiv = document.getElementById(`err-note-${i}`);
+  noteDiv.style.display = 'block';
+  noteDiv.innerHTML = `<div class="err-note">${errorData[i].note}</div>`;
+}
+
+/* ───────── SENTENCE TRANSLATION ───────── */
+let sentAnswers = {};
+let sentSubmitted = {};
+function normalizeChinese(s){
+  return (s||'').replace(/[，,。.！!？?；;\s]/g,'').trim();
+}
+function matchSentAns(val, item){
+  const answers = Array.isArray(item.zh) ? item.zh : [item.zh];
+  return answers.find(a => normalizeChinese(val)===normalizeChinese(a)) || null;
+}
+function getPrimaryAns(item){
+  return Array.isArray(item.zh) ? item.zh[0] : item.zh;
+}
+function buildSentences(){
+  const wrap = document.getElementById('sent-wrap');
+  sentData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'sent-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="sent-vn">${item.vn}</div>
+      <input class="sent-input" id="sent-input-${i}" placeholder="Nhập câu tiếng Trung..."
+        onkeydown="if(event.key==='Enter')checkSentSingle(${i})">
+      <button class="sent-check-btn" onclick="checkSentSingle(${i})">Kiểm tra</button>
+      <div id="sent-result-${i}"></div>`;
+    wrap.appendChild(card);
+  });
+}
+function checkSentSingle(i){
+  const input = document.getElementById('sent-input-'+i);
+  const val = input.value;
+  sentAnswers[i] = val;
+  sentSubmitted[i] = true;
+  const item = sentData[i];
+  const matched = matchSentAns(val, item);
+  const resultDiv = document.getElementById('sent-result-'+i);
+  const primary = getPrimaryAns(item);
+  let html = '';
+  if(matched){
+    html += `<div class="sent-fb fb-ok">✓ Chính xác!</div>`;
+  } else {
+    html += `<div class="sent-fb fb-no">✗ Chưa đúng. Xem phân tích đáp án bên dưới.</div>`;
+  }
+  html += `<div class="sent-explain">
+    <div class="sent-explain-zh han">${primary}</div>
+    <div class="se-words">`;
+  item.words.forEach(w=>{
+    html += `<div class="se-word"><div class="se-word-zh han">${w.zh}</div><div class="se-word-vn">${w.vn}</div></div>`;
+  });
+  html += `</div><div class="se-note">${item.note}</div></div>`;
+  resultDiv.innerHTML = html;
+}
+
+/* ───────── SCORE SUMMARY ───────── */
+function renderScoreTable(computed){
+  const mcTot=mcQ.length, fillTot=fillRows.length, readTot=readingData.length, errTot=errorData.length, sentTot=sentData.length;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pctOf = (ok,tot)=> tot>0 ? Math.round(ok/tot*100) : 0;
+  const dash = '—';
+
+  const wrap = document.getElementById('score-wrap');
+
+  if(!computed){
+    wrap.innerHTML = `
+      <div class="score-wrap">
+        <div class="score-ring"><span class="score-ring-num">${dash}</span><span class="score-ring-tot">${dash}/${totalAll}</span></div>
+        <div class="score-title">Nhấn "Tính điểm tổng kết" để xem kết quả</div>
+        <div class="score-sub">Tổng số câu của bài: ${totalAll}</div>
+        <table class="score-table">
+          <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+          <tr><td>1. Trắc nghiệm</td><td>${dash}</td><td>${mcTot}</td><td>${dash}</td></tr>
+          <tr><td>2. Điền từ</td><td>${dash}</td><td>${fillTot}</td><td>${dash}</td></tr>
+          <tr><td>3. Đọc hiểu</td><td>${dash}</td><td>${readTot}</td><td>${dash}</td></tr>
+          <tr><td>4. Tìm lỗi sai</td><td>${dash}</td><td>${errTot}</td><td>${dash}</td></tr>
+          <tr><td>5. Dịch câu</td><td>${dash}</td><td>${sentTot}</td><td>${dash}</td></tr>
+          <tr><td>TỔNG</td><td>${dash}</td><td>${totalAll}</td><td>${dash}</td></tr>
+        </table>
+      </div>`;
+    return;
+  }
+
+  const {mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict} = computed;
+  wrap.innerHTML = `
+    <div class="score-wrap">
+      <div class="score-ring"><span class="score-ring-num">${pct}%</span><span class="score-ring-tot">${totalOk}/${totalAll}</span></div>
+      <div class="score-title">${verdict}</div>
+      <div class="score-sub">Tổng số câu đúng: ${totalOk} / ${totalAll}</div>
+      <table class="score-table">
+        <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+        <tr><td>1. Trắc nghiệm</td><td>${mcOk}</td><td>${mcTot}</td><td>${pctOf(mcOk,mcTot)}%</td></tr>
+        <tr><td>2. Điền từ</td><td>${fillOk}</td><td>${fillTot}</td><td>${pctOf(fillOk,fillTot)}%</td></tr>
+        <tr><td>3. Đọc hiểu</td><td>${readOk}</td><td>${readTot}</td><td>${pctOf(readOk,readTot)}%</td></tr>
+        <tr><td>4. Tìm lỗi sai</td><td>${errOk}</td><td>${errTot}</td><td>${pctOf(errOk,errTot)}%</td></tr>
+        <tr><td>5. Dịch câu</td><td>${sentOk}</td><td>${sentTot}</td><td>${pctOf(sentOk,sentTot)}%</td></tr>
+        <tr><td>TỔNG</td><td>${totalOk}</td><td>${totalAll}</td><td>${pct}%</td></tr>
+      </table>
+    </div>`;
+}
+
+function calcScore(){
+  let mcOk=0, mcTot=mcQ.length;
+  mcAns.forEach((a,i)=>{ if(a===mcQ[i].ans) mcOk++; });
+
+  let fillOk=0, fillTot=fillRows.length;
+  fillRows.forEach((row,i)=>{ if(slotAns[i]===row.ans) fillOk++; });
+
+  let readOk=0, readTot=readingData.length;
+  readAns.forEach((a,i)=>{ if(a===readingData[i].ans) readOk++; });
+
+  let errOk=0, errTot=errorData.length;
+  errAns.forEach((a,i)=>{ if(a===errorData[i].ans) errOk++; });
+
+  let sentOk=0, sentTot=sentData.length;
+  sentData.forEach((item,i)=>{
+    if(sentSubmitted[i] && matchSentAns(sentAnswers[i]||'', item)) sentOk++;
+  });
+
+  const totalOk = mcOk+fillOk+readOk+errOk+sentOk;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pct = totalAll>0 ? Math.round(totalOk/totalAll*100) : 0;
+
+  let verdict;
+  if(pct>=90) verdict = '⭐ Xuất sắc! Bạn đã nắm rất vững bài học này.';
+  else if(pct>=70) verdict = '👍 Giỏi! Còn vài điểm nhỏ cần ôn lại.';
+  else if(pct>=50) verdict = '📖 Khá! Nên ôn lại các phần từ vựng và ngữ pháp.';
+  else verdict = '💪 Cần ôn tập lại kỹ hơn các phần từ vựng cốt lõi.';
+
+  renderScoreTable({mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict});
+  switchTab('score');
+}
+
+/* ───────── INIT ───────── */
+buildTabs();
+buildVocab();
+buildTranslation();
+buildGrammar();
+buildMC();
+buildWB();
+buildFill();
+buildReading();
+buildWO();
+buildSentences();
+renderScoreTable();
+
+</script>
+</body>
+</html>

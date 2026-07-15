@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HSK 6 – Bài 1: 孩子给我们的启示 | Ôn tập Từ vựng &amp; Ngữ pháp</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:      #1C1A24;
+  --ink-soft: #4A4658;
+  --paper:    #FBF9F4;
+  --paper2:   #F2EEE3;
+  --line:     #DDD6C5;
+  --gold:     #9C7A2E;
+  --gold-d:   #6E5620;
+  --gold-bg:  #F3E7C8;
+  --jade:     #2F5D50;
+  --jade-d:   #1E3F37;
+  --jade-bg:  #DCEAE4;
+  --plum:     #6B3550;
+  --plum-bg:  #F1DEE6;
+  --rust:     #8C3A2B;
+  --rust-bg:  #F5E0D6;
+  --ok:       #1E5E2E;
+  --ok-bg:    #DEEDE0;
+  --bad:      #8C2C2C;
+  --bad-bg:   #F6DEDE;
+  --shadow:   0 6px 24px rgba(28,26,36,.08);
+  --r:        4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;line-height:1.5}
+.han{font-family:'Noto Serif SC',serif}
+
+/* ─── HERO ─── */
+.hero{
+  background:linear-gradient(160deg,var(--jade-d) 0%, var(--jade) 55%, #28473D 100%);
+  padding:40px 20px 64px;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;opacity:.06;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 38px,#fff 38px,#fff 39px);
+}
+.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-bg);font-weight:700;margin-bottom:10px;opacity:.85}
+.hero-title-zh{font-family:'Noto Serif SC',serif;font-size:34px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:6px}
+.hero-title-vn{font-size:15px;color:rgba(255,255,255,.78);margin-bottom:18px;font-style:italic}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hmeta-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:20px;padding:5px 14px;font-size:12px;color:#fff;font-weight:600}
+
+/* ─── NAV TABS ─── */
+.tabnav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.tabnav-inner{max-width:760px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.tabnav-inner::-webkit-scrollbar{display:none}
+.tab-btn{flex:0 0 auto;padding:13px 16px;font-size:13px;font-weight:600;color:var(--ink-soft);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;font-family:'Source Sans 3',sans-serif;transition:all .15s}
+.tab-btn.active{color:var(--jade-d);border-bottom-color:var(--jade)}
+.tab-btn:hover{color:var(--jade-d)}
+
+/* ─── MAIN ─── */
+main{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+.tab-pane{display:none}
+.tab-pane.active{display:block;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+.section-head{margin-bottom:20px}
+.section-title{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.section-sub{font-size:13px;color:var(--ink-soft)}
+
+/* ─── PROGRESS ─── */
+.progress-row{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.progress-track{flex:1;height:5px;background:var(--paper2);border-radius:3px;overflow:hidden}
+.progress-fill{height:5px;background:var(--jade);border-radius:3px;transition:width .35s}
+.progress-label{font-size:11px;color:var(--ink-soft);white-space:nowrap;font-weight:600}
+
+/* ─── VOCAB FLASHCARDS ─── */
+.vocab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.flip-card{position:relative;height:140px;perspective:1000px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;border-radius:8px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;border:1px solid var(--line)}
+.flip-front{background:var(--paper);box-shadow:var(--shadow)}
+.flip-back{background:var(--jade-d);color:#fff;transform:rotateY(180deg)}
+.fc-zh{font-family:'Noto Serif SC',serif;font-size:25px;font-weight:700;color:var(--ink);margin-bottom:4px;text-align:center}
+.fc-py{font-size:11px;color:var(--gold-d);font-weight:600}
+.fc-tag{position:absolute;top:8px;right:10px;font-size:9px;color:var(--ink-soft);opacity:.5}
+.fc-vn{font-size:14px;font-weight:700;color:#fff;text-align:center;margin-bottom:6px;padding:0 4px}
+.fc-ex{font-size:10.5px;color:rgba(255,255,255,.75);text-align:center;padding:0 8px;font-family:'Noto Serif SC',serif;line-height:1.45}
+.vocab-progress{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:16px;font-weight:600}
+
+/* ─── MC ─── */
+.q-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.q-tag{font-size:11px;color:var(--ink-soft);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.q-text{font-size:15px;color:var(--ink);margin-bottom:12px;line-height:1.6}
+.q-text .han{font-size:17px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:14px;color:var(--ink);transition:all .12s;background:#fff}
+.opt:hover{background:var(--paper2)}
+.opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.opt-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.opt-zh{font-family:'Noto Serif SC',serif;font-weight:600}
+.chk-btn{margin-top:10px;padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.chk-btn:hover{background:var(--jade-bg)}
+.fb{font-size:13px;margin-top:9px;padding:8px 12px;border-radius:6px;font-weight:600}
+.fb-ok{background:var(--ok-bg);color:var(--ok)}
+.fb-no{background:var(--bad-bg);color:var(--bad)}
+
+/* ─── FILL ─── */
+.wb-box{background:var(--gold-bg);border-radius:8px;padding:14px 16px;margin-bottom:16px;border:1px solid var(--line)}
+.wb-label{font-size:11px;font-weight:700;color:var(--gold-d);text-transform:uppercase;letter-spacing:.06em;margin-bottom:9px}
+.wb-chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:#fff;border:1px solid var(--gold-d);border-radius:20px;padding:6px 15px;font-size:15px;font-family:'Noto Serif SC',serif;font-weight:600;color:var(--gold-d);cursor:pointer;transition:all .12s}
+.chip:hover{background:var(--gold-bg)}
+.chip.used{background:var(--paper2);border-color:var(--line);color:var(--ink-soft);text-decoration:line-through;cursor:default}
+.chip.active-chip{outline:2px solid var(--gold-d);outline-offset:1px}
+.fill-rows{display:flex;flex-direction:column;gap:9px}
+.fill-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:8px}
+.rn{font-size:12px;color:var(--ink-soft);font-weight:700;min-width:20px}
+.ft{font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink)}
+.slot{display:inline-flex;flex-direction:column;align-items:center}
+.slot-box{min-width:62px;height:34px;border:none;border-bottom:2px solid var(--gold);background:transparent;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--gold-d);font-weight:700;text-align:center;cursor:pointer;border-radius:0;padding:0 4px}
+.slot-box:empty::before{content:'＿＿';color:var(--ink-soft);font-weight:400;font-size:14px}
+.slot-box.filled{border-bottom-color:var(--gold-d)}
+.slot-box.ok{background:var(--ok-bg);color:var(--ok);border-bottom-color:var(--ok);border-radius:4px}
+.slot-box.err{background:var(--bad-bg);color:var(--bad);border-bottom-color:var(--bad);border-radius:4px}
+.fill-actions{display:flex;gap:8px;margin-top:14px}
+.fill-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--gold-d);background:transparent;color:var(--gold-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.fill-btn:hover{background:var(--gold-bg)}
+.reset-btn{padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--ink-soft);background:transparent;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+
+/* ─── GRAMMAR ─── */
+.gram-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
+.gram-title{font-size:16px;font-weight:700;color:var(--plum);margin-bottom:9px;font-family:'Noto Serif SC',serif}
+.gram-formula{background:var(--gold-bg);color:var(--gold-d);padding:9px 12px;border-radius:6px;font-size:14.5px;font-weight:700;margin-bottom:10px;font-family:'Noto Serif SC',serif;display:inline-block}
+.gram-explain{font-size:13.5px;color:var(--ink-soft);margin-bottom:12px;line-height:1.65}
+.gram-ex{background:var(--paper2);border-radius:6px;padding:10px 12px;margin-bottom:7px}
+.gram-ex:last-child{margin-bottom:0}
+.gram-ex-zh{font-size:15.5px;font-weight:600;color:var(--ink);font-family:'Noto Serif SC',serif}
+.gram-ex-vn{font-size:12px;color:var(--ink-soft);margin-top:3px;font-style:italic}
+
+/* ─── DIALOGUE/READING ─── */
+.passage-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:16px;box-shadow:var(--shadow)}
+.passage-title{font-size:13px;font-weight:700;color:var(--plum);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+.passage-zh{font-family:'Noto Serif SC',serif;font-size:16px;line-height:2;color:var(--ink);text-align:justify}
+.passage-zh .hl{background:var(--gold-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--gold-d)}
+.passage-vn{font-size:14.5px;line-height:1.85;color:var(--ink-soft);text-align:justify;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+.passage-vn .hl{background:var(--jade-bg);padding:1px 3px;border-radius:3px;font-weight:700;color:var(--jade-d)}
+
+/* ─── ERROR CORRECTION ─── */
+.err-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.err-sentence{font-family:'Noto Serif SC',serif;font-size:17px;line-height:1.8;color:var(--ink);margin-bottom:14px;padding:10px 12px;background:var(--rust-bg);border-radius:6px;border-left:3px solid var(--rust)}
+.err-sentence u{text-decoration:none;background:#fff;border-bottom:2px solid var(--rust);padding:0 2px;font-weight:700;color:var(--rust)}
+.err-opts{display:flex;flex-direction:column;gap:7px}
+.err-opt{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:6px;cursor:pointer;font-size:15px;font-family:'Noto Serif SC',serif;color:var(--ink);transition:all .12s;background:#fff;line-height:1.6}
+.err-opt:hover{background:var(--paper2)}
+.err-opt.sel{background:var(--jade-bg);border-color:var(--jade);color:var(--jade-d)}
+.err-opt.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.err-opt.no{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.err-lbl{width:22px;height:22px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;font-family:'Source Sans 3',sans-serif}
+.err-note{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:12.5px;color:var(--ink-soft);font-style:italic;line-height:1.55}
+
+/* ─── TRANSLATION ─── */
+.sent-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow)}
+.sent-vn{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.55}
+.sent-input{width:100%;border:1px solid var(--line);border-radius:6px;padding:10px 12px;font-size:16px;font-family:'Noto Serif SC',serif;color:var(--ink);outline:none}
+.sent-input:focus{border-color:var(--jade)}
+.sent-check-btn{margin-top:8px;padding:7px 16px;font-size:12px;font-weight:700;border-radius:6px;border:1px solid var(--jade);background:transparent;color:var(--jade-d);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.sent-fb{font-size:13px;margin-top:9px;padding:9px 12px;border-radius:6px;font-weight:600}
+.sent-explain{margin-top:10px;padding:12px;background:var(--paper2);border-radius:6px;font-size:13px}
+.sent-explain-zh{font-family:'Noto Serif SC',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.se-words{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.se-word{background:#fff;border:1px solid var(--line);border-radius:5px;padding:5px 9px;text-align:center}
+.se-word-zh{font-family:'Noto Serif SC',serif;font-size:14px;font-weight:700;color:var(--ink)}
+.se-word-vn{font-size:10px;color:var(--ink-soft);margin-top:1px}
+.se-note{font-size:12.5px;color:var(--ink-soft);font-style:italic;border-top:1px solid var(--line);padding-top:8px}
+
+/* ─── SCORE ─── */
+.score-wrap{background:linear-gradient(160deg,var(--jade-d),var(--jade));border-radius:10px;padding:24px 20px;color:#fff;text-align:center;margin-bottom:20px}
+.score-ring{width:90px;height:90px;border-radius:50%;border:4px solid rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 14px}
+.score-ring-num{font-size:24px;font-weight:800}
+.score-ring-tot{font-size:11px;opacity:.75}
+.score-title{font-size:17px;font-weight:700;margin-bottom:5px}
+.score-sub{font-size:13px;opacity:.85}
+.score-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}
+.score-table th{text-align:left;padding:9px 10px;background:rgba(255,255,255,.12);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.03em}
+.score-table td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.15)}
+.score-table tr:last-child td{border-bottom:none;font-weight:700}
+.submit-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--jade),var(--jade-d));color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;box-shadow:0 4px 16px rgba(47,93,80,.35);margin-bottom:18px}
+.submit-btn:hover{transform:translateY(-1px)}
+
+/* ─── NAV ARROWS ─── */
+.pane-nav{display:flex;justify-content:space-between;margin-top:24px}
+.nav-arrow{padding:9px 18px;font-size:13px;font-weight:700;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--ink-soft);cursor:pointer;font-family:'Source Sans 3',sans-serif}
+.nav-arrow:hover{border-color:var(--jade);color:var(--jade-d)}
+
+footer.wm{text-align:center;font-size:11.5px;color:var(--ink-soft);padding:18px;font-style:italic;border-top:1px solid var(--line)}
+
+@media(max-width:480px){
+  .vocab-grid{grid-template-columns:1fr}
+  .hero-title-zh{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Tiếng Trung Halaoshi · HSK 6 · 标准教程 6上 第1课</div>
+    <div class="hero-title-zh">孩子给我们的启示</div>
+    <div class="hero-title-vn">Bài học mà con trẻ dạy chúng ta — Ôn tập từ vựng &amp; ngữ pháp</div>
+    <div class="hero-meta">
+      <span class="hmeta-chip">📖 49 từ vựng</span>
+      <span class="hmeta-chip">⏱ ~25 phút</span>
+      <span class="hmeta-chip">🎯 7 phần</span>
+    </div>
+  </div>
+</div>
+
+<nav class="tabnav">
+  <div class="tabnav-inner" id="tabnav"></div>
+</nav>
+
+<main>
+
+  <!-- VOCAB -->
+  <section class="tab-pane active" id="pane-vocab">
+    <div class="section-head">
+      <div class="section-title">Từ vựng bài học</div>
+      <div class="section-sub">Nhấn vào thẻ để lật — xem pinyin, nghĩa và ví dụ trong văn cảnh bài đọc.</div>
+    </div>
+    <div class="vocab-grid" id="vocab-grid"></div>
+    <div class="vocab-progress" id="vocab-progress">0 / 49 đã xem</div>
+  </section>
+
+  <!-- TRANSLATION OF PASSAGE -->
+  <section class="tab-pane" id="pane-transl">
+    <div class="section-head">
+      <div class="section-title">Dịch bài khóa</div>
+      <div class="section-sub">Bản dịch tiếng Việt theo từng đoạn — từ mới và thành ngữ được tô màu tương ứng ở cả bản tiếng Trung (vàng) và bản dịch (xanh ngọc).</div>
+    </div>
+    <div id="transl-wrap"></div>
+  </section>
+
+  <!-- GRAMMAR -->
+  <section class="tab-pane" id="pane-grammar">
+    <div class="section-head">
+      <div class="section-title">Ôn ngữ pháp chính trong bài khóa</div>
+      <div class="section-sub">Các cấu trúc ngữ pháp trọng tâm xuất hiện trong bài đọc, kèm ví dụ trích trực tiếp từ bài khóa.</div>
+    </div>
+    <div id="gram-wrap"></div>
+  </section>
+
+  <!-- MC -->
+  <section class="tab-pane" id="pane-mc">
+    <div class="section-head">
+      <div class="section-title">Phần 1 — Trắc nghiệm</div>
+      <div class="section-sub">Chọn nghĩa hoặc cách dùng đúng nhất cho mỗi từ / cấu trúc.</div>
+    </div>
+    <div class="progress-row"><div class="progress-track"><div class="progress-fill" id="mc-prog" style="width:0%"></div></div><div class="progress-label" id="mc-prog-label">0 / 12</div></div>
+    <div id="mc-wrap"></div>
+  </section>
+
+  <!-- FILL -->
+  <section class="tab-pane" id="pane-fill">
+    <div class="section-head">
+      <div class="section-title">Phần 2 — Điền từ vào chỗ trống</div>
+      <div class="section-sub">Chọn từ trong khung gợi ý, sau đó nhấn vào ô trống để điền.</div>
+    </div>
+    <div class="wb-box">
+      <div class="wb-label">📦 Ngân hàng từ</div>
+      <div class="wb-chips" id="wb"></div>
+    </div>
+    <div class="fill-rows" id="fill-wrap"></div>
+    <div class="fill-actions">
+      <button class="fill-btn" onclick="checkFill()">Kiểm tra</button>
+      <button class="reset-btn" onclick="resetFill()">↺ Làm lại</button>
+    </div>
+    <div id="fill-fb" style="margin-top:10px"></div>
+  </section>
+
+  <!-- READING -->
+  <section class="tab-pane" id="pane-reading">
+    <div class="section-head">
+      <div class="section-title">Phần 3 — Đọc hiểu trích đoạn</div>
+      <div class="section-sub">Đọc đoạn văn gốc, các từ vựng trọng tâm được tô vàng, sau đó trả lời câu hỏi.</div>
+    </div>
+    <div id="reading-wrap"></div>
+  </section>
+
+  <!-- ERROR CORRECTION -->
+  <section class="tab-pane" id="pane-wo">
+    <div class="section-head">
+      <div class="section-title">Phần 4 — Tìm lỗi sai</div>
+      <div class="section-sub">Trong 4 câu A, B, C, D dưới đây, chỉ có 1 câu chứa lỗi sai. Hãy chọn ra câu đó.</div>
+    </div>
+    <div id="wo-wrap"></div>
+  </section>
+
+  <!-- TRANSLATION -->
+  <section class="tab-pane" id="pane-sent">
+    <div class="section-head">
+      <div class="section-title">Phần 5 — Dịch câu sang tiếng Trung</div>
+      <div class="section-sub">Gõ câu tiếng Trung tương ứng. Sau khi kiểm tra sẽ có phân tích từ và ngữ pháp.</div>
+    </div>
+    <div id="sent-wrap"></div>
+  </section>
+
+  <!-- SCORE -->
+  <section class="tab-pane" id="pane-score">
+    <div class="section-head">
+      <div class="section-title">Phần 6 — Tổng kết điểm số</div>
+      <div class="section-sub">Tổng hợp kết quả toàn bộ các phần đã làm.</div>
+    </div>
+    <div id="score-wrap"></div>
+    <button class="submit-btn" onclick="calcScore()">🎯 Tính điểm tổng kết</button>
+  </section>
+
+</main>
+
+<footer class="wm">© Tiếng Trung Halaoshi — Tài liệu ôn tập HSK 6, Bài 1</footer>
+
+<script>
+const vocabData = [
+  {zh:'启示', py:'qǐshì',       vn:'sự gợi ý, khải thị, điều rút ra được', ex:'孩子给我们的启示。', exvn:'Bài học (sự gợi ý) mà con trẻ dạy cho chúng ta.'},
+  {zh:'老公', py:'lǎogōng',    vn:'chồng',                       ex:'我和老公爽快地答应下来。', exvn:'Tôi và chồng vui vẻ đồng ý ngay.'},
+  {zh:'爽快', py:'shuǎngkuai', vn:'thẳng thắn, dứt khoát, sảng khoái', ex:'我和老公爽快地答应下来。', exvn:'Tôi và chồng thẳng thắn đồng ý ngay.'},
+  {zh:'巴不得',py:'bābude',    vn:'mong mỏi, khao khát (điều gì xảy ra)', ex:'我们巴不得呢！', exvn:'Chúng tôi chỉ mong có thế!'},
+  {zh:'嚷',   py:'rǎng',       vn:'kêu, la hét',                  ex:'她嚷着要用爸爸最拿手的佳肴欢迎天天。', exvn:'Con bé kêu lên đòi dùng món sở trường của bố để đón Thiên Thiên.'},
+  {zh:'拿手', py:'náshǒu',     vn:'sở trường, thành thạo, giỏi',   ex:'用爸爸最拿手的美味佳肴欢迎天天。', exvn:'Dùng món ngon sở trường nhất của bố để đón Thiên Thiên.'},
+  {zh:'佳肴', py:'jiāyáo',     vn:'món ngon, sơn hào hải vị',       ex:'用爸爸最拿手的美味佳肴欢迎天天。', exvn:'Dùng món ngon sở trường nhất của bố để đón Thiên Thiên.'},
+  {zh:'异常', py:'yìcháng',    vn:'khác thường, vô cùng',          ex:'林林就变得异常勤劳。', exvn:'Lâm Lâm trở nên chăm chỉ khác thường.'},
+  {zh:'勤劳', py:'qínláo',     vn:'chăm chỉ, cần cù',             ex:'林林就变得异常勤劳。', exvn:'Lâm Lâm trở nên chăm chỉ khác thường.'},
+  {zh:'绅士', py:'shēnshì',    vn:'quý ông, người lịch thiệp',     ex:'我家林林虽是女孩，却也绅士风度十足。', exvn:'Lâm Lâm nhà tôi tuy là con gái nhưng lại rất ra dáng quý ông.'},
+  {zh:'风度', py:'fēngdù',     vn:'phong thái, tác phong',         ex:'绅士风度十足。', exvn:'Phong thái quý ông đầy đủ, ra dáng hẳn hoi.'},
+  {zh:'十足', py:'shízú',      vn:'đầy đủ, trọn vẹn, 100%',        ex:'绅士风度十足。', exvn:'Ra dáng quý ông trọn vẹn.'},
+  {zh:'督促', py:'dūcù',       vn:'đốc thúc, nhắc nhở',            ex:'做作业不用督促。', exvn:'Làm bài tập không cần phải đốc thúc.'},
+  {zh:'打架', py:'dǎjià',      vn:'đánh nhau, ẩu đả',              ex:'她们不打架，不闹别扭。', exvn:'Hai đứa không đánh nhau, không giận dỗi nhau.'},
+  {zh:'别扭', py:'bièniu',     vn:'khó chịu, không hợp, gượng gạo', ex:'她们不打架，不闹别扭。', exvn:'Hai đứa không đánh nhau, không giận dỗi nhau.'},
+  {zh:'融洽', py:'róngqià',    vn:'hòa hợp, hòa thuận',            ex:'她们的关系别提多融洽了。', exvn:'Mối quan hệ của hai đứa hòa hợp không thể tả.'},
+  {zh:'亲密', py:'qīnmì',      vn:'thân thiết, gắn bó',            ex:'看到女儿和天天这么亲密。', exvn:'Thấy con gái và Thiên Thiên thân thiết như vậy.'},
+  {zh:'忽略', py:'hūlüè',      vn:'bỏ qua, lơ là, xao lãng',       ex:'大有忽略我们的趋势。', exvn:'Có vẻ như sắp lơ là, bỏ quên chúng tôi.'},
+  {zh:'嫉妒', py:'jídù',       vn:'ghen tị, đố kị',                ex:'我和老公都有点儿嫉妒了。', exvn:'Tôi và chồng đều có chút ghen tị.'},
+  {zh:'滔滔不绝',py:'tāotāo bùjué',vn:'nói liên tục không ngừng',  ex:'两个孩子开始滔滔不绝地聊了起来。', exvn:'Hai đứa trẻ bắt đầu nói chuyện liên tục không ngừng.'},
+  {zh:'嘲笑', py:'cháoxiào',   vn:'chế giễu, cười nhạo',           ex:'她还老嘲笑别人。', exvn:'Nó còn hay chế giễu người khác.'},
+  {zh:'讨好', py:'tǎohǎo',     vn:'lấy lòng, nịnh bợ',             ex:'她最会讨好老师了。', exvn:'Nó giỏi nhất việc lấy lòng cô giáo.'},
+  {zh:'郑重', py:'zhèngzhòng', vn:'trang trọng, nghiêm túc',       ex:'我郑重地走到她们跟前。', exvn:'Tôi nghiêm túc bước tới trước mặt hai đứa.'},
+  {zh:'当面', py:'dāngmiàn',   vn:'trước mặt, ngay tại chỗ',       ex:'看到别人有缺点，应该当面说。', exvn:'Thấy người khác có khuyết điểm, nên nói thẳng trước mặt.'},
+  {zh:'人家', py:'rénjiā',     vn:'người khác, người ta',          ex:'背后说人家的坏话不好。', exvn:'Nói xấu người khác sau lưng là không tốt.'},
+  {zh:'附和', py:'fùhè',       vn:'hùa theo, phụ họa',             ex:'老公也在旁边附和。', exvn:'Chồng tôi cũng đứng bên cạnh hùa theo.'},
+  {zh:'大伙儿',py:'dàhuǒr',    vn:'mọi người, tất cả chúng ta',    ex:'大伙儿要和睦相处。', exvn:'Mọi người phải sống hòa thuận với nhau.'},
+  {zh:'和睦', py:'hémù',       vn:'hòa thuận, hòa hợp',            ex:'大伙儿要和睦相处。', exvn:'Mọi người phải sống hòa thuận với nhau.'},
+  {zh:'宽容', py:'kuānróng',   vn:'khoan dung, độ lượng',          ex:'对人要宽容。', exvn:'Đối với người khác phải khoan dung.'},
+  {zh:'疑惑', py:'yíhuò',      vn:'nghi hoặc, hoài nghi',          ex:'女儿却是一脸的疑惑。', exvn:'Con gái lại có vẻ mặt đầy nghi hoặc.'},
+  {zh:'反问', py:'fǎnwèn',     vn:'hỏi vặn lại, hỏi ngược lại',    ex:'反问道。', exvn:'Hỏi vặn lại rằng.'},
+  {zh:'瞬间', py:'shùnjiān',   vn:'trong chớp mắt, tức thì',       ex:'瞬间我和老公被问得说不出话来。', exvn:'Trong chớp mắt tôi và chồng bị hỏi đến mức không nói được lời nào.'},
+  {zh:'鸦雀无声',py:'yāquè wúshēng',vn:'im phăng phắc, im lặng tuyệt đối',ex:'屋子里鸦雀无声。', exvn:'Trong phòng im phăng phắc.'},
+  {zh:'启蒙', py:'qǐméng',     vn:'khai sáng, dạy dỗ ban đầu',     ex:'启蒙老师的重要性不可忽视。', exvn:'Không thể coi nhẹ tầm quan trọng của người thầy khai sáng.'},
+  {zh:'任',   py:'rèn',        vn:'(lượng từ chỉ chức vụ/nhiệm kỳ)',ex:'父母就是孩子的第一任老师。', exvn:'Cha mẹ chính là người thầy đầu tiên của con cái.'},
+  {zh:'反驳', py:'fǎnbó',      vn:'phản bác, bác lại',             ex:'如果这次不是女儿反驳。', exvn:'Nếu lần này không phải con gái phản bác.'},
+  {zh:'意识', py:'yìshí',      vn:'nhận thức, ý thức',             ex:'我还意识不到。', exvn:'Tôi còn chưa nhận thức được điều đó.'},
+  {zh:'实行', py:'shíxíng',    vn:'thực hiện, thi hành',           ex:'对孩子的要求实行的是两套标准。', exvn:'Đối với yêu cầu dành cho con cái lại thực hiện theo hai tiêu chuẩn.'},
+  {zh:'严厉', py:'yánlì',      vn:'nghiêm khắc',                  ex:'对自己宽容，对孩子严厉。', exvn:'Khoan dung với bản thân, nghiêm khắc với con cái.'},
+  {zh:'约束', py:'yuēshù',     vn:'ràng buộc, kiềm chế',           ex:'想当好父母，首先要约束好自己的言行。', exvn:'Muốn làm cha mẹ tốt, trước hết phải kiềm chế tốt lời nói và hành động của mình.'},
+  {zh:'视而不见',py:'shì\u2019érbùjiàn',vn:'nhìn mà như không thấy, làm ngơ',ex:'对孩子的缺点不能视而不见。', exvn:'Không thể làm ngơ trước khuyết điểm của con cái.'},
+  {zh:'别提多...了',py:'bié tí duō...le',vn:'…không thể tả (cấu trúc nhấn mạnh)',ex:'她们的关系别提多融洽了。', exvn:'Mối quan hệ của hai đứa hòa hợp không thể tả.'},
+  {zh:'反省', py:'fǎnxǐng',    vn:'tự kiểm điểm, tự xét lại mình', ex:'这件事让我深刻反省自己。', exvn:'Việc này khiến tôi tự kiểm điểm bản thân sâu sắc.'},
+  {zh:'无所拘谨',py:'wúsuǒ jūjǐn',vn:'không hề e dè, gò bó',       ex:'孩子们在一起总是无所拘谨。', exvn:'Các con khi ở cùng nhau luôn không hề e dè gò bó.'},
+  {zh:'无所拘束',py:'wúsuǒ jūshù',vn:'không hề bị bó buộc, tự nhiên thoải mái',ex:'孩子们玩耍时无所拘束。', exvn:'Khi chơi đùa các con hoàn toàn tự nhiên, không bị bó buộc.'},
+  {zh:'目瞪口呆',py:'mùdèng kǒudāi',vn:'sửng sốt, ngây người (vì kinh ngạc)',ex:'听完女儿的反问，我目瞪口呆。', exvn:'Nghe xong câu hỏi vặn của con gái, tôi sửng sốt không nói được gì.'},
+  {zh:'挑剔', py:'tiāotī',     vn:'xét nét, khó tính, hay bắt lỗi', ex:'她对孩子的要求总是很挑剔。', exvn:'Yêu cầu của bà với con cái luôn rất xét nét.'},
+  {zh:'过意不去',py:'guòyì bùqù',vn:'cảm thấy có lỗi, ngại ngùng', ex:'让你白跑一趟，我心里很过意不去。', exvn:'Để bạn chạy đến đây vô ích, tôi cảm thấy rất có lỗi.'},
+  {zh:'挑拨', py:'tiǎobō',     vn:'xúi bẩy, kích động, gây chia rẽ',ex:'有人想挑拨他们的关系。', exvn:'Có người muốn gây chia rẽ mối quan hệ của họ.'},
+];
+const mcQ = [
+  {q:'"启示" trong câu <span class="han">孩子给我们的启示</span> nghĩa là gì?',
+   opts:['Sự chỉ trích','Sự gợi ý, bài học rút ra','Lời hứa'], ans:1},
+  {q:'<span class="han">巴不得</span> diễn tả cảm xúc nào?',
+   opts:['Khao khát, chỉ mong điều đó xảy ra','Lo lắng, sợ hãi','Thất vọng, chán nản'], ans:0},
+  {q:'<span class="han">拿手</span> dùng để miêu tả điều gì?',
+   opts:['Một việc khó khăn','Một món sở trường, giỏi nhất','Một sai lầm lớn'], ans:1},
+  {q:'Trong câu <span class="han">绅士风度十足</span>，từ <span class="han">十足</span> mang nghĩa gần nhất với:',
+   opts:['Một chút, hơi hơi','Đầy đủ, trọn vẹn, 100%','Không đủ, thiếu sót'], ans:1},
+  {q:'<span class="han">督促</span> nghĩa là gì?',
+   opts:['Khen ngợi','Đốc thúc, nhắc nhở làm việc','Cấm đoán'], ans:1},
+  {q:'Cấu trúc <span class="han">别提多...了</span> dùng để:',
+   opts:['Hỏi một câu hỏi','Nhấn mạnh mức độ "không thể tả"','Phủ định hoàn toàn'], ans:1},
+  {q:'<span class="han">郑重</span> miêu tả thái độ nào?',
+   opts:['Đùa cợt, không nghiêm túc','Trang trọng, nghiêm túc','Tức giận, gắt gỏng'], ans:1},
+  {q:'<span class="han">当面</span> đối lập về nghĩa với cụm nào?',
+   opts:['背后 (sau lưng)','马上 (ngay lập tức)','一起 (cùng nhau)'], ans:0},
+  {q:'<span class="han">鸦雀无声</span> miêu tả trạng thái:',
+   opts:['Ồn ào, náo nhiệt','Im lặng tuyệt đối','Vui vẻ, náo nức'], ans:1},
+  {q:'<span class="han">视而不见</span> nghĩa là:',
+   opts:['Nhìn thấy rõ và xử lý ngay','Nhìn mà như không thấy, làm ngơ','Không thể nhìn thấy được'], ans:1},
+  {q:'<span class="han">目瞪口呆</span> dùng khi người ta:',
+   opts:['Đang ngủ gật','Sửng sốt, ngạc nhiên đến mức không nói được','Đang ăn ngon miệng'], ans:1},
+  {q:'<span class="han">过意不去</span> diễn tả cảm giác:',
+   opts:['Tự hào, hài lòng','Cảm thấy có lỗi, ngại ngùng với ai đó','Tức giận với ai đó'], ans:1},
+];
+
+const fillWords = ['爽快','巴不得','异常','别提多...了','嫉妒','郑重','宽容','严厉'];
+const fillRows = [
+  {pre:'我和老公', ans:'爽快', suf:'地答应下来。', py:'shuǎngkuai'},
+  {pre:'有个孩子陪着女儿，我们', ans:'巴不得', suf:'呢！', py:'bābude'},
+  {pre:'天天还没来，林林就变得', ans:'异常', suf:'勤劳。', py:'yìcháng'},
+  {pre:'她们的关系', ans:'别提多...了', suf:'融洽了。', py:'bié tí duō...le'},
+  {pre:'看到女儿和天天这么亲密，我和老公都有点儿', ans:'嫉妒', suf:'了。', py:'jídù'},
+  {pre:'我', ans:'郑重', suf:'地走到她们跟前，严肃地说。', py:'zhèngzhòng'},
+  {pre:'大伙儿要和睦相处，对人要', ans:'宽容', suf:'。', py:'kuānróng'},
+  {pre:'我们对自己宽容，对孩子', ans:'严厉', suf:'。', py:'yánlì'},
+];
+const readingData = [
+  {
+    title: 'Đoạn 1 — Nhận lời chăm bạn của con gái',
+    zh: '林林和天天是同学。天天的父母出差，想请我们帮忙照看几天女儿，我和老公<span class="hl">爽快</span>地答应下来。有个孩子和我们的独生女儿朝夕相处，我们<span class="hl">巴不得</span>呢！最兴奋的是林林，<span class="hl">嚷</span>着要用爸爸最<span class="hl">拿手</span>的美味<span class="hl">佳肴</span>欢迎天天来，还提出，她的书桌可以和天天共用。看到女儿如此热情友好，我和老公<span class="hl">别提多...了</span>高兴了。',
+    q: '看到两个孩子处得这么好，父母的态度是怎样的？',
+    opts: ['很担心，怕耽误学习','非常高兴，只盼着能这样','有点不满，想拒绝'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 2 — Vì chờ đón bạn mà chăm chỉ hẳn lên',
+    zh: '天天还没来，林林就变得<span class="hl">异常</span><span class="hl">勤劳</span>，将屋子收拾得干干净净，东西摆放得整整齐齐，什么好事都想着天天。我家林林虽是女孩，却也<span class="hl">绅士</span><span class="hl">风度</span><span class="hl">十足</span>。',
+    q: '林林为什么在天天来之前变得"异常勤劳"？',
+    opts: ['因为妈妈强迫她打扫房间','因为她想好好准备，欢迎自己的朋友','因为家里要来重要的客人检查'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 3 — Những ngày yên tâm nhờ có bạn',
+    zh: '天天的到来，使我和老公的日子过得<span class="hl">异常</span>省心。两个孩子每天早上不用叫就醒了，上学不用接送，做作业不用<span class="hl">督促</span>；她们不<span class="hl">打架</span>，不闹<span class="hl">别扭</span>，关系<span class="hl">别提多...了</span>融洽了。看到女儿和天天这么<span class="hl">亲密</span>，大有<span class="hl">忽略</span>我们的趋势，我和老公都有点儿<span class="hl">嫉妒</span>了。',
+    q: '父母为什么对两个孩子的关系"有点儿嫉妒"？',
+    opts: ['因为两个孩子学习成绩比父母好','因为女儿好像跟朋友比跟父母更亲密','因为两个孩子要去旅游'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 4 — Câu chuyện phiếm buổi tối',
+    zh: '这天晚上，两个孩子做完作业，开始<span class="hl">滔滔不绝</span>地聊起来，一个说，我不喜欢天天的同学，跟别人拉帮结派，她就喜欢跟长得漂亮的同学一起玩儿，还<span class="hl">嘲笑</span>别人。另一个说我讨厌高鑫，他最会<span class="hl">讨好</span>老师了。',
+    q: '两个孩子聊天时，在说什么？',
+    opts: ['在讨论今天的作业','在背后议论、评价其他同学','在商量明天的活动'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 5 — Bố mẹ nghiêm túc nhắc nhở',
+    zh: '我和老公对视一眼，这么小的孩子怎么学会了背后议论人。我<span class="hl">郑重</span>地走到她们跟前，严肃地说："看到别人有缺点，应该<span class="hl">当面</span>说，背后说<span class="hl">人家</span>的坏话不好。"女儿却是一脸<span class="hl">疑惑</span>，<span class="hl">反问</span>道："你们不是也这样说，哪个朋友好相处，哪个很自私吗？"<span class="hl">瞬间</span>我们被问得说不出话来，屋子里<span class="hl">鸦雀无声</span>。',
+    q: '父母为什么被女儿"问得说不出话来"？',
+    opts: ['因为女儿说的话完全没有道理','因为他们意识到自己也做过同样的事','因为女儿说话声音太大'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 6 — Bài học từ chính con gái',
+    zh: '人们常说，<span class="hl">启蒙</span>老师的重要性不可忽视，父母就是孩子的第一<span class="hl">任</span>老师，这话确实不假，如果这次不是女儿<span class="hl">反驳</span>，我还<span class="hl">意识</span>不到，我们自己的做法和对孩子的要求<span class="hl">实行</span>的是两套标准——对自己<span class="hl">宽容</span>，对孩子<span class="hl">严厉</span>。',
+    q: '这段话主要指出了父母的什么问题？',
+    opts: ['父母不重视启蒙教育','父母对自己和对孩子用了两套不同的标准','父母不了解孩子的想法'],
+    ans: 1,
+  },
+  {
+    title: 'Đoạn 7 — Kết luận của câu chuyện',
+    zh: '这次孩子给我上了重要的一课：想当好父母，首先要<span class="hl">约束</span>好自己的言行。',
+    q: '这段话最后得出的结论是什么？',
+    opts: ['父母应该对孩子更严厉一些','想当好父母，首先要约束好自己的言行','父母不需要在意孩子说的话'],
+    ans: 1,
+  },
+];
+const translationVN = [
+  'Lâm Lâm và Thiên Thiên là bạn học. Bố mẹ Thiên Thiên đi công tác, muốn nhờ chúng tôi trông con gái họ vài hôm, tôi và chồng đã <span class="hl">vui vẻ, dứt khoát</span> nhận lời ngay. Có thêm một đứa trẻ ở cùng con gái một của chúng tôi sớm tối bên nhau, chúng tôi <span class="hl">chỉ mong được như vậy</span>! Hào hứng nhất là Lâm Lâm, con bé <span class="hl">hét toáng lên</span> đòi dùng <span class="hl">món ngon</span> <span class="hl">sở trường</span> nhất của bố để chào đón Thiên Thiên, còn đề nghị cho Thiên Thiên dùng chung bàn học với mình. Thấy con gái nhiệt tình, thân thiện như vậy, tôi và chồng vui <span class="hl">không thể tả</span>.',
+  'Thiên Thiên còn chưa đến, Lâm Lâm đã trở nên <span class="hl">khác thường</span> <span class="hl">chăm chỉ</span>, dọn phòng sạch sẽ tinh tươm, đồ đạc xếp gọn gàng ngăn nắp, có việc gì tốt cũng nghĩ đến Thiên Thiên. Lâm Lâm nhà tôi tuy là con gái nhưng cũng đầy <span class="hl">phong thái</span> <span class="hl">quý ông</span>, ra dáng <span class="hl">trọn vẹn</span>.',
+  'Sự có mặt của Thiên Thiên khiến ngày tháng của tôi và chồng trở nên <span class="hl">vô cùng</span> nhẹ nhõm, yên tâm. Hai đứa trẻ mỗi sáng không cần gọi cũng tự dậy, đi học không cần đưa đón, làm bài tập không cần <span class="hl">đốc thúc</span>; hai đứa không <span class="hl">đánh nhau</span>, không <span class="hl">giận dỗi</span> nhau, quan hệ hòa hợp <span class="hl">không thể tả</span>. Thấy con gái và Thiên Thiên <span class="hl">thân thiết</span> đến vậy, có vẻ sắp <span class="hl">lơ là</span> chúng tôi, tôi và chồng đều có chút <span class="hl">ghen tị</span>.',
+  'Tối hôm đó, làm bài xong, hai đứa trẻ bắt đầu <span class="hl">nói chuyện liên tục không ngừng</span>, một đứa nói, con không thích bạn học của Thiên Thiên, kết bè kết phái với người khác, chỉ thích chơi với những bạn xinh đẹp, còn hay <span class="hl">chế giễu</span> người khác. Đứa kia nói con ghét Cao Hâm, nó giỏi nhất việc <span class="hl">lấy lòng</span> cô giáo.',
+  'Tôi và chồng nhìn nhau, không hiểu sao trẻ con nhỏ như vậy đã học được cách nói xấu sau lưng người khác. Tôi <span class="hl">nghiêm túc</span> bước tới trước mặt hai đứa, nghiêm giọng nói: "Thấy người khác có khuyết điểm thì nên nói <span class="hl">thẳng trước mặt</span>, nói xấu <span class="hl">người khác</span> sau lưng là không tốt." Nhưng con gái lại tỏ vẻ <span class="hl">nghi hoặc</span>, <span class="hl">hỏi vặn lại</span>: "Bố mẹ chẳng phải cũng hay nói vậy sao, bạn nào dễ chơi, bạn nào ích kỷ?" <span class="hl">Trong chớp mắt</span> chúng tôi bị hỏi đến không nói nên lời, cả căn phòng <span class="hl">im phăng phắc</span>.',
+  'Người ta vẫn thường nói, không thể xem nhẹ tầm quan trọng của người thầy <span class="hl">khai sáng</span>, cha mẹ chính là người thầy đầu tiên (<span class="hl">vị</span>) của con cái, câu này quả không sai. Nếu lần này con gái không <span class="hl">phản bác</span> lại, có lẽ tôi vẫn chưa <span class="hl">nhận thức</span> được rằng, cách làm của chính chúng tôi và những yêu cầu đặt ra cho con lại <span class="hl">thực hiện</span> theo hai tiêu chuẩn khác nhau — <span class="hl">khoan dung</span> với bản thân, <span class="hl">nghiêm khắc</span> với con cái.',
+  'Lần này con gái đã dạy cho tôi một bài học quan trọng: muốn làm cha mẹ tốt, trước hết phải <span class="hl">kiềm chế, ràng buộc</span> tốt lời nói và hành động của bản thân.',
+];
+const errorData = [
+  {
+    sentences: [
+      '我和老公爽快地答应下来，巴不得有个孩子陪女儿。',
+      '天天还没来，林林就变得异常勤劳，将屋子收拾得干干净净。',
+      '我和老公异常地答应下来，巴不得有个孩子陪女儿。',
+      '大伙儿要和睦相处，对人要宽容。',
+    ],
+    ans: 2,
+    note: '异常 (vô cùng/khác thường) là phó từ chỉ mức độ, không diễn tả thái độ đồng ý — phải dùng 爽快 (thẳng thắn, dứt khoát) mới đúng nghĩa "vui vẻ đồng ý ngay". Câu C đã dùng sai 异常 ở vị trí này.'
+  },
+  {
+    sentences: [
+      '她们的关系十足融洽，从来不打架。',
+      '她们的关系别提多融洽了。',
+      '我家林林虽是女孩，却也绅士风度十足。',
+      '两个孩子每天早上不用叫就醒了，做作业不用督促。',
+    ],
+    ans: 0,
+    note: '十足 nghĩa là "đầy đủ/trọn vẹn 100%", thường đi với danh từ/tính từ chỉ phẩm chất cụ thể (như 绅士风度十足); khi muốn nói mức độ "rất 融洽" nên dùng 十分 (rất) — 十足 và 十分 dễ nhầm vì gần âm và đều chỉ mức độ cao. Câu A đã dùng sai 十足 thay vì 十分.'
+  },
+  {
+    sentences: [
+      '两个孩子每天早上不用叫就醒了，做作业不用督促。',
+      '她们的关系别提多融洽。',
+      '我家林林虽是女孩，却也绅士风度十足。',
+      '她们的关系别提多融洽了。',
+    ],
+    ans: 1,
+    note: '别提多 + tính từ phải kết thúc bằng trợ từ 了 để hoàn thành cấu trúc nhấn mạnh "...không thể tả được"; thiếu 了 câu sẽ không hoàn chỉnh về ngữ pháp. Câu B đã thiếu 了 ở cuối câu.'
+  },
+  {
+    sentences: [
+      '看到别人有缺点，应该当面说，不要背后说。',
+      '背后说人家的坏话不好。',
+      '看到别人有缺点，应该背后说，不要当面说。',
+      '大伙儿要和睦相处，对人要宽容。',
+    ],
+    ans: 2,
+    note: '当面 (trước mặt) và 背后 (sau lưng) là một cặp trái nghĩa; theo nội dung bài, quan điểm đúng là nên nói thẳng trước mặt (当面), không nên nói xấu sau lưng (背后) — câu C đã đảo ngược ý nghĩa của hai từ này.'
+  },
+  {
+    sentences: [
+      '我们不能对孩子的缺点视而不见。',
+      '我们不能视而不见孩子的缺点。',
+      '对孩子的缺点不能视而不见。',
+      '想当好父母，首先要约束好自己的言行。',
+    ],
+    ans: 1,
+    note: '视而不见 là thành ngữ 4 chữ làm vị ngữ, phải có giới từ 对 đặt trước đối tượng: 对 + đối tượng + 视而不见, không thể đặt 视而不见 ngay trước tân ngữ như một động từ thường. Câu B đã thiếu giới từ 对.'
+  },
+  {
+    sentences: [
+      '父母就是孩子的第一个老师。',
+      '父母就是孩子的第一任老师。',
+      '启蒙老师的重要性不可忽视。',
+      '想当好父母，首先要约束好自己的言行。',
+    ],
+    ans: 0,
+    note: '任 là lượng từ chuyên dùng cho chức vụ/vai trò có tính kế nhiệm (như 第一任老师，第一任总统); 个 là lượng từ phổ biến nhưng không phù hợp với ngữ cảnh chỉ "vai trò đầu tiên" này. Câu A đã dùng sai lượng từ 个 thay vì 任.'
+  },
+  {
+    sentences: [
+      '对自己宽容，对孩子严厉。',
+      '我们对自己严厉，对孩子宽容，这是不对的。',
+      '大伙儿要和睦相处，对人要宽容。',
+      '我们自己的做法和对孩子的要求实行的是两套标准——对自己宽容，对孩子严厉。',
+    ],
+    ans: 1,
+    note: '宽容 (khoan dung) và 严厉 (nghiêm khắc) là cặp trái nghĩa; theo đúng nội dung bài, vấn đề được nêu ra là cha mẹ "khoan dung với bản thân, nghiêm khắc với con cái" (对自己宽容，对孩子严厉) — câu B đã đảo ngược vị trí hai từ này.'
+  },
+  {
+    sentences: [
+      '听完女儿的反问，我目瞪口呆，说不出话来。',
+      '瞬间我和老公被问得说不出话来，屋子里鸦雀无声。',
+      '女儿一脸疑惑，反问道："你们不是也这样说过吗？"',
+      '听完女儿的反问，我们目瞪口呆地说不出话来。',
+    ],
+    ans: 3,
+    note: '目瞪口呆 là thành ngữ miêu tả trạng thái, thường đứng độc lập làm vị ngữ song song (dùng dấu phẩy ngăn cách), không cần thêm 地 biến nó thành trạng ngữ bổ nghĩa cho động từ phía sau. Câu D đã thêm 地 sai.'
+  },
+  {
+    sentences: [
+      '想当好父母，首先要拘束好自己的言行。',
+      '想当好父母，首先要约束好自己的言行。',
+      '孩子们玩耍时无所拘束。',
+      '这件事让我深刻反省自己。',
+    ],
+    ans: 0,
+    note: '约束 (ràng buộc, kiềm chế có chủ đích) khác với 拘束 (cảm thấy gò bó, e dè — thường mang nghĩa bị động, tiêu cực); trong câu này cần 约束 vì ý nghĩa là "tự mình kiềm chế hành vi", không phải "cảm thấy gượng gạo". Câu A đã dùng sai 拘束 thay vì 约束.'
+  },
+  {
+    sentences: [
+      '这件事让我深刻反省自己。',
+      '如果这次不是女儿反驳，我还意识不到。',
+      '女儿一脸疑惑，反驳道："你们不是也这样说过吗？"',
+      '女儿一脸疑惑，反问道："你们不是也这样说过吗？"',
+    ],
+    ans: 2,
+    note: '反问 (hỏi vặn lại bằng một câu hỏi) khác với 反驳 (phản bác bằng lý lẽ, không nhất thiết là câu hỏi); ở đây con gái dùng một câu hỏi để đáp lại nên phải dùng 反问, không phải 反驳. Câu C đã dùng sai 反驳 thay vì 反问.'
+  },
+];
+const sentData = [
+  {
+    vn: 'Chúng tôi chỉ mong điều đó xảy ra thôi!',
+    zh: ['我们巴不得呢！','我们巴不得了！'],
+    words: [
+      {zh:'我们', vn:'chúng tôi'},
+      {zh:'巴不得', vn:'mong mỏi, khao khát'},
+      {zh:'呢', vn:'(trợ từ cuối câu, nhấn mạnh)'},
+      {zh:'！', vn:''},
+    ],
+    note: '巴不得 + 呢 = cấu trúc khẩu ngữ nhấn mạnh sự mong mỏi cấp thiết'
+  },
+  {
+    vn: 'Đây là món sở trường nhất của bố tôi.',
+    zh: ['这是我爸爸最拿手的菜。','这是我爸爸最拿手的佳肴。'],
+    words: [
+      {zh:'这', vn:'đây'},
+      {zh:'是', vn:'là'},
+      {zh:'我爸爸', vn:'bố tôi'},
+      {zh:'最', vn:'nhất'},
+      {zh:'拿手', vn:'sở trường, giỏi'},
+      {zh:'的', vn:'(trợ từ định ngữ)'},
+      {zh:'菜', vn:'món ăn'},
+      {zh:'。', vn:''},
+    ],
+    note: '最 + 拿手 + 的 + danh từ = món/việc sở trường nhất của ai đó'
+  },
+  {
+    vn: 'Hai đứa trẻ không đánh nhau, cũng không giận dỗi nhau.',
+    zh: ['两个孩子不打架，也不闹别扭。','两个孩子不打架，不闹别扭。'],
+    words: [
+      {zh:'两个孩子', vn:'hai đứa trẻ'},
+      {zh:'不', vn:'không'},
+      {zh:'打架', vn:'đánh nhau'},
+      {zh:'，', vn:''},
+      {zh:'也', vn:'cũng'},
+      {zh:'不', vn:'không'},
+      {zh:'闹别扭', vn:'giận dỗi, khó chịu với nhau'},
+      {zh:'。', vn:''},
+    ],
+    note: '不...也不... = không...cũng không... (liệt kê phủ định liên tiếp)'
+  },
+  {
+    vn: 'Mối quan hệ của họ tốt đẹp không thể tả.',
+    zh: ['他们的关系别提多好了。','他们的关系别提多融洽了。'],
+    words: [
+      {zh:'他们', vn:'họ'},
+      {zh:'的', vn:'(trợ từ định ngữ)'},
+      {zh:'关系', vn:'mối quan hệ'},
+      {zh:'别提', vn:'(đừng nhắc tới, dùng để nhấn mạnh)'},
+      {zh:'多', vn:'nhiều, đến mức'},
+      {zh:'好', vn:'tốt'},
+      {zh:'了', vn:'(trợ từ)'},
+      {zh:'。', vn:''},
+    ],
+    note: '别提多 + tính từ + 了 = nhấn mạnh mức độ "không thể tả hết được"'
+  },
+  {
+    vn: 'Thấy người khác có khuyết điểm, nên nói thẳng trước mặt.',
+    zh: ['看到别人有缺点，应该当面说。','看到别人有缺点，要当面说。'],
+    words: [
+      {zh:'看到', vn:'thấy'},
+      {zh:'别人', vn:'người khác'},
+      {zh:'有', vn:'có'},
+      {zh:'缺点', vn:'khuyết điểm'},
+      {zh:'，', vn:''},
+      {zh:'应该', vn:'nên'},
+      {zh:'当面', vn:'trước mặt, ngay tại chỗ'},
+      {zh:'说', vn:'nói'},
+      {zh:'。', vn:''},
+    ],
+    note: '当面 (trước mặt) trái nghĩa với 背后 (sau lưng)'
+  },
+  {
+    vn: 'Cha mẹ chính là người thầy đầu tiên của con cái.',
+    zh: '父母就是孩子的第一任老师。',
+    words: [
+      {zh:'父母', vn:'cha mẹ'},
+      {zh:'就是', vn:'chính là'},
+      {zh:'孩子', vn:'con cái'},
+      {zh:'的', vn:'(trợ từ định ngữ)'},
+      {zh:'第一任', vn:'đời/nhiệm kỳ đầu tiên'},
+      {zh:'老师', vn:'người thầy'},
+      {zh:'。', vn:''},
+    ],
+    note: '任 = lượng từ chỉ chức vụ/nhiệm kỳ, 第一任 = người đầu tiên giữ vai trò đó'
+  },
+  {
+    vn: 'Nếu không phải con gái phản bác, tôi vẫn chưa nhận ra điều đó.',
+    zh: ['如果不是女儿反驳，我还意识不到。','要不是女儿反驳，我还意识不到。'],
+    words: [
+      {zh:'如果', vn:'nếu'},
+      {zh:'不是', vn:'không phải'},
+      {zh:'女儿', vn:'con gái'},
+      {zh:'反驳', vn:'phản bác'},
+      {zh:'，', vn:''},
+      {zh:'我', vn:'tôi'},
+      {zh:'还', vn:'vẫn'},
+      {zh:'意识不到', vn:'không nhận thức được'},
+      {zh:'。', vn:''},
+    ],
+    note: '如果不是.../要不是... = nếu không phải là... (câu điều kiện giả định)'
+  },
+  {
+    vn: 'Muốn làm cha mẹ tốt, trước hết phải kiềm chế tốt lời nói và hành động của bản thân.',
+    zh: '想当好父母，首先要约束好自己的言行。',
+    words: [
+      {zh:'想', vn:'muốn'},
+      {zh:'当', vn:'làm, trở thành'},
+      {zh:'好', vn:'tốt'},
+      {zh:'父母', vn:'cha mẹ'},
+      {zh:'，', vn:''},
+      {zh:'首先', vn:'trước hết'},
+      {zh:'要', vn:'phải'},
+      {zh:'约束', vn:'kiềm chế, ràng buộc'},
+      {zh:'好', vn:'tốt (bổ ngữ kết quả)'},
+      {zh:'自己的', vn:'của bản thân'},
+      {zh:'言行', vn:'lời nói và hành động'},
+      {zh:'。', vn:''},
+    ],
+    note: '约束好 = kiềm chế tốt (动词 + 好 làm bổ ngữ kết quả, chỉ kết quả đạt yêu cầu)'
+  },
+  {
+    vn: 'Không thể làm ngơ trước khuyết điểm của con cái.',
+    zh: ['不能对孩子的缺点视而不见。','不可以对孩子的缺点视而不见。'],
+    words: [
+      {zh:'不能', vn:'không thể'},
+      {zh:'对', vn:'đối với'},
+      {zh:'孩子', vn:'con cái'},
+      {zh:'的', vn:'(trợ từ định ngữ)'},
+      {zh:'缺点', vn:'khuyết điểm'},
+      {zh:'视而不见', vn:'nhìn mà như không thấy, làm ngơ'},
+      {zh:'。', vn:''},
+    ],
+    note: '视而不见 = thành ngữ 4 chữ, dùng làm vị ngữ sau 对 + đối tượng'
+  },
+  {
+    vn: 'Nghe xong câu hỏi vặn lại của con gái, tôi sửng sốt không nói được lời nào.',
+    zh: ['听完女儿的反问，我目瞪口呆，说不出话来。','听了女儿的反问，我目瞪口呆，说不出话来。'],
+    words: [
+      {zh:'听完', vn:'nghe xong'},
+      {zh:'女儿', vn:'con gái'},
+      {zh:'的', vn:'(trợ từ định ngữ)'},
+      {zh:'反问', vn:'câu hỏi vặn lại'},
+      {zh:'，', vn:''},
+      {zh:'我', vn:'tôi'},
+      {zh:'目瞪口呆', vn:'sửng sốt, ngây người'},
+      {zh:'，', vn:''},
+      {zh:'说不出话来', vn:'không nói được lời nào'},
+      {zh:'。', vn:''},
+    ],
+    note: '目瞪口呆 = thành ngữ tả trạng thái kinh ngạc đến mức không phản ứng được'
+  },
+];
+const grammarData = [
+  {
+    title: '1. 别提多 + tính từ + 了',
+    formula: 'Chủ ngữ + 别提多 + tính từ + 了',
+    explain: 'Cấu trúc khẩu ngữ dùng để nhấn mạnh mức độ cao đến mức "không thể diễn tả hết được". Thường mang sắc thái cảm thán, hay dùng trong lời kể.',
+    examples: [
+      {zh:'我和老公别提多高兴了。', vn:'Tôi và chồng vui đến mức không thể tả.'},
+      {zh:'两个孩子的关系别提多融洽了。', vn:'Mối quan hệ của hai đứa trẻ hòa hợp không thể tả.'},
+    ]
+  },
+  {
+    title: '2. 巴不得',
+    formula: 'Chủ ngữ + 巴不得 + (điều mong muốn) + (呢)',
+    explain: 'Diễn tả sự mong mỏi, khao khát tha thiết một điều gì đó xảy ra, thường dùng trong khẩu ngữ, hay đi kèm trợ từ 呢 ở cuối câu để nhấn mạnh.',
+    examples: [
+      {zh:'有个孩子和我们的独生女儿朝夕相处，我们巴不得呢！', vn:'Có một đứa trẻ ở cùng con gái một mình của chúng tôi suốt ngày, chúng tôi chỉ mong có thế!'},
+    ]
+  },
+  {
+    title: '3. 使 + đối tượng + (động từ/tính từ)',
+    formula: 'Sự việc/sự vật + 使 + người/vật + động từ hoặc tính từ',
+    explain: 'Cấu trúc câu khiến (câu nhân quả): A 使 B thế nào đó, nghĩa là "A khiến/làm cho B trở nên...". Chủ ngữ của 使 thường là một sự việc, không phải một người trực tiếp hành động.',
+    examples: [
+      {zh:'天天的到来，使我和老公的日子过得异常省心。', vn:'Việc Thiên Thiên đến khiến những ngày của tôi và chồng trở nên vô cùng nhẹ nhõm.'},
+    ]
+  },
+  {
+    title: '4. 大有...的趋势',
+    formula: 'Chủ ngữ + 大有 + (động từ/cụm từ) + 的趋势',
+    explain: 'Diễn tả một xu hướng, chiều hướng đang hình thành rõ rệt, thường mang ý nhận xét, có phần lo ngại hoặc bất ngờ về một sự thay đổi đang diễn ra.',
+    examples: [
+      {zh:'看到女儿和天天这么亲密，大有忽略我们的趋势。', vn:'Thấy con gái và Thiên Thiên thân thiết như vậy, có vẻ như sắp có xu hướng bỏ quên chúng tôi.'},
+    ]
+  },
+  {
+    title: '5. 对 A ...，对 B ...（cấu trúc đối lập song song）',
+    formula: '对 + đối tượng A + tính từ/động từ 1，对 + đối tượng B + tính từ/động từ 2',
+    explain: 'Dùng hai vế song song với giới từ 对 để so sánh, đối chiếu cách đối xử hoặc thái độ khác nhau dành cho hai đối tượng khác nhau — thường nhằm nêu bật một sự bất công hoặc mâu thuẫn.',
+    examples: [
+      {zh:'我们自己的做法和对孩子的要求实行的是两套标准——对自己宽容，对孩子严厉。', vn:'Cách làm của chúng tôi và yêu cầu đặt ra cho con lại theo hai tiêu chuẩn khác nhau — khoan dung với bản thân, nghiêm khắc với con cái.'},
+    ]
+  },
+  {
+    title: '6. Lượng từ 任 (第一任 + danh từ)',
+    formula: '第 + số thứ tự + 任 + danh từ chỉ chức vụ/vai trò',
+    explain: '任 là lượng từ chuyên dùng cho chức vụ, vai trò có tính kế nhiệm, luân phiên (ví dụ: đời tổng thống, đời giáo viên chủ nhiệm...). Không dùng lượng từ phổ biến như 个/位/名 trong ngữ cảnh này.',
+    examples: [
+      {zh:'父母就是孩子的第一任老师。', vn:'Cha mẹ chính là người thầy đầu tiên của con cái.'},
+    ]
+  },
+  {
+    title: '7. 如果（这次）不是...，我还...不到',
+    formula: '如果（这次）不是 + sự việc/người，Chủ ngữ + 还 + động từ + 不到',
+    explain: 'Câu điều kiện giả định phủ định: nhấn mạnh rằng nếu không nhờ có sự việc/hành động nào đó xảy ra, thì chủ thể đã không thể nhận ra hay đạt được điều gì đó. Vế sau thường dùng "还...不到" để chỉ trạng thái "vẫn chưa" nhận thức được.',
+    examples: [
+      {zh:'如果这次不是女儿反驳，我还意识不到。', vn:'Nếu lần này không phải con gái phản bác, tôi vẫn chưa nhận ra được điều đó.'},
+    ]
+  },
+  {
+    title: '8. ...的重要性不可忽视',
+    formula: 'Danh từ/cụm danh từ + 的重要性不可忽视',
+    explain: 'Cấu trúc mang tính khẳng định, nhấn mạnh tầm quan trọng không thể xem nhẹ của một điều gì đó — thường mở đầu cho một nhận định mang tính đúc kết, triết lý.',
+    examples: [
+      {zh:'启蒙老师的重要性不可忽视。', vn:'Tầm quan trọng của người thầy khai sáng (đầu tiên) là không thể xem nhẹ.'},
+    ]
+  },
+];
+
+/* ───────── TAB NAVIGATION ───────── */
+const tabs = [
+  {id:'vocab',   label:'📖 Từ vựng'},
+  {id:'transl',  label:'📜 Dịch bài khóa'},
+  {id:'grammar', label:'📐 Ngữ pháp'},
+  {id:'mc',      label:'1. Trắc nghiệm'},
+  {id:'fill',    label:'2. Điền từ'},
+  {id:'reading', label:'3. Đọc hiểu'},
+  {id:'wo',      label:'4. Tìm lỗi sai'},
+  {id:'sent',    label:'5. Dịch câu'},
+  {id:'score',   label:'6. Tổng kết'},
+];
+function buildTabs(){
+  const nav = document.getElementById('tabnav');
+  tabs.forEach((t,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'tab-btn' + (i===0?' active':'');
+    btn.textContent = t.label;
+    btn.onclick = ()=>switchTab(t.id);
+    btn.id = 'tabbtn-'+t.id;
+    nav.appendChild(btn);
+  });
+}
+function switchTab(id){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('pane-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).classList.add('active');
+  document.getElementById('tabbtn-'+id).scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ───────── TRANSLATION OF PASSAGE ───────── */
+function buildTranslation(){
+  const wrap = document.getElementById('transl-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh han">${item.zh}</div>
+      <div class="passage-vn">${translationVN[i]}</div>
+    `;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── GRAMMAR ───────── */
+function buildGrammar(){
+  const wrap = document.getElementById('gram-wrap');
+  grammarData.forEach(item=>{
+    const card = document.createElement('div');
+    card.className = 'gram-card';
+    let exHtml = '';
+    item.examples.forEach(ex=>{
+      exHtml += `<div class="gram-ex"><div class="gram-ex-zh han">${ex.zh}</div><div class="gram-ex-vn">${ex.vn}</div></div>`;
+    });
+    card.innerHTML = `
+      <div class="gram-title">${item.title}</div>
+      <div class="gram-formula han">${item.formula}</div>
+      <div class="gram-explain">${item.explain}</div>
+      ${exHtml}`;
+    wrap.appendChild(card);
+  });
+}
+
+/* ───────── VOCAB FLASHCARDS ───────── */
+let vocabSeen = new Set();
+function buildVocab(){
+  const grid = document.getElementById('vocab-grid');
+  vocabData.forEach((v,i)=>{
+    const card = document.createElement('div');
+    card.className = 'flip-card';
+    card.id = 'fc-'+i;
+    card.innerHTML = `
+      <div class="flip-inner">
+        <div class="flip-face flip-front">
+          <span class="fc-tag">${i+1}/49</span>
+          <div class="fc-zh han">${v.zh}</div>
+          <div class="fc-py">${v.py}</div>
+        </div>
+        <div class="flip-face flip-back">
+          <div class="fc-vn">${v.vn}</div>
+          <div class="fc-ex">${v.ex}</div>
+        </div>
+      </div>`;
+    card.onclick = ()=>{
+      card.classList.toggle('flipped');
+      if(!vocabSeen.has(i)){
+        vocabSeen.add(i);
+        document.getElementById('vocab-progress').textContent = vocabSeen.size + ' / ' + vocabData.length + ' đã xem';
+      }
+    };
+    grid.appendChild(card);
+  });
+}
+
+/* ───────── MULTIPLE CHOICE ───────── */
+let mcAns = new Array(mcQ.length).fill(-1);
+function buildMC(){
+  const wrap = document.getElementById('mc-wrap');
+  mcQ.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="q-text">${item.q}</div>
+      <div class="opts" id="mc-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkMC(${i})">Kiểm tra</button>
+      <div id="mc-fb-${i}" class="fb" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#mc-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      const isZh = /[\u4e00-\u9fff]/.test(opt);
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span><span class="${isZh?'opt-zh':''}">${opt}</span>`;
+      el.onclick = ()=>{
+        mcAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+        updateMCProgress();
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function updateMCProgress(){
+  const done = mcAns.filter(a=>a>=0).length;
+  document.getElementById('mc-prog').style.width = Math.round(done/mcQ.length*100)+'%';
+  document.getElementById('mc-prog-label').textContent = done+' / '+mcQ.length;
+}
+function checkMC(i){
+  if(mcAns[i]<0) return;
+  const optsDiv = document.getElementById(`mc-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===mcQ[i].ans) el.className = 'opt ok';
+    else if(k===mcAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`mc-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = mcAns[i]===mcQ[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][mcQ[i].ans];
+}
+
+/* ───────── FILL IN THE BLANK ───────── */
+let slotAns = {};
+let selChip = null;
+function buildWB(){
+  const wb = document.getElementById('wb'); wb.innerHTML=''; selChip=null;
+  fillWords.forEach(w=>{
+    const c = document.createElement('div');
+    c.className = 'chip'; c.textContent = w; c.id = 'chip-'+w;
+    c.onclick = ()=>{
+      if(c.classList.contains('used')) return;
+      document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active-chip'));
+      selChip = w; c.classList.add('active-chip');
+    };
+    wb.appendChild(c);
+  });
+}
+function buildFill(){
+  slotAns = {};
+  const fw = document.getElementById('fill-wrap'); fw.innerHTML='';
+  fillRows.forEach((row,i)=>{
+    const r = document.createElement('div');
+    r.className = 'fill-row';
+    r.innerHTML = `<span class="rn">${i+1}.</span><span class="ft">${row.pre}</span><span class="slot"><span class="slot-box" id="slot-${i}" onclick="fillSlot(${i})"></span></span><span class="ft">${row.suf}</span>`;
+    fw.appendChild(r);
+  });
+}
+function fillSlot(i){
+  if(!selChip) return;
+  const prev = slotAns[i];
+  if(prev){ const pc = document.getElementById('chip-'+prev); if(pc) pc.classList.remove('used'); }
+  slotAns[i] = selChip;
+  const s = document.getElementById('slot-'+i);
+  s.textContent = selChip; s.className = 'slot-box filled';
+  const c = document.getElementById('chip-'+selChip);
+  if(c){ c.classList.add('used'); c.classList.remove('active-chip'); }
+  selChip = null;
+}
+function checkFill(){
+  let ok=0;
+  fillRows.forEach((row,i)=>{
+    const s = document.getElementById('slot-'+i);
+    const v = slotAns[i] || '';
+    s.onclick = null;
+    if(v===row.ans){ s.className='slot-box ok'; ok++; }
+    else{ s.className='slot-box err'; s.textContent=(v||'?')+' → '+row.ans; }
+  });
+  const fb = document.getElementById('fill-fb');
+  fb.innerHTML = `<div class="fb ${ok===fillRows.length?'fb-ok':'fb-no'}">${ok===fillRows.length?'🎉 Hoàn hảo! Điền đúng hết!':'✗ Đúng '+ok+'/'+fillRows.length+'. Ô đỏ đã hiện đáp án đúng.'}</div>`;
+}
+function resetFill(){ buildWB(); buildFill(); document.getElementById('fill-fb').innerHTML=''; }
+
+/* ───────── READING COMPREHENSION ───────── */
+let readAns = new Array(readingData.length).fill(-1);
+function buildReading(){
+  const wrap = document.getElementById('reading-wrap');
+  readingData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'passage-card';
+    card.innerHTML = `
+      <div class="passage-title">${item.title}</div>
+      <div class="passage-zh">${item.zh}</div>
+      <div class="q-card" style="margin-top:14px;margin-bottom:0;box-shadow:none;border:none;padding:14px 0 0;border-top:1px solid var(--line)">
+        <div class="q-text" style="font-weight:600">${item.q}</div>
+        <div class="opts" id="read-opts-${i}"></div>
+        <button class="chk-btn" onclick="checkRead(${i})">Kiểm tra</button>
+        <div id="read-fb-${i}" class="fb" style="display:none"></div>
+      </div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#read-opts-${i}`);
+    item.opts.forEach((opt,j)=>{
+      const el = document.createElement('div');
+      el.className = 'opt';
+      el.innerHTML = `<span class="opt-lbl">${['A','B','C'][j]}</span>${opt}`;
+      el.onclick = ()=>{
+        readAns[i] = j;
+        optsDiv.querySelectorAll('.opt').forEach((o,k)=>{ o.className = 'opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkRead(i){
+  if(readAns[i]<0) return;
+  const optsDiv = document.getElementById(`read-opts-${i}`);
+  optsDiv.querySelectorAll('.opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===readingData[i].ans) el.className = 'opt ok';
+    else if(k===readAns[i]) el.className = 'opt no';
+    else el.className = 'opt';
+  });
+  const fb = document.getElementById(`read-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = readAns[i]===readingData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác!' : '✗ Chưa đúng. Đáp án đúng: '+['A','B','C'][readingData[i].ans];
+}
+
+/* ───────── ERROR CORRECTION ───────── */
+let errAns = new Array(errorData.length).fill(-1);
+function buildWO(){
+  const wrap = document.getElementById('wo-wrap');
+  errorData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'err-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="err-opts" id="err-opts-${i}"></div>
+      <button class="chk-btn" onclick="checkErr(${i})">Kiểm tra</button>
+      <div id="err-fb-${i}" class="fb" style="display:none"></div>
+      <div id="err-note-${i}" style="display:none"></div>`;
+    wrap.appendChild(card);
+    const optsDiv = card.querySelector(`#err-opts-${i}`);
+    item.sentences.forEach((s,j)=>{
+      const el = document.createElement('div');
+      el.className = 'err-opt';
+      el.innerHTML = `<span class="err-lbl">${['A','B','C','D'][j]}</span><span class="han">${s}</span>`;
+      el.onclick = ()=>{
+        errAns[i] = j;
+        optsDiv.querySelectorAll('.err-opt').forEach((o,k)=>{ o.className = 'err-opt' + (k===j?' sel':''); });
+      };
+      optsDiv.appendChild(el);
+    });
+  });
+}
+function checkErr(i){
+  if(errAns[i]<0) return;
+  const optsDiv = document.getElementById(`err-opts-${i}`);
+  optsDiv.querySelectorAll('.err-opt').forEach((el,k)=>{
+    el.onclick = null;
+    if(k===errorData[i].ans) el.className = 'err-opt ok';
+    else if(k===errAns[i]) el.className = 'err-opt no';
+    else el.className = 'err-opt';
+  });
+  const fb = document.getElementById(`err-fb-${i}`);
+  fb.style.display = 'block';
+  const isOk = errAns[i]===errorData[i].ans;
+  fb.className = 'fb ' + (isOk?'fb-ok':'fb-no');
+  fb.textContent = isOk ? '✓ Chính xác! Đây đúng là câu sai.' : '✗ Chưa đúng. Câu sai là: '+['A','B','C','D'][errorData[i].ans];
+  const noteDiv = document.getElementById(`err-note-${i}`);
+  noteDiv.style.display = 'block';
+  noteDiv.innerHTML = `<div class="err-note">${errorData[i].note}</div>`;
+}
+
+/* ───────── SENTENCE TRANSLATION ───────── */
+let sentAnswers = {};
+let sentSubmitted = {};
+function normalizeChinese(s){
+  return (s||'').replace(/[，,。.！!？?；;\s]/g,'').trim();
+}
+function matchSentAns(val, item){
+  const answers = Array.isArray(item.zh) ? item.zh : [item.zh];
+  return answers.find(a => normalizeChinese(val)===normalizeChinese(a)) || null;
+}
+function getPrimaryAns(item){
+  return Array.isArray(item.zh) ? item.zh[0] : item.zh;
+}
+function buildSentences(){
+  const wrap = document.getElementById('sent-wrap');
+  sentData.forEach((item,i)=>{
+    const card = document.createElement('div');
+    card.className = 'sent-card';
+    card.innerHTML = `
+      <div class="q-tag">Câu ${i+1}</div>
+      <div class="sent-vn">${item.vn}</div>
+      <input class="sent-input" id="sent-input-${i}" placeholder="Nhập câu tiếng Trung..."
+        onkeydown="if(event.key==='Enter')checkSentSingle(${i})">
+      <button class="sent-check-btn" onclick="checkSentSingle(${i})">Kiểm tra</button>
+      <div id="sent-result-${i}"></div>`;
+    wrap.appendChild(card);
+  });
+}
+function checkSentSingle(i){
+  const input = document.getElementById('sent-input-'+i);
+  const val = input.value;
+  sentAnswers[i] = val;
+  sentSubmitted[i] = true;
+  const item = sentData[i];
+  const matched = matchSentAns(val, item);
+  const resultDiv = document.getElementById('sent-result-'+i);
+  const primary = getPrimaryAns(item);
+  let html = '';
+  if(matched){
+    html += `<div class="sent-fb fb-ok">✓ Chính xác!</div>`;
+  } else {
+    html += `<div class="sent-fb fb-no">✗ Chưa đúng. Xem phân tích đáp án bên dưới.</div>`;
+  }
+  html += `<div class="sent-explain">
+    <div class="sent-explain-zh han">${primary}</div>
+    <div class="se-words">`;
+  item.words.forEach(w=>{
+    html += `<div class="se-word"><div class="se-word-zh han">${w.zh}</div><div class="se-word-vn">${w.vn}</div></div>`;
+  });
+  html += `</div><div class="se-note">${item.note}</div></div>`;
+  resultDiv.innerHTML = html;
+}
+
+/* ───────── SCORE SUMMARY ───────── */
+function renderScoreTable(computed){
+  const mcTot=mcQ.length, fillTot=fillRows.length, readTot=readingData.length, errTot=errorData.length, sentTot=sentData.length;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pctOf = (ok,tot)=> tot>0 ? Math.round(ok/tot*100) : 0;
+  const dash = '—';
+
+  const wrap = document.getElementById('score-wrap');
+
+  if(!computed){
+    wrap.innerHTML = `
+      <div class="score-wrap">
+        <div class="score-ring"><span class="score-ring-num">${dash}</span><span class="score-ring-tot">${dash}/${totalAll}</span></div>
+        <div class="score-title">Nhấn "Tính điểm tổng kết" để xem kết quả</div>
+        <div class="score-sub">Tổng số câu của bài: ${totalAll}</div>
+        <table class="score-table">
+          <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+          <tr><td>1. Trắc nghiệm</td><td>${dash}</td><td>${mcTot}</td><td>${dash}</td></tr>
+          <tr><td>2. Điền từ</td><td>${dash}</td><td>${fillTot}</td><td>${dash}</td></tr>
+          <tr><td>3. Đọc hiểu</td><td>${dash}</td><td>${readTot}</td><td>${dash}</td></tr>
+          <tr><td>4. Tìm lỗi sai</td><td>${dash}</td><td>${errTot}</td><td>${dash}</td></tr>
+          <tr><td>5. Dịch câu</td><td>${dash}</td><td>${sentTot}</td><td>${dash}</td></tr>
+          <tr><td>TỔNG</td><td>${dash}</td><td>${totalAll}</td><td>${dash}</td></tr>
+        </table>
+      </div>`;
+    return;
+  }
+
+  const {mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict} = computed;
+  wrap.innerHTML = `
+    <div class="score-wrap">
+      <div class="score-ring"><span class="score-ring-num">${pct}%</span><span class="score-ring-tot">${totalOk}/${totalAll}</span></div>
+      <div class="score-title">${verdict}</div>
+      <div class="score-sub">Tổng số câu đúng: ${totalOk} / ${totalAll}</div>
+      <table class="score-table">
+        <tr><th>Phần</th><th>Đúng</th><th>Tổng</th><th>%</th></tr>
+        <tr><td>1. Trắc nghiệm</td><td>${mcOk}</td><td>${mcTot}</td><td>${pctOf(mcOk,mcTot)}%</td></tr>
+        <tr><td>2. Điền từ</td><td>${fillOk}</td><td>${fillTot}</td><td>${pctOf(fillOk,fillTot)}%</td></tr>
+        <tr><td>3. Đọc hiểu</td><td>${readOk}</td><td>${readTot}</td><td>${pctOf(readOk,readTot)}%</td></tr>
+        <tr><td>4. Tìm lỗi sai</td><td>${errOk}</td><td>${errTot}</td><td>${pctOf(errOk,errTot)}%</td></tr>
+        <tr><td>5. Dịch câu</td><td>${sentOk}</td><td>${sentTot}</td><td>${pctOf(sentOk,sentTot)}%</td></tr>
+        <tr><td>TỔNG</td><td>${totalOk}</td><td>${totalAll}</td><td>${pct}%</td></tr>
+      </table>
+    </div>`;
+}
+
+function calcScore(){
+  let mcOk=0, mcTot=mcQ.length;
+  mcAns.forEach((a,i)=>{ if(a===mcQ[i].ans) mcOk++; });
+
+  let fillOk=0, fillTot=fillRows.length;
+  fillRows.forEach((row,i)=>{ if(slotAns[i]===row.ans) fillOk++; });
+
+  let readOk=0, readTot=readingData.length;
+  readAns.forEach((a,i)=>{ if(a===readingData[i].ans) readOk++; });
+
+  let errOk=0, errTot=errorData.length;
+  errAns.forEach((a,i)=>{ if(a===errorData[i].ans) errOk++; });
+
+  let sentOk=0, sentTot=sentData.length;
+  sentData.forEach((item,i)=>{
+    if(sentSubmitted[i] && matchSentAns(sentAnswers[i]||'', item)) sentOk++;
+  });
+
+  const totalOk = mcOk+fillOk+readOk+errOk+sentOk;
+  const totalAll = mcTot+fillTot+readTot+errTot+sentTot;
+  const pct = totalAll>0 ? Math.round(totalOk/totalAll*100) : 0;
+
+  let verdict;
+  if(pct>=90) verdict = '⭐ Xuất sắc! Bạn đã nắm rất vững bài học này.';
+  else if(pct>=70) verdict = '👍 Giỏi! Còn vài điểm nhỏ cần ôn lại.';
+  else if(pct>=50) verdict = '📖 Khá! Nên ôn lại các phần từ vựng và ngữ pháp.';
+  else verdict = '💪 Cần ôn tập lại kỹ hơn các phần từ vựng cốt lõi.';
+
+  renderScoreTable({mcOk, fillOk, readOk, errOk, sentOk, totalOk, pct, verdict});
+  switchTab('score');
+}
+
+/* ───────── INIT ───────── */
+buildTabs();
+buildVocab();
+buildTranslation();
+buildGrammar();
+buildMC();
+buildWB();
+buildFill();
+buildReading();
+buildWO();
+buildSentences();
+renderScoreTable();
+
+</script>
+</body>
+</html>
