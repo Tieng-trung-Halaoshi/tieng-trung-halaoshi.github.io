@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tiếng Trung Halaoshi — Học & Luyện HSK</title>
+<title>Tiếng Trung Halaoshi — Học & Luyện HSK 3.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
 <style>
   :root{
-    --red-deep:#a3242f;
-    --red:#c62f3a;
-    --red-light:#e05a63;
+    --green-deep:#1b5e3a;
+    --green:#2e8b57;
+    --green-light:#57ab7c;
+    --green-pale:#e6f4ec;
     --gold:#d4a437;
     --gold-light:#f0d489;
-    --paper:#fff8f0;
-    --paper-dark:#fbeee1;
-    --ink:#2b1f1a;
-    --ink-soft:#6b5a4e;
+    --paper:#fbfdf9;
+    --paper-dark:#eef6f0;
+    --ink:#20291f;
+    --ink-soft:#5c6b5e;
   }
   *{box-sizing:border-box;}
   body{
@@ -25,19 +26,17 @@
     font-family:'Noto Serif', serif;
     color:var(--ink);
     background:
-      radial-gradient(circle at 15% 10%, rgba(198,47,58,0.06), transparent 40%),
-      radial-gradient(circle at 85% 80%, rgba(212,164,55,0.08), transparent 45%),
+      radial-gradient(circle at 15% 10%, rgba(46,139,87,0.07), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(212,164,55,0.07), transparent 45%),
       var(--paper);
     min-height:100vh;
   }
-  .wrap{max-width:1080px;margin:0 auto;padding:28px 18px 60px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 18px 60px;}
 
   header.top{
     text-align:center;
-    padding:26px 10px 30px;
-    border-bottom:3px double var(--red-deep);
-    margin-bottom:26px;
-    position:relative;
+    padding:26px 10px 20px;
+    margin-bottom:6px;
   }
   header.top .mascot-slot{
     width:72px;height:72px;
@@ -52,13 +51,13 @@
     font-family:'Noto Serif SC', serif;
     letter-spacing:4px;
     font-size:13px;
-    color:var(--red-deep);
+    color:var(--green-deep);
     text-transform:uppercase;
   }
   header.top h1{
     font-family:'Ma Shan Zheng', cursive;
     font-size:44px;
-    color:var(--red-deep);
+    color:var(--green-deep);
     margin:6px 0 4px;
     font-weight:400;
   }
@@ -69,34 +68,61 @@
     font-style:italic;
   }
 
-  .level-tabs{
+  .student-bar{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:10px;
+    margin:0 0 10px;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .student-bar button{
+    font-family:'Noto Serif', serif;
+    font-size:12px;
+    padding:5px 10px;
+    border-radius:6px;
+    border:1px solid var(--gold);
+    background:var(--paper);
+    color:var(--green-deep);
+    cursor:pointer;
+  }
+
+  .main-nav{
     display:flex;
     flex-wrap:wrap;
-    gap:8px;
+    gap:6px;
     justify-content:center;
-    margin-bottom:26px;
-    padding:14px;
-    background:var(--paper-dark);
-    border:1px solid var(--gold-light);
-    border-radius:10px;
+    margin-bottom:24px;
+    padding:10px;
+    background:var(--green-deep);
+    border-radius:12px;
   }
-  .level-btn{
+  .nav-btn{
     font-family:'Noto Serif SC', serif;
-    font-size:15px;
+    font-size:14px;
     font-weight:600;
-    padding:10px 20px;
+    padding:9px 16px;
     border-radius:8px;
-    border:1px solid var(--red-deep);
-    background:var(--paper);
-    color:var(--red-deep);
+    border:none;
+    background:transparent;
+    color:var(--paper);
     cursor:pointer;
     transition:all .15s ease;
+    opacity:0.85;
   }
-  .level-btn:hover{background:var(--gold-light);}
-  .level-btn.active{
-    background:var(--red-deep);
-    color:var(--paper);
-    border-color:var(--red-deep);
+  .nav-btn:hover{background:rgba(255,255,255,0.12); opacity:1;}
+  .nav-btn.active{
+    background:var(--gold);
+    color:var(--green-deep);
+    opacity:1;
+  }
+  .nav-btn.login-btn{
+    margin-left:auto;
+    border:1px solid var(--gold-light);
+  }
+  @media(max-width:700px){
+    .nav-btn.login-btn{margin-left:0;}
   }
 
   .panel{
@@ -104,16 +130,80 @@
     border:1px solid var(--gold-light);
     border-radius:10px;
     padding:28px 24px;
-    box-shadow:0 2px 10px rgba(43,33,21,0.08);
+    box-shadow:0 2px 10px rgba(20,40,25,0.06);
   }
   .panel h2{
     font-family:'Noto Serif SC', serif;
-    color:var(--red-deep);
+    color:var(--green-deep);
     border-bottom:2px solid var(--gold);
     padding-bottom:10px;
     margin-top:0;
     font-size:24px;
   }
+  .panel h3{
+    font-family:'Noto Serif SC', serif;
+    color:var(--green-deep);
+    font-size:18px;
+    margin:20px 0 10px;
+  }
+  .panel p{line-height:1.7;}
+
+  .home-hero{
+    text-align:center;
+    padding:10px 10px 26px;
+  }
+  .home-hero h2{
+    border:none;
+    font-size:26px;
+  }
+  .home-hero p{
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0 auto 18px;
+  }
+  .feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:16px;
+    margin-top:20px;
+  }
+  .feature-card{
+    background:var(--green-pale);
+    border:1px solid var(--gold-light);
+    border-radius:10px;
+    padding:18px;
+  }
+  .feature-card .icon{font-size:26px;margin-bottom:6px;}
+  .feature-card h4{
+    font-family:'Noto Serif SC', serif;
+    color:var(--green-deep);
+    margin:4px 0 6px;
+    font-size:16px;
+  }
+  .feature-card p{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .home-cta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin-top:22px;
+  }
+  .home-cta button{
+    font-family:'Noto Serif SC', serif;
+    font-weight:600;
+    font-size:14px;
+    padding:10px 22px;
+    border-radius:8px;
+    border:1px solid var(--green-deep);
+    background:var(--green-deep);
+    color:var(--paper);
+    cursor:pointer;
+  }
+  .home-cta button:hover{background:var(--green);}
 
   .lesson-grid{
     display:grid;
@@ -125,7 +215,7 @@
     display:block;
     text-decoration:none;
     padding:16px 14px;
-    background:var(--paper-dark);
+    background:var(--green-pale);
     border:1px solid var(--gold-light);
     border-radius:8px;
     color:var(--ink);
@@ -141,7 +231,7 @@
     font-family:'Noto Serif SC', serif;
     font-size:20px;
     font-weight:700;
-    color:var(--red-deep);
+    color:var(--green-deep);
   }
   .lesson-card .name{
     font-size:13px;
@@ -159,6 +249,111 @@
     font-size:14px;
   }
 
+  .doc-list{
+    list-style:none;
+    padding:0;
+    margin:10px 0 0;
+  }
+  .doc-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+    background:var(--green-pale);
+    border:1px solid var(--gold-light);
+    border-radius:8px;
+    margin-bottom:10px;
+    flex-wrap:wrap;
+  }
+  .doc-list .doc-name{
+    font-family:'Noto Serif SC', serif;
+    color:var(--green-deep);
+    font-weight:600;
+  }
+  .doc-list .doc-desc{
+    font-size:13px;
+    color:var(--ink-soft);
+    display:block;
+    font-weight:400;
+    font-family:'Noto Serif', serif;
+  }
+  .doc-list a.doc-link{
+    font-size:13px;
+    padding:6px 14px;
+    border-radius:6px;
+    background:var(--green-deep);
+    color:var(--paper);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .doc-list a.doc-link:hover{background:var(--green);}
+  .doc-list .doc-pending{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-style:italic;
+    white-space:nowrap;
+  }
+
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:16px;
+    margin-top:16px;
+  }
+  .contact-card{
+    background:var(--green-pale);
+    border:1px solid var(--gold-light);
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+  }
+  .contact-card .icon{font-size:26px;margin-bottom:8px;}
+  .contact-card .label{
+    font-family:'Noto Serif SC', serif;
+    color:var(--green-deep);
+    font-weight:600;
+    font-size:14px;
+    margin-bottom:4px;
+  }
+  .contact-card .value{
+    font-size:13px;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  .login-box{
+    max-width:380px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .login-box .who{
+    background:var(--green-pale);
+    border:1px solid var(--gold-light);
+    border-radius:8px;
+    padding:18px;
+    margin-top:14px;
+  }
+  .login-box .who .name{
+    font-family:'Noto Serif SC', serif;
+    font-size:18px;
+    color:var(--green-deep);
+    font-weight:700;
+  }
+  .login-box button{
+    font-family:'Noto Serif SC', serif;
+    font-weight:600;
+    font-size:14px;
+    padding:10px 22px;
+    border-radius:8px;
+    border:1px solid var(--green-deep);
+    background:var(--green-deep);
+    color:var(--paper);
+    cursor:pointer;
+    margin-top:14px;
+  }
+  .login-box button:hover{background:var(--green);}
+
   .empty-note{
     text-align:center;
     padding:50px 20px;
@@ -167,26 +362,6 @@
     border:1px dashed var(--gold);
     border-radius:8px;
     background:rgba(212,164,55,0.06);
-  }
-
-  .student-bar{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    gap:10px;
-    margin-bottom:14px;
-    font-size:13px;
-    color:var(--ink-soft);
-  }
-  .student-bar button{
-    font-family:'Noto Serif', serif;
-    font-size:12px;
-    padding:5px 10px;
-    border-radius:6px;
-    border:1px solid var(--gold);
-    background:var(--paper);
-    color:var(--red-deep);
-    cursor:pointer;
   }
 
   footer{
@@ -210,12 +385,12 @@
     <div class="mascot-slot">🐼</div>
     <div class="eyebrow">Tiếng Trung Halaoshi</div>
     <h1>學中文</h1>
-    <p>Học & luyện tập HSK 3.0 — Từ HSK1 đến HSK6</p>
+    <p>Học & luyện tập theo giáo trình chuẩn HSK 3.0 — Từ HSK1 đến HSK6</p>
   </header>
 
   <div class="student-bar" id="studentBar"></div>
 
-  <nav class="level-tabs" id="levelTabs"></nav>
+  <nav class="main-nav" id="mainNav"></nav>
 
   <main class="panel" id="panel"></main>
 
@@ -226,7 +401,26 @@
 <script>
 /**
  * ============================================================
- * CẤU HÌNH DANH SÁCH BÀI HỌC
+ * CẤU HÌNH CÁC MỤC ĐIỀU HƯỚNG CHÍNH (thanh nav trên cùng)
+ * ============================================================
+ */
+const navSections = [
+  { id: 'home',    label: 'Trang chủ' },
+  { id: 'HSK1',    label: 'HSK 1' },
+  { id: 'HSK2',    label: 'HSK 2' },
+  { id: 'HSK3',    label: 'HSK 3' },
+  { id: 'HSK4',    label: 'HSK 4' },
+  { id: 'HSK5',    label: 'HSK 5' },
+  { id: 'HSK6',    label: 'HSK 6' },
+  { id: 'giaotrinh', label: 'Giáo trình' },
+  { id: 'tailieu',   label: 'Tài liệu' },
+  { id: 'lienhe',    label: 'Liên hệ' },
+  { id: 'login',     label: 'Đăng nhập', isLogin: true }
+];
+
+/**
+ * ============================================================
+ * DANH SÁCH BÀI HỌC THEO TỪNG CẤP ĐỘ
  * ============================================================
  * Đây là NƠI DUY NHẤT cần sửa khi thêm bài học mới.
  * Mỗi bài học cần: { ten: 'Bài X', file: 'đường-dẫn-tới-file.html' }
@@ -234,55 +428,79 @@
  * ============================================================
  */
 const lessonsData = {
-  'HSK1': {
-    label: 'HSK 1',
-    lessons: [
-      // Ví dụ mẫu — cô thay bằng file thật của mình:
-      // { ten: 'Bài 1', file: 'hsk1/bai-01.html' },
-      // { ten: 'Bài 6', file: 'hsk1/bai-06.html' },
-    ]
-  },
+  'HSK1': { label: 'HSK 1', lessons: [
+    // { ten: 'Bài 1', file: 'hsk1/bai-01.html' },
+  ]},
   'HSK2': { label: 'HSK 2', lessons: [] },
   'HSK3': { label: 'HSK 3', lessons: [] },
   'HSK4': { label: 'HSK 4', lessons: [] },
   'HSK5': { label: 'HSK 5', lessons: [] },
-  'HSK6': {
-    label: 'HSK 6',
-    lessons: [
-      // { ten: 'Ngữ pháp (Quyển Thượng)', file: 'hsk6/ngu-phap-hsk6-quyen-thuong.html' },
-      // { ten: 'Bài 1', file: 'hsk6/bai-01.html' },
-      // { ten: 'Bài 7', file: 'hsk6/bai-07.html' },
-    ]
-  }
+  'HSK6': { label: 'HSK 6', lessons: [
+    // { ten: 'Ngữ pháp (Quyển Thượng)', file: 'hsk6/ngu-phap-hsk6-quyen-thuong.html' },
+  ]}
 };
 
-const levelTabsEl = document.getElementById('levelTabs');
+/**
+ * ============================================================
+ * GIÁO TRÌNH — file/link tải về theo từng cấp độ
+ * ============================================================
+ * Thêm mục mới: { ten: 'Tên sách', file: 'đường-dẫn.pdf', mota: 'Mô tả ngắn' }
+ * Nếu chưa có file: để file: null → hiện "Đang cập nhật"
+ * ============================================================
+ */
+const giaoTrinhData = [
+  { capDo: 'HSK 1', ten: 'Giáo trình chuẩn HSK 3.0 - Sơ cấp 1', file: null, mota: 'Sách giáo trình chính, dùng kèm các bài học trên web.' },
+  { capDo: 'HSK 2', ten: 'Giáo trình chuẩn HSK 3.0 - Sơ cấp 2', file: null, mota: '' },
+  { capDo: 'HSK 3', ten: 'Giáo trình chuẩn HSK 3.0 - Sơ cấp 3', file: null, mota: '' },
+  { capDo: 'HSK 4', ten: 'Giáo trình chuẩn HSK 3.0 - Trung cấp 1', file: null, mota: '' },
+  { capDo: 'HSK 5', ten: 'Giáo trình chuẩn HSK 3.0 - Trung cấp 2', file: null, mota: '' },
+  { capDo: 'HSK 6', ten: 'Giáo trình chuẩn HSK 3.0 - Cao cấp (Quyển Thượng)', file: null, mota: '' }
+];
+
+/**
+ * ============================================================
+ * TÀI LIỆU BỔ TRỢ — file âm thanh, bài tập thêm, v.v.
+ * ============================================================
+ */
+const taiLieuData = [
+  { ten: 'File nghe (MP3) toàn khoá', file: null, mota: 'Audio luyện nghe kèm sách giáo trình.' },
+  { ten: 'Bộ 50 Bộ Thủ Thường Gặp', file: null, mota: 'Ứng dụng luyện tập bộ thủ chữ Hán.' },
+  { ten: 'Tài liệu ngữ pháp tổng hợp', file: null, mota: '' }
+];
+
+/**
+ * ============================================================
+ * THÔNG TIN LIÊN HỆ — cô tự điền lại thông tin thật vào đây
+ * ============================================================
+ */
+const lienHeData = {
+  zaloSdt: '0989 326 592',
+  email: '',   // ví dụ: 'tiengtrunghalaoshi@gmail.com' — cô điền khi có
+  facebook: 'https://facebook.com/tiengtrunghalaoshi',
+  tiktok: 'https://tiktok.com/@tiengtrunghalaoshi'
+};
+
+const mainNavEl = document.getElementById('mainNav');
 const panelEl = document.getElementById('panel');
 const studentBarEl = document.getElementById('studentBar');
-let activeLevel = 'HSK1';
+let activeSection = 'home';
 
-function renderLevelTabs(){
-  levelTabsEl.innerHTML = '';
-  Object.keys(lessonsData).forEach(key => {
+function renderMainNav(){
+  mainNavEl.innerHTML = '';
+  navSections.forEach(sec => {
     const btn = document.createElement('button');
-    btn.className = 'level-btn' + (key === activeLevel ? ' active' : '');
-    btn.textContent = lessonsData[key].label;
-    btn.onclick = () => { activeLevel = key; renderLevelTabs(); renderPanel(); };
-    levelTabsEl.appendChild(btn);
+    btn.className = 'nav-btn' + (sec.id === activeSection ? ' active' : '') + (sec.isLogin ? ' login-btn' : '');
+    btn.textContent = sec.label;
+    btn.onclick = () => { activeSection = sec.id; renderMainNav(); renderPanel(); };
+    mainNavEl.appendChild(btn);
   });
 }
 
-function renderPanel(){
-  const level = lessonsData[activeLevel];
-  let html = '<h2>' + level.label + '</h2>';
-
+function renderLessonGrid(level){
   if (!level.lessons.length){
-    html += '<div class="empty-note">Nội dung ' + level.label + ' đang được cập nhật.</div>';
-    panelEl.innerHTML = html;
-    return;
+    return '<div class="empty-note">Nội dung ' + level.label + ' đang được cập nhật.</div>';
   }
-
-  html += '<div class="lesson-grid">';
+  let html = '<div class="lesson-grid">';
   level.lessons.forEach((l, i) => {
     if (l.file){
       html += '<a class="lesson-card" href="' + l.file + '">'
@@ -297,7 +515,126 @@ function renderPanel(){
     }
   });
   html += '</div>';
+  return html;
+}
+
+function renderHome(){
+  let html = '<div class="home-hero">';
+  html += '<h2>Chào mừng đến với Tiếng Trung Halaoshi</h2>';
+  html += '<p>Website tự học và luyện tập tiếng Trung theo giáo trình chuẩn HSK 3.0, biên soạn bởi Halaoshi. '
+        + 'Học sinh có thể luyện tập trực tiếp trên web, làm bài tập tương tác và nộp bài để giáo viên theo dõi kết quả.</p>';
+  html += '<div class="feature-grid">';
+  html += '<div class="feature-card"><div class="icon">📚</div><h4>Giáo trình HSK 3.0</h4><p>Bám sát cấu trúc giáo trình chuẩn, từ HSK1 đến HSK6.</p></div>';
+  html += '<div class="feature-card"><div class="icon">✍️</div><h4>Bài tập tương tác</h4><p>Từ vựng, ngữ pháp, đọc hiểu, dịch câu — có chấm điểm tự động.</p></div>';
+  html += '<div class="feature-card"><div class="icon">📊</div><h4>Theo dõi tiến độ</h4><p>Học sinh nộp bài, giáo viên xem điểm và theo dõi quá trình học.</p></div>';
+  html += '</div>';
+  html += '<div class="home-cta">';
+  navSections.filter(s => s.id.startsWith('HSK')).forEach(s => {
+    html += '<button data-goto="' + s.id + '">' + s.label + '</button>';
+  });
+  html += '</div>';
+  html += '</div>';
+  return html;
+}
+
+function renderGiaoTrinh(){
+  let html = '<h2>Giáo trình</h2>';
+  html += '<p>Danh sách giáo trình chuẩn HSK 3.0 sử dụng trong khoá học. File tải về sẽ được cập nhật dần.</p>';
+  html += '<ul class="doc-list">';
+  giaoTrinhData.forEach(d => {
+    html += '<li>';
+    html += '<div><span class="doc-name">[' + d.capDo + '] ' + d.ten + '</span>';
+    if (d.mota) html += '<span class="doc-desc">' + d.mota + '</span>';
+    html += '</div>';
+    html += d.file
+      ? '<a class="doc-link" href="' + d.file + '" target="_blank" rel="noopener">Tải về</a>'
+      : '<span class="doc-pending">Đang cập nhật</span>';
+    html += '</li>';
+  });
+  html += '</ul>';
+  return html;
+}
+
+function renderTaiLieu(){
+  let html = '<h2>Tài liệu bổ trợ</h2>';
+  html += '<p>Các tài liệu và công cụ luyện tập thêm ngoài giáo trình chính.</p>';
+  html += '<ul class="doc-list">';
+  taiLieuData.forEach(d => {
+    html += '<li>';
+    html += '<div><span class="doc-name">' + d.ten + '</span>';
+    if (d.mota) html += '<span class="doc-desc">' + d.mota + '</span>';
+    html += '</div>';
+    html += d.file
+      ? '<a class="doc-link" href="' + d.file + '" target="_blank" rel="noopener">Tải về</a>'
+      : '<span class="doc-pending">Đang cập nhật</span>';
+    html += '</li>';
+  });
+  html += '</ul>';
+  return html;
+}
+
+function renderLienHe(){
+  let html = '<h2>Liên hệ</h2>';
+  html += '<p>Mọi thắc mắc về khoá học, học viên có thể liên hệ qua các kênh sau:</p>';
+  html += '<div class="contact-grid">';
+  html += '<div class="contact-card"><div class="icon">💬</div><div class="label">Zalo / SĐT</div><div class="value">' + (lienHeData.zaloSdt || 'Đang cập nhật') + '</div></div>';
+  html += '<div class="contact-card"><div class="icon">✉️</div><div class="label">Email</div><div class="value">' + (lienHeData.email || 'Đang cập nhật') + '</div></div>';
+  html += '<div class="contact-card"><div class="icon">📘</div><div class="label">Fanpage</div><div class="value">'
+        + (lienHeData.facebook ? '<a href="' + lienHeData.facebook + '" target="_blank" rel="noopener" style="color:var(--green-deep);">tiengtrunghalaoshi</a>' : 'Đang cập nhật')
+        + '</div></div>';
+  html += '<div class="contact-card"><div class="icon">🎵</div><div class="label">TikTok</div><div class="value">'
+        + (lienHeData.tiktok ? '<a href="' + lienHeData.tiktok + '" target="_blank" rel="noopener" style="color:var(--green-deep);">@tiengtrunghalaoshi</a>' : 'Đang cập nhật')
+        + '</div></div>';
+  html += '</div>';
+  return html;
+}
+
+function renderLogin(){
+  const info = HalaoshiNopBai.getHocSinhInfo();
+  let html = '<h2>Đăng nhập học viên</h2>';
+  html += '<div class="login-box">';
+  html += '<p>Nhập họ tên và lớp để hệ thống ghi nhớ khi nộp bài tập.</p>';
+  if (info && info.hoTen){
+    html += '<div class="who"><div class="name">' + info.hoTen + '</div>';
+    if (info.lop) html += '<div>Lớp: ' + info.lop + '</div>';
+    html += '</div>';
+    html += '<button id="doiTenBtnPanel">Đổi thông tin</button>';
+  } else {
+    html += '<button id="doiTenBtnPanel">Nhập tên học sinh</button>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderPanel(){
+  let html = '';
+  if (activeSection === 'home'){
+    html = renderHome();
+  } else if (lessonsData[activeSection]){
+    html = '<h2>' + lessonsData[activeSection].label + '</h2>' + renderLessonGrid(lessonsData[activeSection]);
+  } else if (activeSection === 'giaotrinh'){
+    html = renderGiaoTrinh();
+  } else if (activeSection === 'tailieu'){
+    html = renderTaiLieu();
+  } else if (activeSection === 'lienhe'){
+    html = renderLienHe();
+  } else if (activeSection === 'login'){
+    html = renderLogin();
+  }
   panelEl.innerHTML = html;
+
+  panelEl.querySelectorAll('[data-goto]').forEach(btn => {
+    btn.onclick = () => { activeSection = btn.getAttribute('data-goto'); renderMainNav(); renderPanel(); };
+  });
+
+  const loginBtn = document.getElementById('doiTenBtnPanel');
+  if (loginBtn){
+    loginBtn.onclick = async () => {
+      await HalaoshiNopBai.doiThongTinHocSinh();
+      renderStudentBar();
+      renderPanel();
+    };
+  }
 }
 
 function renderStudentBar(){
@@ -309,10 +646,11 @@ function renderStudentBar(){
   document.getElementById('doiTenBtn').onclick = async () => {
     await HalaoshiNopBai.doiThongTinHocSinh();
     renderStudentBar();
+    if (activeSection === 'login') renderPanel();
   };
 }
 
-renderLevelTabs();
+renderMainNav();
 renderPanel();
 renderStudentBar();
 </script>
