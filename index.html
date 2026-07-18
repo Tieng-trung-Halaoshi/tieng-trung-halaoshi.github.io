@@ -799,13 +799,14 @@ const hskTabSections = [
  * 2) fileBaiHoc: điền đường dẫn file cho bài nào ĐÃ CÓ file thật.
  *    Bài nào KHÔNG có trong danh sách này sẽ tự động hiện khoá 🔒.
  *
- *    Cách 1 — bài chỉ có 1 file (như HSK1, HSK6 hiện tại):
+ *    Cách 1 — bài chỉ có 1 file (như HSK6 hiện tại):
  *       số bài : 'đường-dẫn-file.html'
  *       Ví dụ: HSK6: { 1: 'hsk6/bai-01.html' }
  *
- *    Cách 2 — bài có cả file Từ vựng và Bài tập (như HSK2):
- *       số bài : { tuVung: 'đường-dẫn-tu-vung.html', baiTap: 'đường-dẫn-bai-tap.html' }
- *       Nếu chỉ có 1 trong 2 file, bỏ trống dòng còn lại là được.
+ *    Cách 2 — bài có 3 mục Từ vựng / Bài khóa / Bài tập (quy ước chung cho HSK1-6):
+ *       số bài : { tuVung: 'đường-dẫn-tu-vung.html', baiKhoa: 'đường-dẫn-bai-khoa.html', baiTap: 'đường-dẫn-bai-tap.html' }
+ *       Tên file chuẩn trong mỗi thư mục bài học: TU VUNG.html, BAI KHOA.html, BAI TAP.html
+ *       Nếu bài nào chỉ có 1-2 trong 3 file, bỏ trống dòng còn lại là được.
  * ============================================================
  */
 const soBaiTheoCap = {
@@ -819,24 +820,25 @@ const soBaiTheoCap = {
 
 const fileBaiHoc = {
   HSK1: {
-    1: 'hsk1/01.AI小语你好/BAI TAP.html',
-    2: 'hsk1/02.我叫李文/BAI TAP.html',
-    3: 'hsk1/03.我是中国人/BAI TAP.html',
-    4: 'hsk1/04.我有两个孩子/BAI TAP.html',
-    5: 'hsk1/05.今天我休息/BAI TAP.html',
-    6: 'hsk1/06.你的手机号是多少/BAI TAP.html',
-    7: 'hsk1/07.我晚上六点半下班/BAI TAP.html',
-    8: 'hsk1/08.我爸爸也在医院工作/BAI TAP.html',
-    9: 'hsk1/09.我明天上午在学校学习/BAI TAP.html',
-    10: 'hsk1/10.这儿的苹果真便宜/BAI TAP.html',
-    11: 'hsk1/11.我读大学呢/BAI TAP.html',
-    12: 'hsk1/12.昨天下雪了/BAI TAP.html',
-    13: 'hsk1/13.请给我一杯茶/BAI TAP.html',
-    14: 'hsk1/14.我看了一个电影/BAI TAP.html',
-    15: 'hsk1/15.大兴机场见/BAI TAP.html',
+    1: { tuVung: 'hsk1/01.AI小语你好/TU VUNG.html', baiTap: 'hsk1/01.AI小语你好/BAI TAP.html' },
+    2: { tuVung: 'hsk1/02.我叫李文/TU VUNG.html', baiTap: 'hsk1/02.我叫李文/BAI TAP.html' },
+    3: { tuVung: 'hsk1/03.我是中国人/TU VUNG.html', baiTap: 'hsk1/03.我是中国人/BAI TAP.html' },
+    4: { tuVung: 'hsk1/04.我有两个孩子/TU VUNG.html', baiTap: 'hsk1/04.我有两个孩子/BAI TAP.html' },
+    5: { tuVung: 'hsk1/05.今天我休息/TU VUNG.html', baiTap: 'hsk1/05.今天我休息/BAI TAP.html' },
+    6: { tuVung: 'hsk1/06.你的手机号是多少/TU VUNG.html', baiTap: 'hsk1/06.你的手机号是多少/BAI TAP.html' },
+    7: { tuVung: 'hsk1/07.我晚上六点半下班/TU VUNG.html', baiTap: 'hsk1/07.我晚上六点半下班/BAI TAP.html' },
+    8: { tuVung: 'hsk1/08.我爸爸也在医院工作/TU VUNG.html', baiTap: 'hsk1/08.我爸爸也在医院工作/BAI TAP.html' },
+    9: { tuVung: 'hsk1/09.我明天上午在学校学习/TU VUNG.html', baiTap: 'hsk1/09.我明天上午在学校学习/BAI TAP.html' },
+    10: { tuVung: 'hsk1/10.这儿的苹果真便宜/TU VUNG.html', baiTap: 'hsk1/10.这儿的苹果真便宜/BAI TAP.html' },
+    11: { tuVung: 'hsk1/11.我读大学呢/TU VUNG.html', baiTap: 'hsk1/11.我读大学呢/BAI TAP.html' },
+    12: { tuVung: 'hsk1/12.昨天下雪了/TU VUNG.html', baiTap: 'hsk1/12.昨天下雪了/BAI TAP.html' },
+    13: { tuVung: 'hsk1/13.请给我一杯茶/TU VUNG.html', baiTap: 'hsk1/13.请给我一杯茶/BAI TAP.html' },
+    14: { tuVung: 'hsk1/14.我看了一个电影/TU VUNG.html', baiTap: 'hsk1/14.我看了一个电影/BAI TAP.html' },
+    15: { tuVung: 'hsk1/15.大兴机场见/TU VUNG.html', baiTap: 'hsk1/15.大兴机场见/BAI TAP.html' },
   },
   HSK2: {
     1: { tuVung: 'hsk2/01. 她请我们吃了北京烤鸭/TU VUNG.html', baiTap: 'hsk2/01. 她请我们吃了北京烤鸭/BAI TAP.html' },
+    2: { tuVung: 'hsk2/02.还是打车去北大吧/TU VUNG.html', baiTap: 'hsk2/02.还是打车去北大吧/BAI TAP.html' },
   },
   HSK3: {},
   HSK4: {},
@@ -900,17 +902,19 @@ function buildLessons(capDo){
   for (let i = 1; i <= total; i++){
     const t = tens[i] || null;
     const raw = files[i] || null;
-    let file = null, tuVung = null, baiTap = null;
+    let file = null, tuVung = null, baiKhoa = null, baiTap = null;
     if (typeof raw === 'string'){
       file = raw; // bài chỉ có 1 file duy nhất
     } else if (raw && typeof raw === 'object'){
       tuVung = raw.tuVung || null;
+      baiKhoa = raw.baiKhoa || null;
       baiTap = raw.baiTap || null;
     }
     arr.push({
       ten: 'Bài ' + i,
       file: file,
       tuVung: tuVung,
+      baiKhoa: baiKhoa,
       baiTap: baiTap,
       hanzi: t ? t.hanzi : null,
       viet: t ? t.viet : null
@@ -1074,13 +1078,14 @@ function renderLessonGrid(level){
             + '<span class="name">' + l.ten + '</span>'
             + extraHtml
             + '</a>';
-    } else if (l.tuVung || l.baiTap){
+    } else if (l.tuVung || l.baiKhoa || l.baiTap){
       html += '<div class="lesson-card has-links">'
             + '<div class="num">' + badge + '</div>'
             + '<span class="name">' + l.ten + '</span>'
             + extraHtml
             + '<div class="lesson-links">'
             + (l.tuVung ? '<a class="lesson-link" href="' + encodeURI(l.tuVung) + '">📖 Từ vựng</a>' : '')
+            + (l.baiKhoa ? '<a class="lesson-link" href="' + encodeURI(l.baiKhoa) + '">📄 Bài khóa</a>' : '')
             + (l.baiTap ? '<a class="lesson-link" href="' + encodeURI(l.baiTap) + '">✍️ Bài tập</a>' : '')
             + '</div>'
             + '</div>';
