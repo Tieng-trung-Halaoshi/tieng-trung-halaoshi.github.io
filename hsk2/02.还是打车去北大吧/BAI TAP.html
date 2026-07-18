@@ -741,137 +741,157 @@ const errData = [
 
 const sentData = [
   {
-    vn: 'Chúng ta hay là bắt taxi đến Đại học Bắc Kinh đi.',
-    zh: ['我们还是打车去北京大学吧。'],
+    vn: 'Nhà tôi cách trường rất xa, cho nên mỗi ngày tôi phải ngồi xe bus đi học.',
+    zh: ['我家离学校很远，所以我每天都要坐公交车上学。'],
     words: [
-      {zh:'我们',   vn:'chúng ta'},
-      {zh:'还是',   vn:'hay là'},
-      {zh:'打车',   vn:'bắt taxi'},
-      {zh:'去',     vn:'đi'},
-      {zh:'北京大学', vn:'Đại học Bắc Kinh'},
-      {zh:'吧',     vn:''},
+      {zh:'我家',   vn:'nhà tôi'},
+      {zh:'离',     vn:'cách'},
+      {zh:'学校',   vn:'trường'},
+      {zh:'很远',   vn:'rất xa'},
+      {zh:'，',     vn:''},
+      {zh:'所以',   vn:'cho nên'},
+      {zh:'我',     vn:'tôi'},
+      {zh:'每天',   vn:'mỗi ngày'},
+      {zh:'都要',   vn:'đều phải'},
+      {zh:'坐',     vn:'ngồi'},
+      {zh:'公交车', vn:'xe bus'},
+      {zh:'上学',   vn:'đi học'},
       {zh:'。',     vn:''},
     ],
-    note: '还是...吧 dùng để đưa ra đề nghị/lựa chọn.'
+    note: '离 + địa điểm + xa/gần diễn tả khoảng cách; 所以 dùng để nối kết quả với nguyên nhân đã nêu trước đó.'
   },
   {
-    vn: 'Bến xe cách đây hơi xa, chúng ta bắt taxi đi thôi.',
-    zh: ['车站离这儿有点儿远，我们打车去吧。'],
+    vn: 'Bến xe xa quá, chúng ta bắt taxi đi đi.',
+    zh: ['车站太远了，我们打车去吧。'],
     words: [
       {zh:'车站',   vn:'bến xe'},
-      {zh:'离',     vn:'cách'},
-      {zh:'这儿',   vn:'đây'},
-      {zh:'有点儿', vn:'hơi'},
-      {zh:'远',     vn:'xa'},
+      {zh:'太远了', vn:'xa quá'},
       {zh:'，',     vn:''},
       {zh:'我们',   vn:'chúng ta'},
       {zh:'打车',   vn:'bắt taxi'},
-      {zh:'去吧',   vn:'đi thôi'},
+      {zh:'去吧',   vn:'đi đi'},
       {zh:'。',     vn:''},
     ],
-    note: '离 + địa điểm + tính từ (远/近) diễn tả khoảng cách giữa hai nơi.'
+    note: '太...了 = quá...(nhấn mạnh mức độ); 去吧 dùng để rủ/đề nghị làm gì.'
   },
   {
-    vn: 'Anh ấy học rất chăm, nhưng thành tích không tốt.',
-    zh: ['他学习很努力，但成绩不好。'],
-    words: [
-      {zh:'他',     vn:'anh ấy'},
-      {zh:'学习',   vn:'học'},
-      {zh:'很努力', vn:'rất chăm'},
-      {zh:'，',     vn:''},
-      {zh:'但',     vn:'nhưng'},
-      {zh:'成绩',   vn:'thành tích'},
-      {zh:'不好',   vn:'không tốt'},
-      {zh:'。',     vn:''},
-    ],
-    note: '但 nối hai vế câu tương phản, đứng đầu vế câu sau.'
-  },
-  {
-    vn: 'Cuốn sách này đã bán được mười vạn cuốn.',
-    zh: ['这本书卖了十万本。'],
-    words: [
-      {zh:'这本书', vn:'cuốn sách này'},
-      {zh:'卖了',   vn:'đã bán'},
-      {zh:'十万',   vn:'mười vạn'},
-      {zh:'本',     vn:'cuốn'},
-      {zh:'。',     vn:''},
-    ],
-    note: '万 = 10.000, luôn đứng sau số từ (十万 = mười vạn).'
-  },
-  {
-    vn: 'Anh ấy đứng vị trí thứ nhất trong kỳ thi này.',
-    zh: ['他这次考试是第一名。'],
-    words: [
-      {zh:'他',     vn:'anh ấy'},
-      {zh:'这次',   vn:'lần này'},
-      {zh:'考试',   vn:'kỳ thi'},
-      {zh:'是',     vn:'là'},
-      {zh:'第一名', vn:'vị trí thứ nhất'},
-      {zh:'。',     vn:''},
-    ],
-    note: '名 là lượng từ chỉ thứ hạng, đứng sau số thứ tự (第一名).'
-  },
-  {
-    vn: 'Tôi đã mua vé trên mạng.',
-    zh: ['我在网上买了票。','我在网上买票了。'],
+    vn: 'Tôi uống cafe, bạn muốn uống cafe hay trà sữa?',
+    zh: ['我喝咖啡，你想喝咖啡还是奶茶？'],
     words: [
       {zh:'我',     vn:'tôi'},
-      {zh:'在网上', vn:'trên mạng'},
-      {zh:'买了',   vn:'đã mua'},
-      {zh:'票',     vn:'vé'},
-      {zh:'。',     vn:''},
-    ],
-    note: '在网上 + động từ = làm gì đó trên mạng.'
-  },
-  {
-    vn: 'Bạn ấy là một học sinh nước ngoài.',
-    zh: ['她是一个外国学生。'],
-    words: [
-      {zh:'她',     vn:'bạn ấy'},
-      {zh:'是',     vn:'là'},
-      {zh:'一个',   vn:'một'},
-      {zh:'外国',   vn:'nước ngoài'},
-      {zh:'学生',   vn:'học sinh'},
-      {zh:'。',     vn:''},
-    ],
-    note: '外国 + danh từ = ... nước ngoài (bổ nghĩa cho danh từ phía sau).'
-  },
-  {
-    vn: 'Phòng học này rất rộng.',
-    zh: ['这间教室很大。'],
-    words: [
-      {zh:'这',     vn:'này'},
-      {zh:'间',     vn:'căn (lượng từ)'},
-      {zh:'教室',   vn:'phòng học'},
-      {zh:'很大',   vn:'rất rộng'},
-      {zh:'。',     vn:''},
-    ],
-    note: '间 là lượng từ cho phòng/gian, đứng giữa từ chỉ định (这/那) và danh từ.'
-  },
-  {
-    vn: 'Đừng lo lắng, không có vấn đề gì đâu.',
-    zh: ['别担心，没问题。'],
-    words: [
-      {zh:'别',     vn:'đừng'},
-      {zh:'担心',   vn:'lo lắng'},
+      {zh:'喝',     vn:'uống'},
+      {zh:'咖啡',   vn:'cafe'},
       {zh:'，',     vn:''},
-      {zh:'没问题', vn:'không có vấn đề gì'},
-      {zh:'。',     vn:''},
-    ],
-    note: '别 + động từ = đừng làm gì.'
-  },
-  {
-    vn: 'Bạn qua đây một chút được không?',
-    zh: ['你可以过来一下吗？','你能过来一下吗？'],
-    words: [
       {zh:'你',     vn:'bạn'},
-      {zh:'可以',   vn:'có thể'},
-      {zh:'过来',   vn:'qua đây'},
-      {zh:'一下',   vn:'một chút'},
-      {zh:'吗',     vn:''},
+      {zh:'想',     vn:'muốn'},
+      {zh:'喝',     vn:'uống'},
+      {zh:'咖啡',   vn:'cafe'},
+      {zh:'还是',   vn:'hay'},
+      {zh:'奶茶',   vn:'trà sữa'},
       {zh:'？',     vn:''},
     ],
-    note: '过来 là bổ ngữ chỉ hướng, thường đi kèm 一下 để câu nhờ vả nghe nhẹ nhàng hơn.'
+    note: 'A + 还是 + B = A hay B, dùng trong câu hỏi lựa chọn.'
+  },
+  {
+    vn: 'Cô ấy tuy không có tiền nhưng rất thích đi du lịch.',
+    zh: ['她虽然没有钱，但是很喜欢旅游。'],
+    words: [
+      {zh:'她',     vn:'cô ấy'},
+      {zh:'虽然',   vn:'tuy'},
+      {zh:'没有钱', vn:'không có tiền'},
+      {zh:'，',     vn:''},
+      {zh:'但是',   vn:'nhưng'},
+      {zh:'很喜欢', vn:'rất thích'},
+      {zh:'旅游',   vn:'đi du lịch'},
+      {zh:'。',     vn:''},
+    ],
+    note: '虽然...但是... = tuy...nhưng..., dùng để nối hai vế câu tương phản.'
+  },
+  {
+    vn: 'Bộ quần áo đẹp quá đi mất!',
+    zh: ['这件衣服太漂亮了！'],
+    words: [
+      {zh:'这件',   vn:'bộ này'},
+      {zh:'衣服',   vn:'quần áo'},
+      {zh:'太漂亮了', vn:'đẹp quá'},
+      {zh:'！',     vn:''},
+    ],
+    note: '太 + tính từ + 了 = quá...(dùng trong câu cảm thán nhấn mạnh mức độ).'
+  },
+  {
+    vn: 'Tên của cuốn sách đó là gì vậy? Bạn biết không?',
+    zh: ['那本书叫什么名字？你知道吗？'],
+    words: [
+      {zh:'那本书', vn:'cuốn sách đó'},
+      {zh:'叫什么名字', vn:'tên là gì'},
+      {zh:'？',     vn:''},
+      {zh:'你',     vn:'bạn'},
+      {zh:'知道',   vn:'biết'},
+      {zh:'吗',     vn:'không'},
+      {zh:'？',     vn:''},
+    ],
+    note: '叫什么名字 = tên là gì, dùng để hỏi tên người/vật.'
+  },
+  {
+    vn: 'Bố mẹ tôi làm việc ở nước ngoài. Tôi rất nhớ bọn họ.',
+    zh: ['我爸爸妈妈在国外工作，我很想他们。'],
+    words: [
+      {zh:'我爸爸妈妈', vn:'bố mẹ tôi'},
+      {zh:'在国外', vn:'ở nước ngoài'},
+      {zh:'工作',   vn:'làm việc'},
+      {zh:'，',     vn:''},
+      {zh:'我',     vn:'tôi'},
+      {zh:'很想',   vn:'rất nhớ'},
+      {zh:'他们',   vn:'bọn họ'},
+      {zh:'。',     vn:''},
+    ],
+    note: '在 + địa điểm + động từ = làm gì ở đâu; 想 trong câu này mang nghĩa "nhớ" (nhớ người).'
+  },
+  {
+    vn: 'Hôm nay em không lái xe (ô tô), anh tới đón em được không?',
+    zh: ['今天我没开车，你可以来接我吗？'],
+    words: [
+      {zh:'今天',   vn:'hôm nay'},
+      {zh:'我',     vn:'em'},
+      {zh:'没开车', vn:'không lái xe'},
+      {zh:'，',     vn:''},
+      {zh:'你',     vn:'anh'},
+      {zh:'可以',   vn:'có thể'},
+      {zh:'来',     vn:'tới'},
+      {zh:'接',     vn:'đón'},
+      {zh:'我',     vn:'em'},
+      {zh:'吗',     vn:'được không'},
+      {zh:'？',     vn:''},
+    ],
+    note: '没 + động từ = phủ định một hành động đã/đang xảy ra; 可以 + động từ = có thể làm gì (dùng khi nhờ vả).'
+  },
+  {
+    vn: 'Trong phòng học này có 10 học sinh nam và 12 học sinh nữ.',
+    zh: ['这间教室里有十个男学生和十二个女学生。'],
+    words: [
+      {zh:'这间',   vn:'này (lượng từ phòng)'},
+      {zh:'教室里', vn:'trong phòng học'},
+      {zh:'有',     vn:'có'},
+      {zh:'十个',   vn:'mười'},
+      {zh:'男学生', vn:'học sinh nam'},
+      {zh:'和',     vn:'và'},
+      {zh:'十二个', vn:'mười hai'},
+      {zh:'女学生', vn:'học sinh nữ'},
+      {zh:'。',     vn:''},
+    ],
+    note: '教室里 = trong phòng học (里 chỉ vị trí bên trong); lượng từ 个 dùng cho người khi đếm số lượng.'
+  },
+  {
+    vn: 'Bạn mua mấy vé xem phim rồi?',
+    zh: ['你买了几张电影票？'],
+    words: [
+      {zh:'你',     vn:'bạn'},
+      {zh:'买了',   vn:'đã mua'},
+      {zh:'几张',   vn:'mấy'},
+      {zh:'电影票', vn:'vé xem phim'},
+      {zh:'？',     vn:''},
+    ],
+    note: '几 + lượng từ + danh từ = hỏi số lượng nhỏ; 张 là lượng từ dùng cho vé/tờ giấy.'
   },
 ];
 
