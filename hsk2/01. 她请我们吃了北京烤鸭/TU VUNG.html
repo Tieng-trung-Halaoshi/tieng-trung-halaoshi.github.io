@@ -551,6 +551,23 @@
     justify-content:flex-end;
     margin-bottom:10px;
   }
+  .review-field-toggles{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+  }
+  .rv-toggle-btn.off{
+    background:var(--paper-dark);
+    color:var(--ink-soft);
+    border-color:var(--paper-line);
+  }
+  #panel-review.hide-hanzi .review-hanzi{filter:blur(6px);user-select:none;cursor:pointer;transition:filter .2s;}
+  #panel-review.hide-pinyin .review-pinyin{filter:blur(6px);user-select:none;cursor:pointer;transition:filter .2s;}
+  #panel-review.hide-meaning .review-meaning{filter:blur(6px);user-select:none;cursor:pointer;transition:filter .2s;}
+  #panel-review .review-hanzi.peek,
+  #panel-review .review-pinyin.peek,
+  #panel-review .review-meaning.peek{filter:none !important;}
   .review-topbar{
     display:flex;
     align-items:center;
@@ -886,6 +903,12 @@
         <input type="checkbox" id="reviewSelectAll">
         Tick tất cả / Bỏ tick tất cả
       </label>
+    </div>
+    <div class="review-field-toggles">
+      <button class="btn btn-ghost rv-toggle-btn" id="rvt-hanzi" onclick="toggleReviewField('hanzi')">🈴 Hán tự</button>
+      <button class="btn btn-ghost rv-toggle-btn" id="rvt-pinyin" onclick="toggleReviewField('pinyin')">🔤 Pinyin</button>
+      <button class="btn btn-ghost rv-toggle-btn" id="rvt-meaning" onclick="toggleReviewField('meaning')">🇻🇳 Nghĩa</button>
+      <span class="hint" style="align-self:center;">💡 Ẩn bớt cột để tự kiểm tra — bấm vào ô đang mờ để xem tạm</span>
     </div>
     <div class="review-header">
       <span></span>
@@ -1547,10 +1570,10 @@ vocab.forEach((item, vIndex)=>{
     '<input type="checkbox" class="review-check" title="Đánh dấu đã thuộc">' +
     '<button class="icon-btn review-actions-listen" title="Nghe phát âm">🔊</button>' +
     '<button class="icon-btn review-actions-write" title="Luyện viết nét chữ">✍️</button>' +
-    '<div class="review-hanzi zh" title="'+item.example.zh+'">'+item.hanzi+'</div>' +
-    '<div class="review-pinyin">'+item.pinyin+'</div>' +
+    '<div class="review-hanzi zh" title="'+item.example.zh+'" onclick="this.classList.toggle(\'peek\')">'+item.hanzi+'</div>' +
+    '<div class="review-pinyin" onclick="this.classList.toggle(\'peek\')">'+item.pinyin+'</div>' +
     '<div class="review-wordclass"' + (item.wordClass ? '' : ' style="visibility:hidden;"') + '>'+(item.wordClass||'')+'</div>' +
-    '<div class="review-meaning">'+item.meaning+'</div>' +
+    '<div class="review-meaning" onclick="this.classList.toggle(\'peek\')">'+item.meaning+'</div>' +
     '<div class="review-input-wrap">' +
       '<input type="text" class="review-input zh" placeholder="Gõ lại Hán tự..." maxlength="6">' +
       '<span class="review-status"></span>' +
@@ -1607,6 +1630,18 @@ document.getElementById('reviewResetBtn').addEventListener('click', ()=>{
   resetReviewTimer();
   startReviewTimer();
 });
+
+/* Ẩn/hiện Hán tự, Pinyin, Nghĩa trong bảng Ôn tập để học sinh tự chọn cách kiểm tra trí nhớ */
+let reviewFieldState = {hanzi:true, pinyin:true, meaning:true};
+function toggleReviewField(f){
+  reviewFieldState[f] = !reviewFieldState[f];
+  const panel = document.getElementById('panel-review');
+  const btn = document.getElementById('rvt-' + f);
+  const cls = 'hide-' + f;
+  if(reviewFieldState[f]){ panel.classList.remove(cls); btn.classList.remove('off'); }
+  else { panel.classList.add(cls); btn.classList.add('off'); }
+  reviewList.querySelectorAll('.peek').forEach(el => el.classList.remove('peek'));
+}
 
 /* ===================== HANZI WRITER TAB ===================== */
 let hzInitialized = false;
