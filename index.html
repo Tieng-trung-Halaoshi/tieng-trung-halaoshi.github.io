@@ -532,6 +532,32 @@
     content:' 🔒';
     font-size:14px;
   }
+  .lesson-card.has-links{
+    cursor:default;
+  }
+  .lesson-links{
+    display:flex;
+    gap:6px;
+    justify-content:center;
+    margin-top:10px;
+    flex-wrap:wrap;
+  }
+  .lesson-link{
+    font-family:'Quicksand', sans-serif;
+    font-size:12px;
+    font-weight:700;
+    text-decoration:none;
+    color:var(--green-deep);
+    background:#fff;
+    border:1px solid var(--gold-light);
+    padding:6px 10px;
+    border-radius:50px;
+    transition:all .15s ease;
+  }
+  .lesson-link:hover{
+    background:var(--gold-light);
+    border-color:var(--gold);
+  }
 
   .doc-list{
     list-style:none;
@@ -771,11 +797,15 @@ const hskTabSections = [
  *    kể cả bài chưa có file — sẽ hiện khoá 🔒).
  *
  * 2) fileBaiHoc: điền đường dẫn file cho bài nào ĐÃ CÓ file thật.
- *    Cú pháp: số bài : 'đường-dẫn-file.html'
  *    Bài nào KHÔNG có trong danh sách này sẽ tự động hiện khoá 🔒.
  *
- * Ví dụ: đã có file cho Bài 1 và Bài 7 của HSK6:
- *    HSK6: { 1: 'hsk6/bai-01.html', 7: 'hsk6/bai-07.html' }
+ *    Cách 1 — bài chỉ có 1 file (như HSK1, HSK6 hiện tại):
+ *       số bài : 'đường-dẫn-file.html'
+ *       Ví dụ: HSK6: { 1: 'hsk6/bai-01.html' }
+ *
+ *    Cách 2 — bài có cả file Từ vựng và Bài tập (như HSK2):
+ *       số bài : { tuVung: 'đường-dẫn-tu-vung.html', baiTap: 'đường-dẫn-bai-tap.html' }
+ *       Nếu chỉ có 1 trong 2 file, bỏ trống dòng còn lại là được.
  * ============================================================
  */
 const soBaiTheoCap = {
@@ -806,7 +836,7 @@ const fileBaiHoc = {
     15: 'hsk1/15.大兴机场见/BAI TAP.html',
   },
   HSK2: {
-    1: 'hsk2/01. 她请我们吃了北京烤鸭/BAI TAP.html',
+    1: { tuVung: 'hsk2/01. 她请我们吃了北京烤鸭/TU VUNG.html', baiTap: 'hsk2/01. 她请我们吃了北京烤鸭/BAI TAP.html' },
   },
   HSK3: {},
   HSK4: {},
@@ -869,7 +899,22 @@ function buildLessons(capDo){
   const arr = [];
   for (let i = 1; i <= total; i++){
     const t = tens[i] || null;
-    arr.push({ ten: 'Bài ' + i, file: files[i] || null, hanzi: t ? t.hanzi : null, viet: t ? t.viet : null });
+    const raw = files[i] || null;
+    let file = null, tuVung = null, baiTap = null;
+    if (typeof raw === 'string'){
+      file = raw; // bài chỉ có 1 file duy nhất
+    } else if (raw && typeof raw === 'object'){
+      tuVung = raw.tuVung || null;
+      baiTap = raw.baiTap || null;
+    }
+    arr.push({
+      ten: 'Bài ' + i,
+      file: file,
+      tuVung: tuVung,
+      baiTap: baiTap,
+      hanzi: t ? t.hanzi : null,
+      viet: t ? t.viet : null
+    });
   }
   (extraTheoCap[capDo] || []).forEach(item => arr.push(Object.assign({ extra: true }, item)));
   return arr;
@@ -1029,6 +1074,16 @@ function renderLessonGrid(level){
             + '<span class="name">' + l.ten + '</span>'
             + extraHtml
             + '</a>';
+    } else if (l.tuVung || l.baiTap){
+      html += '<div class="lesson-card has-links">'
+            + '<div class="num">' + badge + '</div>'
+            + '<span class="name">' + l.ten + '</span>'
+            + extraHtml
+            + '<div class="lesson-links">'
+            + (l.tuVung ? '<a class="lesson-link" href="' + encodeURI(l.tuVung) + '">📖 Từ vựng</a>' : '')
+            + (l.baiTap ? '<a class="lesson-link" href="' + encodeURI(l.baiTap) + '">✍️ Bài tập</a>' : '')
+            + '</div>'
+            + '</div>';
     } else {
       html += '<div class="lesson-card locked">'
             + '<div class="num">' + badge + '</div>'
