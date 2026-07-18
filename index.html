@@ -837,7 +837,7 @@ const fileBaiHoc = {
     15: { tuVung: 'hsk1/15.大兴机场见/TU VUNG.html', baiTap: 'hsk1/15.大兴机场见/BAI TAP.html' },
   },
   HSK2: {
-    1: { tuVung: 'hsk2/01. 她请我们吃了北京烤鸭/TU VUNG.html', baiTap: 'hsk2/01. 她请我们吃了北京烤鸭/BAI TAP.html' },
+    1: { tuVung: 'hsk2/01.她请我们吃了北京烤鸭/TU VUNG.html', baiTap: 'hsk2/01.她请我们吃了北京烤鸭/BAI TAP.html' },
     2: { tuVung: 'hsk2/02.还是打车去北大吧/TU VUNG.html', baiTap: 'hsk2/02.还是打车去北大吧/BAI TAP.html' },
   },
   HSK3: {},
@@ -1004,6 +1004,20 @@ const heroEl = document.getElementById('heroSection');
 const panelEl = document.getElementById('panel');
 const hamburgerEl = document.getElementById('hamburger');
 let activeSection = 'home';
+
+// Nếu link có dạng index.html#HSK2 (vd nút "Quay lại" từ trang bài học),
+// tự động mở đúng tab cấp độ đó thay vì luôn về Trang chủ.
+(function applyInitialHash(){
+  const h = (window.location.hash || '').replace('#', '').trim().toUpperCase();
+  const validIds = topNavSections.map(s => s.id.toUpperCase())
+    .concat(hskTabSections.map(s => s.id.toUpperCase()));
+  if (h && validIds.includes(h)){
+    // khớp lại đúng id gốc (giữ nguyên hoa/thường như khai báo)
+    const match = hskTabSections.find(s => s.id.toUpperCase() === h)
+               || topNavSections.find(s => s.id.toUpperCase() === h);
+    if (match) activeSection = match.id;
+  }
+})();
 
 function navLinkHtml(sec, forMobile){
   let label = sec.label;
