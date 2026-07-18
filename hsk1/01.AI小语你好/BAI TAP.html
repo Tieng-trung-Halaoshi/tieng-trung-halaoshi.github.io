@@ -43,6 +43,19 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
   background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .hero-float{position:absolute;font-size:80px;opacity:.07;top:-10px;right:-10px;line-height:1}
+.back-link{
+  position:absolute;top:16px;left:16px;z-index:2;
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  font-size:12.5px;font-weight:700;
+  padding:7px 14px;border-radius:20px;
+  text-decoration:none;
+  backdrop-filter:blur(6px);
+  transition:all .18s;
+}
+.back-link:hover{background:rgba(255,255,255,.28); transform:translateX(-2px);}
 .hero-tag{font-size:11px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;animation:fadeDown .6s ease both}
 .hero-title{font-size:24px;font-weight:800;color:#fff;margin-bottom:6px;animation:fadeDown .6s .1s ease both}
 .hero-sub{font-size:13px;color:rgba(255,255,255,.75);margin-bottom:14px;animation:fadeDown .6s .2s ease both}
@@ -594,6 +607,7 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
 
 <!-- HERO -->
 <div class="hero">
+  <a href="../../index.html#HSK1" class="back-link">◀ Quay lại HSK1</a>
   <div class="hero-float">🇨🇳</div>
   <div class="hero-tag">Tiếng Trung Halaoshi · HSK 1</div>
   <div class="hero-title">Bài 1: Xin chào AI Tiểu Ngữ! 👋</div>
