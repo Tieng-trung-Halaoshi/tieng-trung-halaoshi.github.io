@@ -158,15 +158,6 @@ header .lesson-title{font-size:1.1em;margin-top:4px;font-weight:bold;}
 }
 .line:last-child{margin-bottom:0;}
 .spk{font-weight:bold;margin-right:4px;}
-.name-pinyin{
-  display:none;
-  font-weight:normal;
-  font-style:italic;
-  font-size:.85em;
-  color:var(--gray);
-  margin-right:2px;
-}
-body.show-pinyin .name-pinyin{display:inline;}
 .spk-baijiayue{color:#2f6fed;}
 .spk-wangyixue{color:#c0392b;}
 .spk-anni{color:#8e44ad;}
@@ -233,13 +224,22 @@ body.hide-hanzi .hanzi-text{display:none;}
 }
 .pinyin-toggle-btn:hover{background:#fff7ea;}
 .pinyin-toggle-btn.active{background:var(--gold);color:#fff;}
+.disclaimer-note{
+  max-width:900px;
+  margin:8px auto 0;
+  padding:8px 16px;
+  font-size:.82em;
+  color:#b26a00;
+  text-align:center;
+  line-height:1.5;
+}
 footer{text-align:center;padding:16px;color:#aaa;font-size:.8em;}
 </style>
 </head>
 <body>
 
 <header>
-  <a href="../index.html#hsk2" class="back-btn">← Quay lại HSK2</a>
+  <a href="../../index.html#HSK2" class="back-btn">← Quay lại HSK2</a>
   <div><span style="display:inline-block;background:#fff;color:var(--teal);border-radius:50%;width:34px;height:34px;line-height:34px;text-align:center;font-weight:bold;margin-right:6px;">汉</span><b>Tiếng Trung Halaoshi</b></div>
   <h1>HSK2 - Bài 1</h1>
   <div class="lesson-title">她请我们吃了北京烤鸭 · Cô ấy đã mời chúng tôi món vịt quay Bắc Kinh</div>
@@ -252,6 +252,7 @@ footer{text-align:center;padding:16px;color:#aaa;font-size:.8em;}
   <button class="pinyin-toggle-btn" id="hanziToggleBtn">🙈 Ẩn chữ Hán</button>
   <button class="pinyin-toggle-btn" id="viToggleBtn">👁 Hiện nghĩa</button>
 </div>
+<div class="disclaimer-note">⚠️ Phần pinyin và nghĩa tiếng Việt chỉ mang tính tham khảo, học sinh cần tự đối chiếu với giáo trình chuẩn HSK2.</div>
 <div class="container" id="panelHost"></div>
 
 <footer>Tiếng Trung Halaoshi · Tài liệu luyện tập nội bộ</footer>
@@ -270,7 +271,7 @@ const texts = [
     title:"课文1：在机场",
     audio:AUD1,
     lines:[
-      {spk:"白家月", cls:"spk-baijiayue", hanzi:"请问，您是王一飞老师的姐姐吗？", pinyin:"Qǐngwèn, nín shì Wáng Yīfēi lǎoshī de jiějie ma?", vi:"Xin hỏi, chị có phải là chị gái của thầy Vương Nhất Phi không ạ?"},
+      {spk:"白家月", cls:"spk-baijiayue", hanzi:"请问，您是王一飞老师的姐姐吗？", pinyin:"Qǐngwèn, nín shì Wáng Yīfēi lǎoshī de jiějie ma?", vi:"Xin hỏi, chị có phải là chị gái của cô Vương Nhất Phi không ạ?"},
       {spk:"王一雪", cls:"spk-wangyixue", hanzi:"是的，你们就是她的学生吧？", pinyin:"Shì de, nǐmen jiù shì tā de xuésheng ba?", vi:"Đúng vậy, các em là học sinh của cô ấy phải không?"},
       {spk:"白家月", cls:"spk-baijiayue", hanzi:"对。我是白家月，她是安妮。", pinyin:"Duì. Wǒ shì Bái Jiāyuè, tā shì Ānnī.", vi:"Vâng ạ. Em là Bạch Gia Nguyệt, đây là An Ni."},
       {spk:"王一雪", cls:"spk-wangyixue", hanzi:"你们好，我叫王一雪。一飞给我打电话了，让我来接你们。", pinyin:"Nǐmen hǎo, wǒ jiào Wáng Yīxuě. Yīfēi gěi wǒ dǎ diànhuà le, ràng wǒ lái jiē nǐmen.", vi:"Chào các em, chị tên là Vương Nhất Tuyết. Nhất Phi đã gọi điện cho chị, bảo chị đến đón các em."},
@@ -310,7 +311,7 @@ const texts = [
     audio:AUD4,
     passage:"王老师，我们已经到北京了，是您姐姐来接我们的。她请我们吃了北京烤鸭，还给我们介绍了很多东西。我们的中文不太好，有时不太懂她的意思。",
     passagePinyin:"Wáng lǎoshī, wǒmen yǐjīng dào Běijīng le, shì nín jiějie lái jiē wǒmen de. Tā qǐng wǒmen chīle Běijīng kǎoyā, hái gěi wǒmen jièshàole hěn duō dōngxi. Wǒmen de Zhōngwén bú tài hǎo, yǒushí bú tài dǒng tā de yìsi.",
-    passageVi:"Thầy Vương ơi, chúng em đã đến Bắc Kinh rồi, là chị gái của thầy đến đón chúng em. Chị ấy đã mời chúng em ăn vịt quay Bắc Kinh, còn giới thiệu cho chúng em rất nhiều thứ. Tiếng Trung của chúng em không tốt lắm, đôi khi không hiểu rõ ý của chị ấy."
+    passageVi:"Cô Vương ơi, chúng em đã đến Bắc Kinh rồi, là chị gái của cô đến đón chúng em. Chị ấy đã mời chúng em ăn vịt quay Bắc Kinh, còn giới thiệu cho chúng em rất nhiều thứ. Tiếng Trung của chúng em không tốt lắm, đôi khi không hiểu rõ ý của chị ấy."
   }
 ];
 
@@ -321,6 +322,13 @@ const nameMap = {
   "安妮":"Ānnī",
   "陈天中":"Chén Tiānzhōng",
   "白家月、安妮":"Bái Jiāyuè, Ānnī"
+};
+const nameMapVi = {
+  "白家月":"Bạch Gia Nguyệt",
+  "王一雪":"Vương Nhất Tuyết",
+  "安妮":"An Ni",
+  "陈天中":"Trần Thiên Trung",
+  "白家月、安妮":"Bạch Gia Nguyệt, An Ni"
 };
 const tabBar = document.getElementById('tabBar');
 const panelHost = document.getElementById('panelHost');
@@ -365,11 +373,12 @@ function renderPanel(t, idx){
     t.lines.forEach(l=>{
       const div = document.createElement('div');
       div.className='line';
-      const namePinyin = nameMap[l.spk] ? ' <span class="name-pinyin">('+nameMap[l.spk]+')</span>' : '';
-      div.innerHTML = '<span class="spk '+l.cls+'">'+l.spk+namePinyin+'：</span>'+
+      const namePinyinPrefix = nameMap[l.spk] ? nameMap[l.spk]+'： ' : '';
+      const nameViPrefix = nameMapVi[l.spk] ? nameMapVi[l.spk]+'： ' : '';
+      div.innerHTML = '<span class="spk '+l.cls+'">'+l.spk+'：</span>'+
         '<span class="hanzi-text">'+l.hanzi+'</span>'+
-        (l.pinyin ? '<div class="pinyin">'+l.pinyin+'</div>' : '')+
-        (l.vi ? '<div class="vi-text">'+l.vi+'</div>' : '');
+        (l.pinyin ? '<div class="pinyin">'+namePinyinPrefix+l.pinyin+'</div>' : '')+
+        (l.vi ? '<div class="vi-text">'+nameViPrefix+l.vi+'</div>' : '');
       card.appendChild(div);
     });
   } else if(t.passage){
@@ -481,9 +490,7 @@ let viShown = false;
 
 function applyPinyinVisibility(){
   const lineDisplay = pinyinShown ? 'block' : 'none';
-  const nameDisplay = pinyinShown ? 'inline' : 'none';
   document.querySelectorAll('.pinyin, .passage-pinyin').forEach(el=>{ el.style.display = lineDisplay; });
-  document.querySelectorAll('.name-pinyin').forEach(el=>{ el.style.display = nameDisplay; });
   pinyinToggleBtn.textContent = pinyinShown ? '🙈 Ẩn pinyin' : '👁 Hiện pinyin';
   pinyinToggleBtn.classList.toggle('active', pinyinShown);
 }
