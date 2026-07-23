@@ -510,7 +510,7 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
       <div class="sec-num" style="background:#EDE9FE;color:#7C4DFF">5</div>
       <div class="sec-title">Tìm lỗi sai trong câu</div>
     </div>
-    <div class="sec-desc">Mỗi câu được chia thành 4 phần A/B/C/D, một trong số đó chứa lỗi sai. Nhấn vào phần bạn cho là sai. 🔍</div>
+    <div class="sec-desc">Mỗi câu được chia thành các phần (A, B, C...), một trong số đó chứa lỗi sai. Nhấn vào phần bạn cho là sai. 🔍<br><span style="font-style:italic">Lưu ý: một số câu có thể chứa từ mới chưa học — hãy dựa vào ngữ pháp của câu (vị trí đúng của từ) để tìm lỗi sai, không cần hiểu hết nghĩa từng từ.</span></div>
     <div id="wo-wrap"></div>
   </div>
 
@@ -708,9 +708,9 @@ const errData = [
   },
   {
     segs: ['我们', '打车', '还是', '去', '吧。'],
-    ans: 2,
+    ans: [1, 2],
     fix: '我们还是打车去吧。',
-    explain: '还是 (hay là) dùng để đề nghị, phải đứng ngay sau chủ ngữ và trước động từ, không chen vào giữa các thành phần phía sau.'
+    explain: '还是 (hay là) dùng để đề nghị, phải đứng ngay sau chủ ngữ và trước động từ, không chen vào giữa các thành phần phía sau — chọn phần chứa 打车 hoặc phần chứa 还是 đều được.'
   },
   {
     segs: ['这', '本书', '卖了', '万十', '本。'],
@@ -1261,22 +1261,26 @@ function buildErr() {
     wrap.appendChild(card);
   });
 }
+function errAnsArr(item) { return Array.isArray(item.ans) ? item.ans : [item.ans]; }
 function selectErrSeg(i, si) {
   if(errAns[i] !== -1) return;
   errAns[i] = si;
+  const ansArr = errAnsArr(errData[i]);
+  const isCorrect = ansArr.includes(si);
   const sentEl = document.getElementById('err-sent-' + i);
   const fb = document.getElementById('err-fb-' + i);
   sentEl.querySelectorAll('.err-seg').forEach((el, k) => {
-    if(k === errData[i].ans) el.className = 'err-seg ok';
+    if(ansArr.includes(k)) el.className = 'err-seg ok';
     else if(k === si) el.className = 'err-seg no';
     else el.className = 'err-seg';
   });
   upProg();
-  if(si === errData[i].ans) {
+  if(isCorrect) {
     fb.innerHTML = '\u2705 Chính xác! Câu đúng: <span style="font-family:\'Noto Serif SC\',serif">' + errData[i].fix + '</span><br>' + errData[i].explain;
     fb.style.color = '#065F46';
   } else {
-    fb.innerHTML = '\u274c Chưa đúng! Lỗi nằm ở phần ' + ERR_LETTERS[errData[i].ans] + '. Câu đúng: <span style="font-family:\'Noto Serif SC\',serif">' + errData[i].fix + '</span><br>' + errData[i].explain;
+    const letters = ansArr.map(a => ERR_LETTERS[a]).join(' hoặc ');
+    fb.innerHTML = '\u274c Chưa đúng! Lỗi nằm ở phần ' + letters + '. Câu đúng: <span style="font-family:\'Noto Serif SC\',serif">' + errData[i].fix + '</span><br>' + errData[i].explain;
     fb.style.color = '#991B1B';
   }
 }
@@ -1384,7 +1388,7 @@ function calcScore() {
   let p4ok=0,p4tot=dlgQ.length;
   dlgAns.forEach((a,i)=>{ if(a===dlgQ[i].ans)p4ok++; });
   let p5ok=0,p5tot=errData.length;
-  errAns.forEach((a,i)=>{ if(a===errData[i].ans)p5ok++; });
+  errAns.forEach((a,i)=>{ if(errAnsArr(errData[i]).includes(a))p5ok++; });
   let p6answered=0,p6tot=sentData.length;
   sentData.forEach((item,i)=>{
     const val=(sentAnswers[i]||'').trim();
