@@ -510,7 +510,7 @@ body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--text);m
       <div class="sec-num" style="background:#EDE9FE;color:#7C4DFF">5</div>
       <div class="sec-title">Tìm lỗi sai trong câu</div>
     </div>
-    <div class="sec-desc">Mỗi câu được chia thành 4 phần A/B/C/D, một trong số đó chứa lỗi sai. Nhấn vào phần bạn cho là sai. 🔍</div>
+    <div class="sec-desc">Mỗi câu được chia thành các phần (A, B, C...), một trong số đó chứa lỗi sai. Nhấn vào phần bạn cho là sai. 🔍<br><span style="font-style:italic">Lưu ý: một số câu có thể chứa từ mới chưa học — hãy dựa vào ngữ pháp của câu (vị trí đúng của từ) để tìm lỗi sai, không cần hiểu hết nghĩa từng từ.</span></div>
     <div id="wo-wrap"></div>
   </div>
 
@@ -736,15 +736,15 @@ const errData = [
   },
   {
     segs: ['不好意思，', '我', '来晚', '了，', '路上', '堵', '有点儿。'],
-    ans: 5,
+    ans: [5, 6],
     fix: '不好意思，我来晚了，路上有点儿堵。',
-    explain: '有点儿 (hơi/có chút) là phó từ, phải đứng trước tính từ (堵), không đứng sau.'
+    explain: '有点儿 (hơi/có chút) là phó từ, phải đứng trước tính từ (堵), không đứng sau — chọn phần chứa 堵 hoặc phần chứa 有点儿 đều được.'
   },
   {
     segs: ['谢谢', '你', '这次', '帮了', '我很多忙，', '不好意思', '别。'],
-    ans: 6,
+    ans: [5, 6],
     fix: '谢谢你这次帮了我很多忙，别不好意思。',
-    explain: '别 (đừng) là phó từ phủ định mệnh lệnh, phải đứng trước 不好意思, không đứng sau.'
+    explain: '别 (đừng) là phó từ phủ định mệnh lệnh, phải đứng trước 不好意思, không đứng sau — chọn phần chứa 不好意思 hoặc phần chứa 别 đều được.'
   },
   {
     segs: ['我', '看完已经', '这本', '书', '了。'],
@@ -1286,22 +1286,26 @@ function buildErr() {
     wrap.appendChild(card);
   });
 }
+function errAnsArr(item) { return Array.isArray(item.ans) ? item.ans : [item.ans]; }
 function selectErrSeg(i, si) {
   if(errAns[i] !== -1) return;
   errAns[i] = si;
+  const ansArr = errAnsArr(errData[i]);
+  const isCorrect = ansArr.includes(si);
   const sentEl = document.getElementById('err-sent-' + i);
   const fb = document.getElementById('err-fb-' + i);
   sentEl.querySelectorAll('.err-seg').forEach((el, k) => {
-    if(k === errData[i].ans) el.className = 'err-seg ok';
+    if(ansArr.includes(k)) el.className = 'err-seg ok';
     else if(k === si) el.className = 'err-seg no';
     else el.className = 'err-seg';
   });
   upProg();
-  if(si === errData[i].ans) {
+  if(isCorrect) {
     fb.innerHTML = '\u2705 Chính xác! Câu đúng: <span style="font-family:\'Noto Serif SC\',serif">' + errData[i].fix + '</span><br>' + errData[i].explain;
     fb.style.color = '#065F46';
   } else {
-    fb.innerHTML = '\u274c Chưa đúng! Lỗi nằm ở phần ' + ERR_LETTERS[errData[i].ans] + '. Câu đúng: <span style="font-family:\'Noto Serif SC\',serif">' + errData[i].fix + '</span><br>' + errData[i].explain;
+    const letters = ansArr.map(a => ERR_LETTERS[a]).join(' hoặc ');
+    fb.innerHTML = '\u274c Chưa đúng! Lỗi nằm ở phần ' + letters + '. Câu đúng: <span style="font-family:\'Noto Serif SC\',serif">' + errData[i].fix + '</span><br>' + errData[i].explain;
     fb.style.color = '#991B1B';
   }
 }
@@ -1409,7 +1413,7 @@ function calcScore() {
   let p4ok=0,p4tot=dlgQ.length;
   dlgAns.forEach((a,i)=>{ if(a===dlgQ[i].ans)p4ok++; });
   let p5ok=0,p5tot=errData.length;
-  errAns.forEach((a,i)=>{ if(a===errData[i].ans)p5ok++; });
+  errAns.forEach((a,i)=>{ if(errAnsArr(errData[i]).includes(a))p5ok++; });
   let p6answered=0,p6tot=sentData.length;
   sentData.forEach((item,i)=>{
     const val=(sentAnswers[i]||'').trim();
