@@ -1410,7 +1410,7 @@ function calcScore() {
   const tips = [];
   if(p1tot>0 && Math.round(p1ok/p1tot*100)<80) tips.push('\uD83D\uDCDD Trắc nghiệm: Ôn lại nghĩa các từ vựng về thời tiết, cảm giác và ốm đau trong phần Từ vựng.');
   if(p2ok<p2tot) tips.push('\uD83D\uDD17 Nối từ: Hãy lật hết thẻ từ vựng và đọc to nghĩa để ghi nhớ.');
-  if(p3tot>0 && Math.round(p3ok/p3tot*100)<80) tips.push('\u270F\uFE0F Điền từ: Chú ý cách dùng 觉得, 有点儿, 再, 了 — các từ chức năng quan trọng của bài.');
+  if(p3tot>0 && Math.round(p3ok/p3tot*100)<80) tips.push('\u270F\uFE0F Điền từ: Chú ý cách dùng 觉得, 一点儿, 再, 回 — các từ chức năng quan trọng của bài.');
   if(p4tot>0 && Math.round(p4ok/p4tot*100)<80) tips.push('\uD83D\uDCAC Hội thoại: Đọc lại hội thoại nhiều lần và chú ý ngữ cảnh từng câu.');
   if(p5tot>0 && Math.round(p5ok/p5tot*100)<80) tips.push('\uD83E\uDDE9 Sắp xếp từ: Nhớ cấu trúc — 有点儿/一点儿 + tính từ/danh từ; 了 đặt cuối câu chỉ sự thay đổi; 再 + động từ = làm thêm lần nữa.');
   if(p6answered<p6tot) tips.push('\u270D\uFE0F Dịch câu: Bạn còn ' + (p6tot-p6answered) + ' câu chưa nộp — hãy hoàn thành trước khi lên lớp nhé.');
